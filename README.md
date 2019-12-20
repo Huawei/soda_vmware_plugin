@@ -30,4 +30,4 @@ II. Description
     
 III. Details
     
-    More details, please refer to each subdirectory doc.
+    For more details, please refer to each subdirectory.
