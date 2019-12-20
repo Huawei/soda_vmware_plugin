@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D9D9F358-F670-4DB3-B8CA-72EDC81739E2}</ProjectGuid>
+    <RootNamespace>sra</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../CmdAdapter;../common;../common/xml_node;../common/cli;../../third_party_groupware/OpenSDS_Storage_Plugins/ACE/source;../../third_party_groupware/OpenSDS_Storage_Plugins/jsoncpp/source/include;../../third_party_groupware/OpenSDS_Storage_Plugins/openssl/include;../securec;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ACEd.lib;lib_json.lib;TLVCom.lib;ACE_SSLd.lib;libcrypto.lib;libssl.lib;cfgmgr32.lib;libcurl.lib;wldap32.lib;ws2_32.lib;CmdAdapterd.lib;psapi.lib;securec.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../lib;../bin;../../third_party_groupware/OpenSDS_Storage_Plugins/cfgmgr/lib;../../third_party_groupware/OpenSDS_Storage_Plugins/openssl/lib/win32_x86_msvc/release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../CmdAdapter;../common;../common/xml_node;../common/cli;../../third_party_groupware/OpenSDS_Storage_Plugins/ACE/source;../../third_party_groupware/OpenSDS_Storage_Plugins/jsoncpp/source/include;../../third_party_groupware/OpenSDS_Storage_Plugins/openssl/include;../securec;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ACE.lib;lib_json.lib;TLVCom.lib;ACE_SSL.lib;libcrypto.lib;libssl.lib;cfgmgr32.lib;libcurl.lib;wldap32.lib;ws2_32.lib;psapi.lib;securec.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../lib;../bin;../../third_party_groupware/OpenSDS_Storage_Plugins/cfgmgr/lib;../../third_party_groupware/OpenSDS_Storage_Plugins/openssl/lib/win32_x86_msvc/release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="discover_arrays.cpp" />
+    <ClCompile Include="discover_devices.cpp" />
+    <ClCompile Include="failover.cpp" />
+    <ClCompile Include="prepare_failover.cpp" />
+    <ClCompile Include="prepare_reverse.cpp" />
+    <ClCompile Include="query_capacity.cpp" />
+    <ClCompile Include="query_connection.cpp" />
+    <ClCompile Include="query_error.cpp" />
+    <ClCompile Include="query_info.cpp" />
+    <ClCompile Include="query_strings.cpp" />
+    <ClCompile Include="query_syncstatus.cpp" />
+    <ClCompile Include="restore.cpp" />
+    <ClCompile Include="reverse_replication.cpp" />
+    <ClCompile Include="sra.cpp" />
+    <ClCompile Include="sra_basic.cpp" />
+    <ClCompile Include="sync_once.cpp" />
+    <ClCompile Include="test_failover_start.cpp" />
+    <ClCompile Include="test_failover_stop.cpp" />
+    <ClCompile Include="ThreeDCLun.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="discover_arrays.h" />
+    <ClInclude Include="discover_devices.h" />
+    <ClInclude Include="failover.h" />
+    <ClInclude Include="prepare_failover.h" />
+    <ClInclude Include="prepare_reverse.h" />
+    <ClInclude Include="query_capacity.h" />
+    <ClInclude Include="query_connection.h" />
+    <ClInclude Include="query_error.h" />
+    <ClInclude Include="query_info.h" />
+    <ClInclude Include="query_strings.h" />
+    <ClInclude Include="query_syncstatus.h" />
+    <ClInclude Include="restore.h" />
+    <ClInclude Include="reverse_replication.h" />
+    <ClInclude Include="sra.h" />
+    <ClInclude Include="sra_basic.h" />
+    <ClInclude Include="sync_once.h" />
+    <ClInclude Include="test_failover_start.h" />
+    <ClInclude Include="test_failover_stop.h" />
+    <ClInclude Include="ThreeDCLun.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CmdAdapter\CmdAdapter.vcxproj">
+      <Project>{440cdd33-cc8e-495d-8cb2-3e19c11c8402}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\common\common.vcxproj">
+      <Project>{f80e2ded-dcc5-4dbd-be33-381236c58c43}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TlvCom\TLVCom.vcxproj">
+      <Project>{02278ec5-49c1-4597-a89c-e9b1cc79d331}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

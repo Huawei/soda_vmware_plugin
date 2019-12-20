@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration status="OFF" monitorInterval="300">
+ <appenders>
+  <RollingFile name="RestLogger" append="true" fileName="/storage/log/vcops/log/adapters/OpenSDSStorAdapter/httpInfo.log"
+  			filePattern="/storage/log/vcops/log/adapters/OpenSDSStorAdapter/httpInfo-%d{yyyy-MM-dd}-%i.log">
+   <PatternLayout charset="UTF-8" pattern="[%d{yyyy-MM-dd HH:mm:ss,SSS}][%-5p][%m][%C{1}][%M,%L][%t]%n"/>
+   <Policies>
+    <TimeBasedTriggeringPolicy interval="1" />
+    <!-- SizeBasedTriggeringPolicy  指定当文件体积大于size指定的值时，触发Rolling -->
+    <SizeBasedTriggeringPolicy size="50 MB" />
+   </Policies>
+   <!-- DefaultRolloverStrategy  指定最多保存的文件个数 -->
+   <DefaultRolloverStrategy max="15" />
+  </RollingFile>
+ </appenders>
+
+ <loggers>
+  <!-- root 定义了root logger -->
+  <root level="info">
+   <appender-ref ref="RestLogger"/>
+  </root>
+ </loggers>
+</configuration>
+
+
+
+
+
+
+

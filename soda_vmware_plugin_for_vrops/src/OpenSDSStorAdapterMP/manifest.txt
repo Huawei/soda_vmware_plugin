@@ -1,0 +1,30 @@
+{
+
+    "display_name": "OpenSDSStorAdapter",
+    "name": "OpenSDSStorAdapterMP-1.0.15",
+
+    "description": "vROps Adapter for OpenSDS storage. Provides end-to-end visibility, analytics, and capacity planning for workloads running on OpenSDS Storage.",
+    "version": "1.0.15",
+    "vcops_minimum_version": "6.0.0",
+    "disk_space_required": 500,
+    "eula_file": "eula.txt",
+    "platform": [
+        "Linux VA","Linux Non-VA","Windows"
+    ],
+
+    "vendor": "OpenSDS",
+    "pak_icon": "pak_icon.png",
+    "license_type": [  
+	],
+    "pak_validation_script": {
+        "script": "python validate.py"
+    },
+    "adapter_pre_script": {
+        "script": "python preAdapters.py"
+    },
+    "adapter_post_script": {
+        "script": "python postAdapters.py"
+    },
+    "adapter_kinds": [ "OpenSDSStorAdapter"
+    ]
+}

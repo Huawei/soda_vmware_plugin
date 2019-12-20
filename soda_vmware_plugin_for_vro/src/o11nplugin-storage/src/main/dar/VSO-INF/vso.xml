@@ -1,0 +1,2877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.vmware.com/support/orchestrator/plugin-4-0.xsd"
+	name="OpenSDSStorage" version="1.0.0" build-number="__build.number__"
+	image="images/device_delegate_rollover16x16.png" display-name="OpenSDS Storage">
+	<description>OpenSDS Storage</description>
+
+	<installation mode="version">
+		<action type="install-package" resource="packages/org.OpenSDS.Storage.package" />
+	</installation>  
+
+	<inventory type="OpenSDS" />
+	
+	<finder-datasources>
+		<finder-datasource name="opensds-datasource"
+			adaptor-class="org.opensds.storage.vro.plugin.core.OpenSDSStorageAdapter"
+			anonymous-login-mode="internal" />
+	</finder-datasources>
+	
+	<enumerations>
+        <enumeration type="OpenSDS_Lun_Space_allocation_type" >
+            <description>Space allocation type</description>
+            <entries>
+                <entry id="0" name="Thick LUN">0</entry>
+                <entry id="1" name="Thin LUN">1</entry>
+            </entries>
+        </enumeration>
+		
+		<enumeration type="Chap_Status_Enum" >
+            <description>chap status</description>
+            <entries>
+                <entry id="0" name="disabled">0</entry>
+                <entry id="1" name="enabled">1</entry>
+            </entries>
+        </enumeration>
+		
+		<enumeration type="Encrypted_Enum" >
+            <description>Encrypted</description>
+            <entries>
+                <entry id="0" name="NOT_ENCRYPTED">0</entry>
+                <entry id="1" name="ENCRYPTED">1</entry>
+            </entries>
+        </enumeration>		
+		
+		<enumeration type="OpenSDS_Initator_Multipathing_type" >
+            <description>Multipathing type</description>
+            <entries>
+                <entry id="0" name="default">0</entry>
+                <entry id="1" name="third-party multipathing software">1</entry>
+            </entries>
+        </enumeration>
+		
+		<enumeration type="RunningStatus_Enum" >
+            <description>RunningStatus</description>
+            <entries>
+                <entry id="27" name="ONLINE">0</entry>
+                <entry id="28" name="OFFLINE">1</entry>
+            </entries>
+        </enumeration>			
+		
+		<enumeration type="InitiatorParentType_Enum" >
+            <description>parentType</description>
+            <entries>
+                <entry id="21" name="HOST">21</entry>
+            </entries>
+        </enumeration>		
+		
+		<enumeration type="SwitchoverMode_Enum" >
+            <description>Encrypted</description>
+            <entries>
+                <entry id="0" name="Disable_alua">0</entry>
+                <entry id="1" name="Enable_alua">1</entry>
+            </entries>
+        </enumeration>	
+		
+		<enumeration type="PathType_Enum" >
+            <description>Encrypted</description>
+            <entries>
+                <entry id="0" name="optimal_path">0</entry>
+                <entry id="1" name="non_optimal_path">1</entry>
+            </entries>
+        </enumeration>
+		
+		<enumeration type="LunOrSnapshotStatus_Enum" >
+            <description>Snapshot Status</description>
+            <entries>
+                <entry id="0" name="NORMAL">0</entry>
+                <entry id="1" name="MARK_DEL">1</entry>
+				<entry id="2" name="DELETING">2</entry>
+				<entry id="3" name="DATA_DELETED">3</entry>
+				<entry id="4" name="SRC_DUPLICATE">4</entry>
+				<entry id="5" name="DST_DUPLICATE_SNAPSHOT">5</entry>
+				<entry id="6" name="DST_DUPLICATE_VOLUME">6</entry>
+				<entry id="7" name="UNDER_CREATING">7</entry>
+				<entry id="8" name="SNAP_IS_CREATING">8</entry>
+				<entry id="9" name="BAD_SECTOR_DATA">9</entry>
+				<entry id="10" name="PRE_DEL">10</entry>
+				<entry id="11" name="MIRROR_ACTIVATING">11</entry>
+				<entry id="12" name="SRC_MIGRATING">12</entry>
+				<entry id="13" name="DST_MIGRATING">13</entry>
+				<entry id="14" name="DST_USELESS">14</entry>
+            </entries>
+        </enumeration>		
+		
+		<enumeration type="HostOsType_Enum" >
+            <description>OS Type</description>
+            <entries>
+                <entry id="0" name="Linux">0</entry>
+                <entry id="1" name="Windows">1</entry>
+				<entry id="2" name="XenServer">2</entry>
+				<entry id="3" name="Vmware">3</entry>
+				<entry id="4" name="Oracle">4</entry>
+            </entries>
+        </enumeration>
+		
+		<enumeration type="LunDsType_Enum" >
+            <description>OpenSDS LUN DISK</description>
+            <entries>
+                <entry id="0" name="SCSI">0</entry>
+                <entry id="1" name="ISCSI">1</entry>
+				<entry id="2" name="NOTUSED">2</entry>
+            </entries>
+        </enumeration>
+        
+         <enumeration type="OpenSDS_Lun_Read_cache_policy" >
+            <description>Read cache policy</description>
+            <entries>
+                <entry id="1" name="permanent">1</entry>
+                <entry id="2" name="default">2</entry>
+                <entry id="3" name="reclaim">3</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Lun_Write_cache_policy" >
+            <description>Write cache policy</description>
+            <entries>
+                <entry id="4" name="permanent">4</entry>
+                <entry id="5" name="default">5</entry>
+                <entry id="6" name="reclaim">6</entry>
+            </entries>
+        </enumeration>
+        
+         <enumeration type="OpenSDS_Lun_Prefetch_policy" >
+            <description>Prefetch policy</description>
+            <entries>
+                <entry id="0" name="no prefetch">0</entry>
+                <entry id="1" name="constant prefetch">1</entry>
+                <entry id="2" name="variable prefetch">2</entry>
+                <entry id="3" name="intelligent prefetch">3</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Lun_SmartTier" >
+            <description>SmartTier(Data migration policy)</description>
+            <entries>
+                <entry id="0" name="no relocation">0</entry>
+                <entry id="1" name="automatic relocation">1</entry>
+                <entry id="2" name="highest available">2</entry>
+                <entry id="3" name="lowest available">3</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Lun_SmartQos" >
+            <description>SmartQos(I/O priority)</description>
+            <entries>
+                <entry id="1" name="low">1</entry>
+                <entry id="2" name="medium">2</entry>
+                <entry id="3" name="high">3</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Host_Operation_System" >
+            <description>Host Operation System</description>
+            <entries>
+            	<entry id="0" name="Linux">0</entry>
+                <entry id="1" name="Windows">1</entry>
+                <entry id="2" name="Solaris">2</entry>
+                <entry id="3" name="HP-UX">3</entry>
+                <entry id="4" name="AIX">4</entry>
+                <entry id="5" name="XenServer">5</entry>
+                <entry id="6" name="Mac OS">6</entry>
+                <entry id="7" name="VMware ESX">7</entry>
+                <entry id="8" name="LINUX_VIS">8</entry>
+                <entry id="9" name="Windows Server 2012">9</entry>
+                <entry id="10" name="Oracle VM">10</entry>
+                <entry id="11" name="OpenVMS">11</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Initator_Failover_mode" >
+            <description>Failover mode</description>
+            <entries>
+                <entry id="0" name="early-version ALUA">0</entry>
+                <entry id="1" name="common ALUA">1</entry>
+                <entry id="2" name="ALUA not used">2</entry>
+                <entry id="3" name="special ALUA">3</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Initator_Path_type" >
+            <description>Path type</description>
+            <entries>
+                <entry id="0" name="optimized">0</entry>
+                <entry id="1" name="nonoptimized">1</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_iSCSI_Initator_Authentication_mode_in_discovery_stage" >
+            <description>Authentication mode in discovery stage</description>
+            <entries>
+                <entry id="0" name="none">0</entry>
+                <entry id="1" name="oneway">1</entry>
+                <entry id="2" name="both">2</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_iSCSI_Initator_Authentication_mode_in_normal_stage" >
+            <description>Authentication mode in normal stage</description>
+            <entries>
+                <entry id="0" name="none">0</entry>
+                <entry id="1" name="oneway">1</entry>
+                <entry id="2" name="both">2</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_LUN_Speed" >
+            <description>Copy Speed</description>
+            <entries>
+                <entry id="1" name="low">1</entry>
+                <entry id="2" name="medium">2</entry>
+                <entry id="3" name="high">3</entry>
+                <entry id="4" name="highest">4</entry>
+            </entries>
+        </enumeration>
+        
+         <enumeration type="OpenSDS_CIFS_Share_Permission" >
+            <description>Permission</description>
+            <entries>
+                <entry id="0" name="only read">0</entry>
+                <entry id="1" name="full control">1</entry>
+                <entry id="2" name="forbidden">2</entry>
+                <entry id="5" name="read/write">5</entry>
+            </entries>
+        </enumeration>
+       
+        <enumeration type="OpenSDS_CIFS_Share_Domain_type" >
+            <description>Domain type</description>
+            <entries>
+                <entry id="0" name="AD domain user">0</entry>
+                <entry id="2" name="local user">2</entry>
+            </entries>
+        </enumeration>
+        
+         <enumeration type="OpenSDS_CIFS_Share_Offline_Cache_Mode" >
+            <description>Offline Cache Mode</description>
+            <entries>
+                <entry id="0" name="none">0</entry>
+                <entry id="1" name="manual">1</entry>
+                <entry id="2" name="documents">2</entry>
+                <entry id="3" name="programs">3</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Boolean" >
+            <description>Boolean</description>
+            <entries>
+                <entry id="true" name="true"></entry>
+                <entry id="false" name="false"></entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_File_System_Alloctype" >
+            <description>Alloctype</description>
+            <entries>
+                <entry id="0" name="Thick File System">0</entry>
+                <entry id="1" name="Thin File System">1</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_File_System_Sectorsize_in_bytes" >
+            <description>Sectorsize</description>
+            <entries>
+                <entry id="4096" name="4KB"></entry>
+                <entry id="8192" name="8KB"></entry>
+                <entry id="16384" name="16KB"></entry>
+                <entry id="32768" name="32KB"></entry>
+                <entry id="65536" name="64KB"></entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_File_System_NFS_Share_Permission" >
+            <description>Permission</description>
+            <entries>
+                <entry id="0" name="read-only">0</entry>
+                <entry id="1" name="read/write">1</entry>
+            </entries>
+        </enumeration>
+        
+         <enumeration type="OpenSDS_File_System_NFS_Share_Write_Mode" >
+            <description>Write Mode</description>
+            <entries>
+                <entry id="0" name="synchronization">0</entry>
+                <entry id="1" name="asynchronous">1</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_File_System_NFS_Share_Permission_Constraint" >
+            <description>Permission Constraint</description>
+            <entries>
+                <entry id="0" name="all_squash">0</entry>
+                <entry id="1" name="no_all_squash">1</entry>
+            </entries>
+        </enumeration>
+        
+         <enumeration type="OpenSDS_File_System_NFS_Share_Root_Permission_Constraint" >
+            <description>Root Permission Constraint</description>
+            <entries>
+                <entry id="0" name="root_squash">0</entry>
+                <entry id="1" name="no_root_squash">1</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_File_System_NFS_Share_Character_coding" >
+            <description>Character coding used by the current share</description>
+            <entries>
+                <entry id="0" name="UTF-8">0</entry>
+                <entry id="21" name="EUC-JP">21</entry>
+                <entry id="22" name="JIS">22</entry>
+                <entry id="23" name="S-JIS">23</entry>
+            </entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Remote_Replication_Pair_LocalResType">
+        	<description>OpenSDS remote replication pair local resource type</description>
+        	<entries>
+        		<entry id="11" name="LUN">11</entry>
+        		<entry id="40" name="FileSystem">40</entry>
+        	</entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Remote_Replication_SynchronizeType">
+        	<description>OpenSDS remote replication Synchronize Type. Valid for asynchronous replication only</description>
+        	<entries>
+        		<entry id="1" name="MANUAL">1</entry>
+        		<entry id="2" name="START_TIMING">2</entry>
+        		<entry id="3" name="END_TIMING">3</entry>
+        	</entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Remote_Replication_RecoveryPolicy">
+        	<description>OpenSDS remote replication Recovery Policy</description>
+        	<entries>
+        		<entry id="1" name="Automatic">1</entry>
+        		<entry id="2" name="Manual">2</entry>
+        	</entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Remote_Replication_Speed">
+        	<description>OpenSDS remote replication Speed</description>
+        	<entries>
+        		<entry id="1" name="Low">1</entry>
+        		<entry id="2" name="Medium">2</entry>
+        		<entry id="3" name="High">3</entry>
+        		<entry id="4" name="Highest">4</entry>
+        	</entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Remote_Replication_ReplicationModel">
+        	<description>OpenSDS remote replication Model</description>
+        	<entries>
+        		<entry id="1" name="Synchronous replication">1</entry>
+        		<entry id="2" name="Asynchronous replication">2</entry>
+        	</entries>
+        </enumeration>
+        
+        <enumeration type="OpenSDS_Remote_Replication_Isdatasync">
+        	<description>OpenSDS remote replication if date is sync</description>
+        	<entries>
+        		<entry id="1" name="Consistent">1</entry>
+        		<entry id="2" name="Inconsistent">2</entry>
+        	</entries>
+        </enumeration>
+        
+         <enumeration type="OpenSDS_Remote_Replication_Enablecompress">
+        	<description>OpenSDS remote replication indicates whether the data is compressed during transmission.</description>
+        	<entries>
+        		<entry id="true" name="Enables compression">1</entry>
+        		<entry id="false" name="Disables compression">2</entry>
+        	</entries>
+        </enumeration>
+
+     </enumerations>
+
+	<finders>
+
+		<finder type="OpenSDS" datasource="opensds-datasource" image="images/device_delegate_rollover16x16.png">
+			<relations>
+				<relation type="StorageArrayInfo" name="StorageArrayInfos" />
+			</relations>
+			<inventory-children>
+				<relation-link name="StorageArrayInfos"></relation-link>
+			</inventory-children>
+		</finder>			
+
+		<finder type="StorageArrayInfo" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.StorageArrayInfo"
+			script-object="OpenSDSStorageArrayInfo" image="images/device_delegate_rollover16x16.png">
+			<id accessor="getId()" />
+			<properties>
+				<property display-name="Storage Array Name" name="arrayName"
+					bean-property="arrayName" />
+				<property display-name="Host Name" name="hostName"
+					bean-property="hostName" />
+				<property display-name="Port" name="port" bean-property="port" />
+				<property display-name="Candidate IP List" name="candidateIpList" bean-property="candidateIpList" />
+				<property display-name="Whether Open Switch IP Feature" name="needSwithIp" bean-property="needSwithIp" />
+				<property display-name="Product Name" name="productName" bean-property="productName" />
+				<property display-name="Product Version" name="productVersion" bean-property="productVersion" />
+				<property display-name="Whether Verify SSL Certificate" name="checkCert" bean-property="checkCert" />
+				<property display-name="Product Model" name="productModel" bean-property="productModel" />
+			</properties>
+		</finder>
+
+		<finder type="Conf" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.Configration"
+			script-object="OpenSDSConf">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+
+		<finder type="LUNService" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.LUNService"
+			script-object="OpenSDSLUNService">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+		<finder type="FilesystemManager" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.FilesystemManager"
+			script-object="OpenSDSFilesystemManager">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+		<finder type="CIFSShareManager" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.CIFSShareManager"
+			script-object="OpenSDSCIFSShareManager">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+		<finder type="FCInitiatorManager" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.FCInitiatorManager"
+			script-object="OpenSDSFCInitiatorManager">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+		<finder type="FilesystemSnapshotManager" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.FilesystemSnapshotManager"
+			script-object="OpenSDSFilesystemSnapshotManager">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+		<finder type="HostService" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.HostService"
+			script-object="OpenSDSHostService">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+		<finder type="iSCSIManager" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.iSCSIManager"
+			script-object="OpenSDSiSCSIManager">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+		
+		<finder type="PortGroupManager" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.PortGroupManager"
+			script-object="OpenSDSPortGroupManager">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+		<finder type="LUNCopyManager" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.LUNCopyManager"
+			script-object="OpenSDSLUNCopyManager">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+		<finder type="LUNSnapshotManager" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.LUNSnapshotManager"
+			script-object="OpenSDSLUNSnapshotManager">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+		<finder type="MappingViewService" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.MappingViewService"
+			script-object="OpenSDSMappingViewService">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+		<finder type="NFSShareManager" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.NFSShareManager"
+			script-object="OpenSDSNFSShareManager">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+		
+		<finder type="LunAndHostService" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.LunAndHostService"
+			script-object="OpenSDSLunAndHostService">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+		<finder type="RemoteReplicationService" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.RemoteReplicationService"
+			script-object="OpenSDSRemoteReplicationService">
+			<id accessor="getId()"></id>
+			<properties></properties>
+		</finder>
+
+		<finder type="FilesystemSnapshot" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.FilesystemSnapshot"
+			script-object="OpenSDSFilesystemSnapshot">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="TYPE" name="type" bean-property="type" />
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="CONSUMEDCAPACITY" name="consumedcapacity"
+					bean-property="consumedcapacity" />
+				<property display-name="HEALTHSTATUS" name="healthstatus"
+					bean-property="healthstatus" />
+				<property display-name="PARENTTYPE" name="parenttype"
+					bean-property="parenttype" />
+				<property display-name="PARENTID" name="parentid"
+					bean-property="parentid" />
+				<property display-name="PARENTNAME" name="parentname"
+					bean-property="parentname" />
+				<property display-name="TIMESTAMP" name="timestamp"
+					bean-property="timestamp" />
+				<property display-name="USERCAPACITY" name="usercapacity"
+					bean-property="usercapacity" />
+			</properties>
+		</finder>
+		<finder type="Host" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.Host" script-object="OpenSDSHost">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="DESCRIPTION" name="description"
+					bean-property="description" />
+				<property display-name="OS" name="os" bean-property="os" />
+				<property display-name="IP" name="ip" bean-property="ip" />
+				<property display-name="LOCATION" name="location"
+					bean-property="location" />
+			</properties>
+		</finder>
+		<finder type="LUNSnapshot" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.LUNSnapshot"
+			script-object="OpenSDSLUNSnapshot">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="PARENTTYPE" name="parenttype"
+					bean-property="parenttype" />
+				<property display-name="PARENTID" name="parentid"
+					bean-property="parentid" />
+				<property display-name="PARENTNAME" name="parentname"
+					bean-property="parentname" />
+				<property display-name="HEALTHSTATUS" name="healthstatus"
+					bean-property="healthstatus" />
+				<property display-name="RUNNINGSTATUS" name="runningstatus"
+					bean-property="runningstatus" />
+				<property display-name="DESCRIPTION" name="description"
+					bean-property="description" />
+				<property display-name="SUBTYPE" name="subtype"
+					bean-property="subtype" />
+				<property display-name="SNAPSHOTUSER" name="snapshotuser"
+					bean-property="snapshotuser" />
+				<property display-name="TIMESTAMP" name="timestamp"
+					bean-property="timestamp" />
+				<property display-name="ROLLBACKSTARTTIME" name="rollbackstarttime"
+					bean-property="rollbackstarttime" />
+				<property display-name="ROLLBACKENDTIME" name="rollbackendtime"
+					bean-property="rollbackendtime" />
+				<property display-name="ROLLBACKSPEED" name="rollbackspeed"
+					bean-property="rollbackspeed" />
+				<property display-name="ROLLBACKRATE" name="rollbackrate"
+					bean-property="rollbackrate" />
+				<property display-name="EXPOSEDTOINITIATOR" name="exposedtoinitiator"
+					bean-property="exposedtoinitiator" />
+				<property display-name="WWN" name="wwn" bean-property="wwn" />
+				<property display-name="USERCAPACITY" name="usercapacity"
+					bean-property="usercapacity" />
+				<property display-name="CONSUMEDCAPACITY" name="consumedcapacity"
+					bean-property="consumedcapacity" />
+				<property display-name="WORKINGCONTROLLER" name="workingcontroller"
+					bean-property="workingcontroller" />
+				<property display-name="IOCLASSID" name="ioclassid"
+					bean-property="ioclassid" />
+				<property display-name="IOPRIORITY" name="iopriority"
+					bean-property="iopriority" />
+				<property display-name="REPLICATIONCAPACITY" name="replicationcapacity"
+					bean-property="replicationcapacity" />
+			</properties>
+		</finder>
+		<finder type="Filesystem" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.Filesystem"
+			script-object="OpenSDSFilesystem">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="PARENTSNAPSHOTID" name="parentsnapshotid"
+					bean-property="parentsnapshotid" />
+				<property display-name="PARENTFILESYSTEMID" name="parentfilesystemid"
+					bean-property="parentfilesystemid" />
+				<property display-name="ENABLEDEDUPCHECK" name="enablededupcheck"
+					bean-property="enablededupcheck" />
+				<property display-name="TYPE" name="type" bean-property="type" />
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="ENABLEDEDUP" name="enablededup"
+					bean-property="enablededup" />
+				<property display-name="RECYCLESWITCH" name="recycleswitch"
+					bean-property="recycleswitch" />
+				<property display-name="IOCLASSID" name="ioclassid"
+					bean-property="ioclassid" />
+				<property display-name="CAPACITYTHRESHOLD" name="capacitythreshold"
+					bean-property="capacitythreshold" />
+				<property display-name="PARENTTYPE" name="parenttype"
+					bean-property="parenttype" />
+				<property display-name="PARENTID" name="parentid"
+					bean-property="parentid" />
+				<property display-name="PARENTNAME" name="parentname"
+					bean-property="parentname" />
+				<property display-name="HEALTHSTATUS" name="healthstatus"
+					bean-property="healthstatus" />
+				<property display-name="RUNNINGSTATUS" name="runningstatus"
+					bean-property="runningstatus" />
+				<property display-name="DESCRIPTION" name="description"
+					bean-property="description" />
+				<property display-name="SUBTYPE" name="subtype"
+					bean-property="subtype" />
+				<property display-name="ALLOCTYPE" name="alloctype"
+					bean-property="alloctype" />
+				<property display-name="ROOT" name="root" bean-property="root" />
+				<property display-name="PATHNAMESEPARATORSTRING" name="pathnameseparatorstring"
+					bean-property="pathnameseparatorstring" />
+			</properties>
+		</finder>
+		<finder type="LUNCopy" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.LUNCopy"
+			script-object="OpenSDSLUNCopy">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="TYPE" name="type" bean-property="type" />
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="HEALTHSTATUS" name="healthstatus"
+					bean-property="healthstatus" />
+				<property display-name="RUNNINGSTATUS" name="runningstatus"
+					bean-property="runningstatus" />
+				<property display-name="DESCRIPTION" name="description"
+					bean-property="description" />
+				<property display-name="SUBTYPE" name="subtype"
+					bean-property="subtype" />
+				<property display-name="COPYSPEED" name="copyspeed"
+					bean-property="copyspeed" />
+				<property display-name="LUNCOPYTYPE" name="luncopytype"
+					bean-property="luncopytype" />
+				<property display-name="COPYPROGRESS" name="copyprogress"
+					bean-property="copyprogress" />
+				<property display-name="COPYSTARTTIME" name="copystarttime"
+					bean-property="copystarttime" />
+				<property display-name="COPYSTOPTIME" name="copystoptime"
+					bean-property="copystoptime" />
+				<property display-name="SOURCELUN" name="sourcelun"
+					bean-property="sourcelun" />
+				<property display-name="SOURCELUNNAME" name="sourcelunname"
+					bean-property="sourcelunname" />
+				<property display-name="SOURCELUNWWN" name="sourcelunwwn"
+					bean-property="sourcelunwwn" />
+				<property display-name="SOURCELUNWWPN" name="sourcelunwwpn"
+					bean-property="sourcelunwwpn" />
+				<property display-name="SOURCELUNCAPACITY" name="sourceluncapacity"
+					bean-property="sourceluncapacity" />
+				<property display-name="SOURCELUNCAPACITYBYTE" name="sourceluncapacitybyte"
+					bean-property="sourceluncapacitybyte" />
+				<property display-name="SOURCEDEVICEID" name="sourcedeviceid"
+					bean-property="sourcedeviceid" />
+				<property display-name="SOURCEDEVICENAME" name="sourcedevicename"
+					bean-property="sourcedevicename" />
+				<property display-name="BASELUN" name="baselun"
+					bean-property="baselun" />
+			</properties>
+		</finder>
+		<finder type="iSCSIInitiator" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.iSCSIInitiator"
+			script-object="OpenSDSiSCSIInitiator">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="DISCOVERYVERMODE" name="discoveryvermode"
+					bean-property="discoveryvermode" />
+				<property display-name="NORMALVERMODE" name="normalvermode"
+					bean-property="normalvermode" />
+				<property display-name="FAILOVERMODE" name="failovermode"
+					bean-property="failovermode" />
+				<property display-name="PATHTYPE" name="pathtype"
+					bean-property="pathtype" />				
+				<property display-name="PARENTID" name="parentid"
+					bean-property="parentid" />				
+				<property display-name="PARENTNAME" name="parentname"
+					bean-property="parentname" />
+			</properties>
+		</finder>		
+		<finder type="StorageArrayAndLUNInfo" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.StorageArrayAndLUNInfo"
+			script-object="OpenSDSStorageArrayAndLUNInfo">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="LUNNAME" name="lunname"
+					bean-property="lunname" />
+				<property display-name="STORAGEID" name="storageid" bean-property="storageid" />
+			</properties>
+		</finder>		
+		<finder type="MappingInfo" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.MappingInfo"
+			script-object="OpenSDSMappingInfo">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="LUNNAME" name="lunname"
+					bean-property="lunname" />
+				<property display-name="LUNGroupNAME" name="lungroupname" bean-property="lungroupname" />
+				<property display-name="HOSTNAME" name="hostname"
+					bean-property="hostname" />
+				<property display-name="HOSTGROUPNAME" name="hostgroupname"
+					bean-property="hostgroupname" />
+				<property display-name="MAPPINGVIEWNAME" name="mappingviewname"
+					bean-property="mappingviewname" />			
+					<property display-name="LUNWWN" name="lunwwn"
+					bean-property="lunwwn" />
+			</properties>
+		</finder>
+		<finder type="NFSShare" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.NFSShare"
+			script-object="OpenSDSNFSShare">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="DESCRIPTION" name="description"
+					bean-property="description" />
+				<property display-name="SHAREPATH" name="sharepath"
+					bean-property="sharepath" />
+				<property display-name="CHARACTERENCODING" name="characterencoding"
+					bean-property="characterencoding" />
+				<property display-name="FSID" name="fsid" bean-property="fsid" />
+			</properties>
+		</finder>
+		<finder type="HostGroup" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.HostGroup"
+			script-object="OpenSDSHostGroup">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="DESCRIPTION" name="description"
+					bean-property="description" />
+				<property display-name="TYPE" name="type" bean-property="type" />
+				<property display-name="ISADD2MAPPINGVIEW" name="isadd2mappingview"
+					bean-property="isadd2mappingview" />
+			</properties>
+		</finder>
+		<finder type="FCInitiator" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.FCInitiator"
+			script-object="OpenSDSFCInitiator">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="TYPE" name="type" bean-property="type" />
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="PARENTTYPE" name="parenttype"
+					bean-property="parenttype" />
+				<property display-name="PARENTID" name="parentid"
+					bean-property="parentid" />				
+					<property display-name="PARENTNAME" name="parentname"
+					bean-property="parentname" />
+			</properties>
+		</finder>
+		<finder type="FTPShare" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.FTPShare"
+			script-object="OpenSDSFTPShare">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="ACCESSNAME" name="accessname"
+					bean-property="accessname" />
+				<property display-name="SHAREPATH" name="sharepath"
+					bean-property="sharepath" />
+				<property display-name="PERMISSION" name="permission"
+					bean-property="permission" />
+				<property display-name="UPBANDWIDTH" name="upbandwidth"
+					bean-property="upbandwidth" />
+				<property display-name="DOWNBANDWIDTH" name="downbandwidth"
+					bean-property="downbandwidth" />
+			</properties>
+		</finder>
+		<finder type="LUNGroup" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.LUNGroup"
+			script-object="OpenSDSLUNGroup">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="DESCRIPTION" name="description"
+					bean-property="description" />
+			</properties>
+		</finder>
+		<finder type="MappingView" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.MappingView"
+			script-object="OpenSDSMappingView">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="DESCRIPTION" name="description"
+					bean-property="description" />
+			</properties>
+		</finder>		
+		<finder type="MappingViewInfo" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.MappingViewInfo"
+			script-object="OpenSDSMappingViewInfo">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="DESCRIPTION" name="description"
+					bean-property="description" />			
+					<property display-name="AVAILABLEHOSTLUNIDLIST" name="availablehostlunidlist"
+					bean-property="availablehostlunidlist" />
+			</properties>
+		</finder>
+		<finder type="LUN" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.LUN" script-object="OpenSDSLUN">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="CAPACITY" name="capacity"
+					bean-property="capacity" />
+				<property display-name="PARENTID" name="parentid"
+					bean-property="parentid" />
+				<property display-name="ALLOCTYPE" name="alloctype"
+					bean-property="alloctype" />
+				<property display-name="DESCRIPTION" name="description"
+					bean-property="description" />
+				<property display-name="OWNINGCONTROLLER" name="owningcontroller"
+					bean-property="owningcontroller" />
+				<property display-name="READCACHEPOLICY" name="readcachepolicy"
+					bean-property="readcachepolicy" />
+				<property display-name="WRITECACHEPOLICY" name="writecachepolicy"
+					bean-property="writecachepolicy" />
+				<property display-name="PREFETCHPOLICY" name="prefetchpolicy"
+					bean-property="prefetchpolicy" />
+				<property display-name="PREFETCHVALUE" name="prefetchvalue"
+					bean-property="prefetchvalue" />
+				<property display-name="DATATRANSFERPOLICY" name="datatransferpolicy"
+					bean-property="datatransferpolicy" />
+				<property display-name="IOPRIORITY" name="iopriority"
+					bean-property="iopriority" />
+				<property display-name="WWN" name="wwn"
+					bean-property="wwn" />
+			</properties>
+		</finder>
+		<finder type="CIFSShare" datasource="opensds-datasource"
+			java-class="org.opensds.storage.vro.plugin.model.CIFSShare"
+			script-object="OpenSDSCIFSShare">
+			<id accessor="getId()"></id>
+			<properties>
+				<property display-name="ID" name="id" bean-property="id" />
+				<property display-name="REAL_ID" name="real_id"
+					bean-property="real_id" />
+				<property display-name="NAME" name="name" bean-property="name" />
+				<property display-name="DESCRIPTION" name="description"
+					bean-property="description" />
+				<property display-name="SHAREPATH" name="sharepath"
+					bean-property="sharepath" />
+				<property display-name="ENABLEOPLOCK" name="enableoplock"
+					bean-property="enableoplock" />
+				<property display-name="ENABLENOTIFY" name="enablenotify"
+					bean-property="enablenotify" />
+				<property display-name="ENABLECA" name="enableca"
+					bean-property="enableca" />
+				<property display-name="OFFLINEFILEMODE" name="offlinefilemode"
+					bean-property="offlinefilemode" />
+				<property display-name="ENABLEIPCONTROL" name="enableipcontrol"
+					bean-property="enableipcontrol" />
+			</properties>
+		</finder>
+
+	</finders>
+
+
+
+	<scripting-objects>	
+		<object script-name="OpenSDSStorageArrayInfo"
+			java-class="org.opensds.storage.vro.plugin.model.StorageArrayInfo"
+			create="false" strict="true">
+			<description></description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">The
+					unique Id of the star
+				</attribute>
+				<attribute script-name="hostName" java-name="hostName"
+					return-type="string">The name of the star</attribute>
+				<attribute script-name="port" java-name="port"
+					return-type="string">Circumference of the star</attribute>
+			</attributes>
+			<methods>
+			</methods>
+		</object>		
+
+		<object script-name="OpenSDSConf"
+			java-class="org.opensds.storage.vro.plugin.model.Configration" create="false"
+			strict="true">
+			<description></description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="register" java-name="register">
+					<description></description>
+					<parameters>
+						<parameter type="string" name="arrayName"></parameter>
+						<parameter type="string" name="hostname"></parameter>
+						<parameter type="string" name="port"></parameter>
+						<parameter type="string" name="candidateIpList"></parameter>
+						<parameter type="boolean" name="needSwithIp"></parameter>
+						<parameter type="string" name="username"></parameter>
+						<parameter type="string" name="password"></parameter>
+						<parameter type="boolean" name="checkCert"></parameter>
+						<parameter type="string" name="productModel"></parameter>
+					</parameters>
+				</method>
+				<method script-name="unregister" java-name="unregister">
+					<description></description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="arrayInfo"></parameter>
+					</parameters>
+				</method>				
+				<method script-name="getStorageArrayInfos" java-name="getStorageArrayInfos">
+					<description>getStorageArrayInfos</description>
+					<parameters>
+					</parameters>
+				</method>
+				<method script-name="reloadTrustStore" java-name="reloadTrustStore">
+					<description></description>
+					<parameters>
+					</parameters>
+				</method>
+				<method script-name="clearCache" java-name="clearCache">
+					<description></description>
+					<parameters>
+					</parameters>
+				</method>
+				<method script-name="debugOn" java-name="debugOn">
+					<description></description>
+					<parameters>
+					</parameters>
+				</method>
+				<method script-name="debugOff" java-name="debugOff">
+					<description></description>
+					<parameters>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+
+
+
+
+		<object script-name="OpenSDSFCInitiatorManager"
+			java-class="org.opensds.storage.vro.plugin.model.FCInitiatorManager"
+			create="false" strict="true">
+			<description>FCInitiatorManager</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createFCINitiator" java-name="createFCINitiator">
+					<description>createFCINitiator</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="fcWWN">fcWWN</parameter>
+						<parameter type="string" name="fcName">fcName</parameter>
+						<parameter type="string" name="failoverMode">failoverMode</parameter>
+						<parameter type="string" name="pathType">pathType</parameter>
+						<parameter type="string" name="multipathtype">multipathtype</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteFCINitiator" java-name="deleteFCINitiator">
+					<description>deleteFCINitiator</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="fcWWN">fcWWN</parameter>
+					</parameters>
+				</method>				
+				<method script-name="getFCInitiatorById" java-name="getFCInitiatorById">
+					<description>getFCInitiatorById</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="wwn">wwn</parameter>
+					</parameters>
+				</method>
+				<method script-name="getFCINitiatorTotalCount" java-name="getFCINitiatorTotalCount">
+					<description>getFCINitiatorTotalCount</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getFCInitiatorsByRange" java-name="getFCInitiatorsByRange">
+					<description>getFCInitiatorsByRange</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="number" name="begin">begin</parameter>
+						<parameter type="number" name="end">end</parameter>
+					</parameters>
+				</method>
+				<method script-name="addFCInitiatortoHost" java-name="addFCInitiatortoHost">
+					<description>addFCInitiatortoHost</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="fcWWN">fcWWN</parameter>
+						<parameter type="string" name="hostName">hostName</parameter>
+					</parameters>
+				</method>
+				<method script-name="removeFCInitiatorFromHost" java-name="removeFCInitiatorFromHost">
+					<description>removeFCInitiatorFromHost</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="fcWWN">fcWWN</parameter>
+					</parameters>
+				</method>
+				<method script-name="modifyFCInitiator" java-name="modifyFCInitiator">
+					<description>modifyFCInitiator</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="FCInitiator" name="fcInitiator">fcInitiator
+						</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+		<object script-name="OpenSDSCIFSShareManager"
+			java-class="org.opensds.storage.vro.plugin.model.CIFSShareManager"
+			create="false" strict="true">
+			<description>CIFSShareManager</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createCIFSShare" java-name="createCIFSShare">
+					<description>createCIFSShare</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="fs_name">fs_name</parameter>
+						<parameter type="string" name="sharePath">sharePath</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="description">description</parameter>
+						<parameter type="string" name="enable_oplock">enable_oplock</parameter>
+						<parameter type="string" name="enable_notify">enable_notify</parameter>
+						<parameter type="string" name="enable_ca">enable_ca</parameter>
+						<parameter type="string" name="offline_cache_mode">offline_cache_mode
+						</parameter>
+						<parameter type="string" name="enable_ip_control">enable_ip_control
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getCIFShareIdByName" java-name="getCIFShareIdByName">
+					<description>getCIFShareIdByName</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteCIFSShareById" java-name="deleteCIFSShareById">
+					<description>deleteCIFSShareById</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="modifyCIFSShare" java-name="modifyCIFSShare">
+					<description>modifyCIFSShare</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="currentName">currentName</parameter>
+						<parameter type="string" name="description">description</parameter>
+						<parameter type="string" name="enable_oplock">enable_oplock</parameter>
+						<parameter type="string" name="enable_notify">enable_notify</parameter>
+						<parameter type="string" name="enable_ca">enable_ca</parameter>
+						<parameter type="string" name="offline_cache_mode">offline_cache_mode
+						</parameter>
+						<parameter type="string" name="enable_ip_control">enable_ip_control
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getCIFSShareTotalCount" java-name="getCIFSShareTotalCount">
+					<description>getCIFSShareTotalCount</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getCIFSSharesByRange" java-name="getCIFSSharesByRange">
+					<description>getCIFSSharesByRange</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="number" name="begin">begin</parameter>
+						<parameter type="number" name="end">end</parameter>
+					</parameters>
+				</method>
+				<method script-name="addUserForCIFSShare" java-name="addUserForCIFSShare">
+					<description>addUserForCIFSShare</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="cifsShareId">cifsShareId</parameter>
+						<parameter type="string" name="cifsshareName">cifsshareName</parameter>
+						<parameter type="string" name="permission">permission</parameter>
+						<parameter type="string" name="domaintype">domaintype</parameter>
+					</parameters>
+				</method>
+				<method script-name="removeUser" java-name="removeUser">
+					<description>removeUser</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="getCIFSShareClientIdByName" java-name="getCIFSShareClientIdByName">
+					<description>getCIFSShareClientIdByName</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+		<object script-name="OpenSDSFilesystemManager"
+			java-class="org.opensds.storage.vro.plugin.model.FilesystemManager"
+			create="false" strict="true">
+			<description>FilesystemManager</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createFilesystem" java-name="createFilesystem">
+					<description>createFilesystem</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="description">description</parameter>
+						<parameter type="string" name="poolId">poolId</parameter>
+						<parameter type="string" name="poolName">poolName</parameter>
+						<parameter type="long" name="capacity">capacity</parameter>
+						<parameter type="string" name="alloctype">alloctype</parameter>
+						<parameter type="string" name="sectorsize">sectorsize</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteFilesystem" java-name="deleteFilesystem">
+					<description>deleteFilesystem</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="id">id</parameter>
+					</parameters>
+				</method>
+				<method script-name="modifyFilesystem" java-name="modifyFilesystem">
+					<description>modifyFilesystem</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="currentName">currentName</parameter>
+						<parameter type="string" name="newName">newName</parameter>
+						<parameter type="string" name="newDescription">newDescription</parameter>
+						<parameter type="long" name="newCapacity">newCapacity</parameter>
+					</parameters>
+				</method>
+				<method script-name="getFilesystemTotalCount" java-name="getFilesystemTotalCount">
+					<description>getFilesystemTotalCount</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getFilesystemsByRange" java-name="getFilesystemsByRange">
+					<description>getFilesystemsByRange</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="number" name="begin">begin</parameter>
+						<parameter type="number" name="end">end</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+		<object script-name="OpenSDSMappingViewService"
+			java-class="org.opensds.storage.vro.plugin.model.MappingViewService"
+			create="false" strict="true">
+			<description>MappingViewService</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createMappingView" java-name="createMappingView">
+					<description>createMappingView</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="description">description</parameter>
+					</parameters>
+				</method>			
+				<method script-name="getMappingViewByHostGroup" java-name="getMappingViewByHostGroup">
+					<description>getMappingViewByHostGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="groupId">groupId</parameter>
+					</parameters>
+				</method>	
+				<method script-name="getMappingViewById" java-name="getMappingViewById">
+					<description>getMappingViewById</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteMappingView" java-name="deleteMappingView">
+					<description>deleteMappingView</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="createMappingViewAssociate" java-name="createMappingViewAssociate">
+					<description>createMappingViewAssociate</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="mappingViewName">mappingViewName
+						</parameter>
+						<parameter type="string" name="lunGroupName">lunGroupName</parameter>
+						<parameter type="string" name="hostGroupName">hostGroupName</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteMappingViewAssociate" java-name="deleteMappingViewAssociate">
+					<description>deleteMappingViewAssociate</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="mappingViewName">mappingViewName
+						</parameter>
+						<parameter type="string" name="lunGroupName">lunGroupName</parameter>
+						<parameter type="string" name="hostGroupName">hostGroupName</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+		<object script-name="OpenSDSLUNCopyManager"
+			java-class="org.opensds.storage.vro.plugin.model.LUNCopyManager"
+			create="false" strict="true">
+			<description>LUNCopyManager</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createLUNCopy" java-name="createLUNCopy">
+					<description>createLUNCopy</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="description">description</parameter>
+						<parameter type="string" name="copySpeed">copySpeed</parameter>
+						<parameter type="string" name="sourceLUNId">sourceLUNId</parameter>
+						<parameter type="string" name="targetLUNId">targetLUNId</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteLUNCopy" java-name="deleteLUNCopy">
+					<description>deleteLUNCopy</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="modifyLUNCopy" java-name="modifyLUNCopy">
+					<description>modifyLUNCopy</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="newName">newName</parameter>
+						<parameter type="string" name="description">description</parameter>
+						<parameter type="string" name="copySpeed">copySpeed</parameter>
+					</parameters>
+				</method>
+				<method script-name="getLUNCopyTotalCount" java-name="getLUNCopyTotalCount">
+					<description>getLUNCopyTotalCount</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getLUNCopyByRange" java-name="getLUNCopyByRange">
+					<description>getLUNCopyByRange</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="number" name="begin">begin</parameter>
+						<parameter type="number" name="end">end</parameter>
+					</parameters>
+				</method>
+				<method script-name="startLUNCopy" java-name="startLUNCopy">
+					<description>startLUNCopy</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="stopLUNCopy" java-name="stopLUNCopy">
+					<description>stopLUNCopy</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="suspendLUNCopy" java-name="suspendLUNCopy">
+					<description>suspendLUNCopy</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="continueLUNCopy" java-name="continueLUNCopy">
+					<description>continueLUNCopy</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="addLUNCopyTarget" java-name="addLUNCopyTarget">
+					<description>addLUNCopyTarget</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="targetId">targetId</parameter>
+						<parameter type="string" name="lunCopyId">lunCopyId</parameter>
+						<parameter type="string" name="lunCopyName">lunCopyName</parameter>
+					</parameters>
+				</method>
+				<method script-name="removeLUNCopyTarget" java-name="removeLUNCopyTarget">
+					<description>removeLUNCopyTarget</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="targetId">targetId</parameter>
+						<parameter type="string" name="lunCopyId">lunCopyId</parameter>
+						<parameter type="string" name="lunCopyName">lunCopyName</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+		<object script-name="OpenSDSFilesystemSnapshotManager"
+			java-class="org.opensds.storage.vro.plugin.model.FilesystemSnapshotManager"
+			create="false" strict="true">
+			<description>FilesystemSnapshotManager</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="getIdByName" java-name="getIdByName">
+					<description>createFilesystemSnapshot</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="snapshotName">snapshotName</parameter>
+						<parameter type="string" name="filesystemId">filesystemId</parameter>
+						<parameter type="string" name="filesystemName">filesystemName</parameter>
+						<parameter type="string" name="vstoreId">vstoreId</parameter>
+					</parameters>
+				</method>
+				<method script-name="createFilesystemSnapshot" java-name="createFilesystemSnapshot">
+					<description>createFilesystemSnapshot</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="snapshotName">snapshotName</parameter>
+						<parameter type="string" name="filesystemId">filesystemId</parameter>
+						<parameter type="string" name="filesystemName">filesystemName</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteFilesystemSnapshot" java-name="deleteFilesystemSnapshot">
+					<description>deleteFilesystemSnapshot</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+					</parameters>
+				</method>
+				<method script-name="rollbackFilesystemSnapshot" java-name="rollbackFilesystemSnapshot">
+					<description>rollbackFilesystemSnapshot</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+					</parameters>
+				</method>
+				<method script-name="modifyFilesystemSnapshot" java-name="modifyFilesystemSnapshot">
+					<description>modifyFilesystemSnapshot</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="getFilesystemSnapshotsByRange"
+					java-name="getFilesystemSnapshotsByRange">
+					<description>getFilesystemSnapshotsByRange</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="number" name="begin">begin</parameter>
+						<parameter type="number" name="end">end</parameter>
+						<parameter type="string" name="parentId">parentId</parameter>
+						<parameter type="string" name="parentName">parentName</parameter>
+					</parameters>
+				</method>
+				<method script-name="geFilesystemSnapshotCount" java-name="geFilesystemSnapshotCount">
+					<description>geFilesystemSnapshotCount</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="parentId">parentId</parameter>
+						<parameter type="string" name="parentName">parentName</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+		<object script-name="OpenSDSNFSShareManager"
+			java-class="org.opensds.storage.vro.plugin.model.NFSShareManager"
+			create="false" strict="true">
+			<description>NFSShareManager</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createNFSShare" java-name="createNFSShare">
+					<description>createNFSShare</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="filesystemName">filesystemName</parameter>
+						<parameter type="string" name="sharepath">sharepath</parameter>
+						<parameter type="string" name="description">description</parameter>
+						<parameter type="string" name="encoding">encoding</parameter>
+					</parameters>
+				</method>
+				<method script-name="getNFSShareBySharePath" java-name="getNFSShareBySharePath">
+					<description>getNFSShareBySharePath</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="sharePath">sharePath</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteNFSShare" java-name="deleteNFSShare">
+					<description>deleteNFSShare</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="sharePath">sharePath</parameter>
+					</parameters>
+				</method>
+				<method script-name="modifyNFSShare" java-name="modifyNFSShare">
+					<description>modifyNFSShare</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="sharePath">sharePath</parameter>
+						<parameter type="string" name="description">description</parameter>
+						<parameter type="string" name="encoding">encoding</parameter>
+					</parameters>
+				</method>
+				<method script-name="getNFSShareTotalCount" java-name="getNFSShareTotalCount">
+					<description>getNFSShareTotalCount</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getNFSSharesByRange" java-name="getNFSSharesByRange">
+					<description>getNFSSharesByRange</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="number" name="begin">begin</parameter>
+						<parameter type="number" name="end">end</parameter>
+					</parameters>
+				</method>
+				<method script-name="createNFSShareClient" java-name="createNFSShareClient">
+					<description>createNFSShareClient</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="sharePath">sharePath</parameter>
+						<parameter type="string" name="accessval">accessval</parameter>
+						<parameter type="string" name="sync">sync</parameter>
+						<parameter type="string" name="allsquash">allsquash</parameter>
+						<parameter type="string" name="rootSquash">rootSquash</parameter>
+					</parameters>
+				</method>
+				<method script-name="getNFSShareClientIdByName" java-name="getNFSShareClientIdByName">
+					<description>getNFSShareClientIdByName</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteNFSShareClient" java-name="deleteNFSShareClient">
+					<description>deleteNFSShareClient</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+		<object script-name="OpenSDSHostService"
+			java-class="org.opensds.storage.vro.plugin.model.HostService" create="false"
+			strict="true">
+			<description>HostService</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createHost" java-name="createHost">
+					<description>createHost</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="description">description</parameter>
+						<parameter type="string" name="os">os</parameter>
+						<parameter type="string" name="ip">ip</parameter>
+						<parameter type="string" name="location">location</parameter>
+					</parameters>
+				</method>				
+				<method script-name="getHostGroupByHost" java-name="getHostGroupByHost">
+					<description>getHostGroupByHost</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="hostName">hostName</parameter>
+					</parameters>
+				</method>
+				<method script-name="modifyHost" java-name="modifyHost">
+					<description>modifyHost</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="currentName">currentName</parameter>
+						<parameter type="string" name="new_name">new_name</parameter>
+						<parameter type="string" name="description">description</parameter>
+						<parameter type="string" name="os">os</parameter>
+						<parameter type="string" name="ip">ip</parameter>
+						<parameter type="string" name="location">location</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteHost" java-name="deleteHost">
+					<description>deleteHost</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="getHostsTotalCount" java-name="getHostsTotalCount">
+					<description>getHostsTotalCount</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getHostsByRange" java-name="getHostsByRange">
+					<description>getHostsByRange</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="number" name="begin">begin</parameter>
+						<parameter type="number" name="end">end</parameter>
+					</parameters>
+				</method>
+				<method script-name="createHostGroup" java-name="createHostGroup">
+					<description>createHostGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="description">description</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteHostGroup" java-name="deleteHostGroup">
+					<description>deleteHostGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="getHostGroupsTotalCount" java-name="getHostGroupsTotalCount">
+					<description>getHostGroupsTotalCount</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getHostGroupsByRange" java-name="getHostGroupsByRange">
+					<description>getHostGroupsByRange</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="number" name="begin">begin</parameter>
+						<parameter type="number" name="end">end</parameter>
+					</parameters>
+				</method>
+				<method script-name="createHostGroupAssociation" java-name="createHostGroupAssociation">
+					<description>createHostGroupAssociation</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="hostGroupName">hostGroupName</parameter>
+						<parameter type="string" name="hostName">hostName</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteHostGroupAssociation" java-name="deleteHostGroupAssociation">
+					<description>deleteHostGroupAssociation</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="hostGroupId">hostGroupId</parameter>
+						<parameter type="string" name="hostGroupName">hostGroupName</parameter>
+						<parameter type="string" name="hostId">hostId</parameter>
+						<parameter type="string" name="hostName">hostName</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+		<object script-name="OpenSDSLUNSnapshotManager"
+			java-class="org.opensds.storage.vro.plugin.model.LUNSnapshotManager"
+			create="false" strict="true">
+			<description>LUNSnapshotManager</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="getIdByName" java-name="getIdByName">
+					<description>getIdByName</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="createLUNSnapshot" java-name="createLUNSnapshot">
+					<description>createLUNSnapshot</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="description">description</parameter>
+						<parameter type="string" name="LUNName">LUNName</parameter>
+					</parameters>
+				</method>
+				<method script-name="modifyLUNSnapshot" java-name="modifyLUNSnapshot">
+					<description>modifyLUNSnapshot</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="currentName">currentName</parameter>
+						<parameter type="string" name="newName">newName</parameter>
+						<parameter type="string" name="newDescription">newDescription</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteLUNSnapshot" java-name="deleteLUNSnapshot">
+					<description>deleteLUNSnapshot</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="activeLUNSnapshot" java-name="activeLUNSnapshot">
+					<description>activeLUNSnapshot</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="snapshotIdList">snapshotIdList</parameter>
+					</parameters>
+				</method>
+				<method script-name="deactiveLUNSnapshot" java-name="deactiveLUNSnapshot">
+					<description>deactiveLUNSnapshot</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="rollbackLUNSnapshot" java-name="rollbackLUNSnapshot">
+					<description>rollbackLUNSnapshot</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="rollbackSpeed">rollbackSpeed</parameter>
+					</parameters>
+				</method>
+				<method script-name="cancelRollbackLUNSnapshot" java-name="cancelRollbackLUNSnapshot">
+					<description>cancelRollbackLUNSnapshot</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+					</parameters>
+				</method>
+				<method script-name="createLUNSnapshotCopy" java-name="createLUNSnapshotCopy">
+					<description>createLUNSnapshotCopy</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="snapshotId">snapshotId</parameter>
+						<parameter type="string" name="snapshotName">snapshotName</parameter>
+						<parameter type="string" name="snapshotCopyName">snapshotCopyName
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getLUNSnapshotTotalCount" java-name="getLUNSnapshotTotalCount">
+					<description>getLUNSnapshotTotalCount</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getLUNSnapshotByRange" java-name="getLUNSnapshotByRange">
+					<description>getLUNSnapshotByRange</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="number" name="begin">begin</parameter>
+						<parameter type="number" name="end">end</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+		<object script-name="OpenSDSiSCSIManager"
+			java-class="org.opensds.storage.vro.plugin.model.iSCSIManager" create="false"
+			strict="true">
+			<description>iSCSIManager</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createiSCSIINitiator" java-name="createiSCSIINitiator">
+					<description>createiSCSIINitiator</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="iqn">iqn</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="usechap">usechap</parameter>
+						<parameter type="string" name="chapname">chapname</parameter>
+						<parameter type="string" name="chappassword">chappassword</parameter>
+						<parameter type="string" name="chapnameinitatorvertarget">chapnameinitatorvertarget
+						</parameter>
+						<parameter type="string" name="chappasswordinitatorvertarget">chappasswordinitatorvertarget
+						</parameter>
+						<parameter type="string" name="discoveryvermode">discoveryvermode
+						</parameter>
+						<parameter type="string" name="normalvermode">normalvermode</parameter>
+						<parameter type="string" name="failovermode">failovermode</parameter>
+						<parameter type="string" name="pathtype">pathtype</parameter>
+						<parameter type="string" name="multipathtype">multipathtype</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteiSCISINitiator" java-name="deleteiSCISINitiator">
+					<description>deleteiSCISINitiator</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="iqn">iqn</parameter>
+					</parameters>
+				</method>				
+				<method script-name="getiSCSIInitiatorByHost" java-name="getiSCSIInitiatorByHost">
+					<description>getiSCSIInitiatorByHost</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="hostName">hostName</parameter>
+					</parameters>
+				</method>				
+				<method script-name="getISCSIInitiatorById" java-name="getISCSIInitiatorById">
+					<description>getISCSIInitiatorById</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="iqn">iqn</parameter>
+					</parameters>
+				</method>
+				<method script-name="modifyiSCISINitiator" java-name="modifyiSCISINitiator">
+					<description>modifyiSCISINitiator</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="iqn">iqn</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="usechap">usechap</parameter>
+						<parameter type="string" name="chapname">chapname</parameter>
+						<parameter type="string" name="chappassword">chappassword</parameter>
+						<parameter type="string" name="chapoldpassword">chapoldpassword
+						</parameter>
+						<parameter type="string" name="chapnameinitatorvertarget">chapnameinitatorvertarget
+						</parameter>
+						<parameter type="string" name="chappasswordinitatorvertarget">chappasswordinitatorvertarget
+						</parameter>
+						<parameter type="string" name="chapoldpasswordinitatorvertarget">chapoldpasswordinitatorvertarget
+						</parameter>
+						<parameter type="string" name="discoveryvermode">discoveryvermode
+						</parameter>
+						<parameter type="string" name="normalvermode">normalvermode</parameter>
+						<parameter type="string" name="failovermode">failovermode</parameter>
+						<parameter type="string" name="pathtype">pathtype</parameter>
+						<parameter type="string" name="multipathtype">multipathtype</parameter>
+					</parameters>
+				</method>
+				<method script-name="getiSCSINitiatorTotalCount" java-name="getiSCSINitiatorTotalCount">
+					<description>getiSCSINitiatorTotalCount</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getiSCSIInitiatorByRange" java-name="getiSCSIInitiatorByRange">
+					<description>getiSCSIInitiatorByRange</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="number" name="begin">begin</parameter>
+						<parameter type="number" name="end">end</parameter>
+					</parameters>
+				</method>
+				<method script-name="addiSCSIInitiatorToHost" java-name="addiSCSIInitiatorToHost">
+					<description>addiSCSIInitiatorToHost</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="iqn">iqn</parameter>
+						<parameter type="string" name="hostName">hostName</parameter>
+					</parameters>
+				</method>
+				<method script-name="removeiSCSIInitiatorFromHost" java-name="removeiSCSIInitiatorFromHost">
+					<description>removeiSCSIInitiatorFromHost</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="iqn">iqn</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+		<object script-name="OpenSDSPortGroupManager"
+			java-class="org.opensds.storage.vro.plugin.model.PortGroupManager" create="false"
+			strict="true">
+			<description>PortGroupManager</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createPortGroup" java-name="createPortGroup">
+					<description>createPortGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="portName">portName</parameter>
+						<parameter type="string" name="Description">Description</parameter>
+                    </parameters>
+				</method>
+				<method script-name="deletePortGroupById" java-name="deletePortGroupById">
+					<description>deletePortGroupById</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="portGroupName">portGroupName</parameter>
+					</parameters>
+				</method>				
+				<method script-name="createPortGroupAssociation" java-name="createPortGroupAssociation">
+					<description>createPortGroupAssociation</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="portGroupName">portGroupName</parameter>
+						<parameter type="string" name="portMAC">portMAC</parameter>
+					</parameters>
+				</method>
+				<method script-name="deletePortGroupAssociation" java-name="deletePortGroupAssociation">
+					<description>deletePortGroupAssociation</description>
+					<parameters>
+						<parameter type="FusionStorageInfo" name="arrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="portGroupName">portGroupName</parameter>
+						<parameter type="string" name="portMAC">portMAC</parameter>
+					</parameters>
+				</method>	
+			</methods>
+		</object>
+		<object script-name="OpenSDSLUNService"
+			java-class="org.opensds.storage.vro.plugin.model.LUNService" create="false"
+			strict="true">
+			<description>LUNService</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="getIdByName" java-name="getIdByName">
+					<description>getIdByName</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="LUNName">LUNName</parameter>
+					</parameters>
+				</method>					
+				<method script-name="expandLUNForDatastore" java-name="expandLUNForDatastore">
+					<description>expandLUNForDatastore</description>
+					<parameters>
+						<parameter type="string" name="wwn">wwn</parameter>
+						<parameter type="number" name="newSize">newSize</parameter>
+					</parameters>
+				</method>					
+				<method script-name="getStorageArrayAndLUNInfoByWWN" java-name="getStorageArrayAndLUNInfoByWWN">
+					<description>getStorageArrayAndLUNInfoByWWN</description>
+					<parameters>
+						<parameter type="string" name="wwn">wwn</parameter>
+					</parameters>
+				</method>
+				<method script-name="getLUNById" java-name="getLUNById">
+					<description>getLUNById</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="LUNId">LUNId</parameter>
+					</parameters>
+				</method>
+				<method script-name="createLUN" java-name="createLUN">
+					<description>createLUN</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="LUNName">LUNName</parameter>
+						<parameter type="string" name="Description">Description</parameter>
+						<parameter type="number" name="Capacity">Capacity</parameter>
+						<parameter type="string" name="StoragePoolName">StoragePoolName
+						</parameter>
+						<parameter type="string" name="alloctype">alloctype</parameter>
+						<parameter type="string" name="owningcontroller">owningcontroller
+						</parameter>
+						<parameter type="string" name="readcachepolicy">readcachepolicy
+						</parameter>
+						<parameter type="string" name="writecachepolicy">writecachepolicy
+						</parameter>
+						<parameter type="string" name="prefetchpolicy">prefetchpolicy</parameter>
+						<parameter type="string" name="prefetchvalue">prefetchvalue</parameter>
+						<parameter type="string" name="datatransferpolicy">datatransferpolicy
+						</parameter>
+						<parameter type="string" name="iopriority">iopriority</parameter>
+					</parameters>
+				</method>
+				<method script-name="modifyLUN" java-name="modifyLUN">
+					<description>modifyLUN</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="currentName">currentName</parameter>
+						<parameter type="string" name="newName">newName</parameter>
+						<parameter type="string" name="Description">Description</parameter>
+						<parameter type="string" name="owningcontroller">owningcontroller
+						</parameter>
+						<parameter type="string" name="readcachepolicy">readcachepolicy
+						</parameter>
+						<parameter type="string" name="writecachepolicy">writecachepolicy
+						</parameter>
+						<parameter type="string" name="prefetchpolicy">prefetchpolicy</parameter>
+						<parameter type="string" name="prefetchvalue">prefetchvalue</parameter>
+						<parameter type="string" name="datatransferpolicy">datatransferpolicy
+						</parameter>
+						<parameter type="string" name="iopriority">iopriority</parameter>
+					</parameters>
+				</method>
+				<method script-name="getLUNsByRange" java-name="getLUNsByRange">
+					<description>getLUNsByRange</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="number" name="begin">begin</parameter>
+						<parameter type="number" name="end">end</parameter>
+					</parameters>
+				</method>
+				<method script-name="expandLUNCapacity" java-name="expandLUNCapacity">
+					<description>expandLUNCapacity</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="LUNName">LUNName</parameter>
+						<parameter type="number" name="Capacity">Capacity</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteLUN" java-name="deleteLUN">
+					<description>deleteLUN</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="LUNName">LUNName</parameter>
+					</parameters>
+				</method>
+				<method script-name="getLUNTotalCount" java-name="getLUNTotalCount">
+					<description>getLUNTotalCount</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="createLUNGroup" java-name="createLUNGroup">
+					<description>createLUNGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="description">description</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteLUNGroup" java-name="deleteLUNGroup">
+					<description>deleteLUNGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="LUNGroupName">LUNGroupName</parameter>
+					</parameters>
+				</method>
+				<method script-name="getLUNGroupTotalCount" java-name="getLUNGroupTotalCount">
+					<description>getLUNGroupTotalCount</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+					</parameters>
+				</method>
+				<method script-name="getLUNGroupsByRange" java-name="getLUNGroupsByRange">
+					<description>getLUNGroupsByRange</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="number" name="begin">begin</parameter>
+						<parameter type="number" name="end">end</parameter>
+					</parameters>
+				</method>
+				<method script-name="createLUNGroupAssociate" java-name="createLUNGroupAssociate">
+					<description>createLUNGroupAssociate</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="LUNGroupName">LUNGroupName</parameter>
+						<parameter type="string" name="LUNName">LUNName</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteLUNGroupAssociate" java-name="deleteLUNGroupAssociate">
+					<description>deleteLUNGroupAssociate</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="LUNGroupName">LUNGroupName</parameter>
+						<parameter type="string" name="LUNName">LUNName</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+
+		
+		
+		
+		
+		<object script-name="RemoteReplicationPairManager"
+			java-class="org.opensds.storage.vro.plugin.model.RemoteReplicationPairManager" create="false"
+			strict="true">
+			<description>RemoteReplicationPairManager</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createRemoteReplicationPair" java-name="createRemoteReplicationPair">
+					<description>createRemoteReplicationPair</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="localresid">localresid</parameter>
+						<parameter type="string" name="localrestyoe">localrestyoe</parameter>
+						<parameter type="string" name="remotedeviceid">remotedeviceid</parameter>
+						<parameter type="string" name="remoteresid">remoteresid</parameter>
+						<parameter type="string" name="synchronizetype">synchronizetype</parameter>
+						<parameter type="string" name="recoverypolicy">recoverypolicy</parameter>
+						<parameter type="string" name="speed">speed</parameter>
+						<parameter type="string" name="timingval">timingval</parameter>
+						<parameter type="string" name="replicationmodel">replicationmodel</parameter>
+						<parameter type="string" name="isdatasync">isdatasync</parameter>
+						<parameter type="string" name="enablecompress">enablecompress</parameter>
+						<parameter type="string" name="remtimeoutperiod">remtimeoutperiod</parameter>
+						<parameter type="string" name="synchronizeschedule">synchronizeschedule</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteRemoteReplicationPair" java-name="deleteRemoteReplicationPair">
+					<description>deleteRemoteReplicationPair</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="islocaldelete">islocaldelete</parameter>
+						<parameter type="string" name="tosyncsrwhendelete">tosyncsrwhendelete</parameter>
+						<parameter type="string" name="id">id</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+		
+		<object script-name="RemoteReplicationConsistencyGroupManager"
+			java-class="org.opensds.storage.vro.plugin.model.RemoteReplicationConsistencyGroupManager" create="false"
+			strict="true">
+			<description>RemoteReplicationConsistencyGroupManager</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createRemoteReplicationConsistencyGroup" java-name="createRemoteReplicationConsistencyGroup">
+					<description>createRemoteReplicationConsistencyGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="description">description</parameter>
+						<parameter type="string" name="recoverypolicy">recoverypolicy</parameter>
+						<parameter type="string" name="replicationmodel">replicationmodel</parameter>
+						<parameter type="string" name="speed">speed</parameter>
+						<parameter type="string" name="synchronizetype">synchronizetype</parameter>
+						<parameter type="string" name="timingval">timingval</parameter>
+						<parameter type="string" name="timingvalinsec">timingvalinsec</parameter>
+						<parameter type="string" name="enablecompress">enablecompress</parameter>
+					</parameters>
+				</method>
+				<method script-name="deleteRemoteReplicationConsistencyGroup" java-name="deleteRemoteReplicationConsistencyGroup">
+					<description>deleteRemoteReplicationConsistencyGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="islocaldelete">islocaldelete</parameter>
+						<parameter type="string" name="id">id</parameter>
+					</parameters>
+				</method>
+				<method script-name="addPairToRemoteReplicationConsistencyGroup" java-name="addPairToRemoteReplicationConsistencyGroup">
+					<description>addPairToRemoteReplicationConsistencyGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo
+						</parameter>
+						<parameter type="string" name="id">id</parameter>
+						<parameter type="string" name="rmlist">rmlist</parameter>
+					</parameters>
+				</method>
+			</methods>
+		</object>
+		
+		
+		<object script-name="OpenSDSRemoteReplicationService"
+			java-class="org.opensds.storage.vro.plugin.model.RemoteReplicationService" create="false"
+			strict="true">
+			<description>RemoteReplicationService</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createRemoteReplicationPairAndConsistencyGroup" java-name="createRemoteReplicationPairAndConsistencyGroup">
+					<description>createRemoteReplicationPairAndConsistencyGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo</parameter>
+						<parameter type="string" name="localresName">localresName</parameter>
+						<parameter type="string" name="localrestype">localrestype</parameter>
+						<parameter type="string" name="remotedeviceName">remotedeviceName</parameter>
+						<parameter type="string" name="remoteresName">remoteresName</parameter>
+						<parameter type="string" name="synchronizetype">synchronizetype</parameter>
+						<parameter type="string" name="recoverypolicy">recoverypolicy</parameter>
+						<parameter type="string" name="speed">speed</parameter>
+						<parameter type="string" name="timingval">timingval</parameter>
+						<parameter type="string" name="replicationmodel">replicationmodel</parameter>
+						<parameter type="string" name="isdatasync">isdatasync</parameter>
+						<parameter type="string" name="enablecompress">enablecompress</parameter>
+						<parameter type="string" name="remtimeoutperiod">remtimeoutperiod</parameter>
+						<parameter type="string" name="synchronizeschedule">synchronizeschedule</parameter>
+						<parameter type="string" name="name">name</parameter>
+						<parameter type="string" name="description">description</parameter>
+						<parameter type="string" name="islocaldelete">islocaldelete</parameter>
+						<parameter type="string" name="tosyncsrwhendelete">tosyncsrwhendelete</parameter>
+					</parameters>
+				</method>
+				
+				<method script-name="deleteRemoteReplicationPairAndConsistencyGroup" java-name="deleteRemoteReplicationPairAndConsistencyGroup">
+					<description>deleteRemoteReplicationPairAndConsistencyGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo</parameter>
+						<parameter type="string" name="consistencygroupname">consistencygroupname</parameter>
+						<parameter type="string" name="islocaldelete">islocaldelete</parameter>
+						<parameter type="string" name="tosyncsrwhendelete">tosyncsrwhendelete</parameter>
+					</parameters>
+				</method>
+				
+				<method script-name="splitRemoteReplicationConsistencyGroup" java-name="splitRemoteReplicationConsistencyGroup">
+					<description>splitRemoteReplicationConsistencyGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo</parameter>
+						<parameter type="string" name="consistencygroupname">consistencygroupname</parameter>
+					</parameters>
+				</method>
+
+				<method script-name="syncRemoteReplicationConsistencyGroup" java-name="syncRemoteReplicationConsistencyGroup">
+					<description>syncRemoteReplicationConsistencyGroup</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo</parameter>
+						<parameter type="string" name="consistencygroupname">consistencygroupname</parameter>
+					</parameters>
+				</method>
+				
+			</methods>
+		</object>
+
+		
+		<object script-name="OpenSDSLunAndHostService"
+			java-class="org.opensds.storage.vro.plugin.model.LunAndHostService" create="false"
+			strict="true">
+			<description>LunAndHostService</description>
+			<attributes>
+			</attributes>
+			<methods>
+				<method script-name="createLunAndHostMappingView" java-name="createLunAndHostMappingView">
+					<description>createLunAndHostMappingView</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo</parameter>
+						<parameter type="string" name="lunname">lunname</parameter>
+						<parameter type="string" name="lundescription">lundescription</parameter>
+						<parameter type="string" name="capacity">capacity</parameter>
+						<parameter type="string" name="storagepoolname">storagepoolname</parameter>
+						<parameter type="string" name="alloctype">alloctype</parameter>
+						<parameter type="string" name="owningcontroller">owningcontroller</parameter>
+						<parameter type="string" name="readcachepolicy">readcachepolicy</parameter>
+						<parameter type="string" name="writecachepolicy">writecachepolicy</parameter>
+						<parameter type="string" name="prefetchpolicy">prefetchpolicy</parameter>
+						<parameter type="string" name="prefetchvalue">prefetchvalue</parameter>
+						<parameter type="string" name="datatransferpolicy">datatransferpolicy</parameter>
+						<parameter type="string" name="iopriority">iopriority</parameter>
+						<parameter type="string" name="lungroupname">lungroupname</parameter>
+						<parameter type="string" name="lungroupdescription">lungroupdescription</parameter>
+						<parameter type="string" name="hostname">hostname</parameter>
+						<parameter type="string" name="hostgroupname">hostgroupname</parameter>
+						<parameter type="string" name="hostgroupdescription">hostgroupdescription</parameter>
+						<parameter type="string" name="mappingviewname">mappingviewname</parameter>
+						<parameter type="string" name="mappingviewdescription">mappingviewdescription</parameter>
+					</parameters>
+				</method>				
+				
+				<method script-name="createLunAndHostMappingViewByESX" java-name="createLunAndHostMappingViewByESX">
+					<description>createLunAndHostMappingViewByESX</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo</parameter>
+						<parameter type="string" name="lunname">lunname</parameter>
+						<parameter type="number" name="capacity">capacity</parameter>
+						<parameter type="string" name="storagepoolname">storagepoolname</parameter>
+						<parameter type="string" name="alloctype">alloctype</parameter>
+						<parameter type="string" name="owningcontroller">owningcontroller</parameter>
+						<parameter type="string" name="readcachepolicy">readcachepolicy</parameter>
+						<parameter type="string" name="writecachepolicy">writecachepolicy</parameter>
+						<parameter type="string" name="prefetchpolicy">prefetchpolicy</parameter>
+						<parameter type="string" name="prefetchvalue">prefetchvalue</parameter>
+						<parameter type="string" name="datatransferpolicy">datatransferpolicy</parameter>
+						<parameter type="string" name="iopriority">iopriority</parameter>
+						<parameter type="Array/string" name="hostIqns">hostIqns</parameter>				
+						<parameter type="Array/string" name="hostWwns">hostWwns</parameter>
+					</parameters>
+				</method>	
+				
+				<method script-name="attachLUNToLUNGroupByInitiator" java-name="attachLUNToLUNGroupByInitiator">
+					<description>attachLUNToLUNGroupByInitiator</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo</parameter>
+						<parameter type="Array/string" name="hostIqns">hostIqns</parameter>				
+						<parameter type="Array/string" name="hostWwns">hostWwns</parameter>						
+						<parameter type="string" name="lunname">lunname</parameter>
+					</parameters>
+				</method>				
+				
+				<method script-name="deleteLUNByStorageArrayAndLUNInfo" java-name="deleteLUNByStorageArrayAndLUNInfo">
+					<description>deleteLUNByStorageArrayAndLUNInfo</description>
+					<parameters>
+						<parameter type="StorageArrayAndLUNInfo" name="info">info</parameter>
+					</parameters>
+				</method>
+				
+				<method script-name="deleteLunAndHostMappingView" java-name="deleteLunAndHostMappingView">
+					<description>deleteLunAndHostMappingView</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo</parameter>
+						<parameter type="string" name="lunname">lunname</parameter>
+						<parameter type="string" name="lungroupname">lungroupname</parameter>
+						<parameter type="string" name="hostname">hostname</parameter>
+						<parameter type="string" name="hostgroupname">hostgroupname</parameter>
+						<parameter type="string" name="mappingviewname">mappingviewname</parameter>
+					</parameters>
+				</method>	
+				
+				<method script-name="deleteLun" java-name="deleteLun">
+					<description>deleteLun</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo</parameter>
+						<parameter type="string" name="lunname">lunname</parameter>
+					</parameters>
+				</method>
+				
+				<method script-name="deleteLunBywwn" java-name="deleteLunBywwn">
+					<description>deleteLunBywwn</description>
+					<parameters>
+						<parameter type="StorageArrayInfo" name="storageArrayInfo">storageArrayInfo</parameter>
+						<parameter type="string" name="wwn">wwn</parameter>
+					</parameters>
+				</method>
+				
+			</methods>
+		</object>
+
+
+
+
+		<object script-name="OpenSDSFilesystemSnapshot"
+			java-class="org.opensds.storage.vro.plugin.model.FilesystemSnapshot"
+			create="false" strict="true">
+			<description>FilesystemSnapshot</description>
+			<attributes>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="type" java-name="type"
+					return-type="string">type</attribute>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="consumedcapacity" java-name="consumedcapacity"
+					return-type="string">consumedcapacity</attribute>
+				<attribute script-name="healthstatus" java-name="healthstatus"
+					return-type="string">healthstatus</attribute>
+				<attribute script-name="parenttype" java-name="parenttype"
+					return-type="string">parenttype</attribute>
+				<attribute script-name="parentid" java-name="parentid"
+					return-type="string">parentid</attribute>
+				<attribute script-name="parentname" java-name="parentname"
+					return-type="string">parentname</attribute>
+				<attribute script-name="timestamp" java-name="timestamp"
+					return-type="string">timestamp</attribute>
+				<attribute script-name="usercapacity" java-name="usercapacity"
+					return-type="string">usercapacity</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSHost" java-class="org.opensds.storage.vro.plugin.model.Host"
+			create="false" strict="true">
+			<description>Host</description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="description" java-name="description"
+					return-type="string">description</attribute>
+				<attribute script-name="os" java-name="os" return-type="string">os
+				</attribute>
+				<attribute script-name="ip" java-name="ip" return-type="string">ip
+				</attribute>
+				<attribute script-name="location" java-name="location"
+					return-type="string">location</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSLUNSnapshot"
+			java-class="org.opensds.storage.vro.plugin.model.LUNSnapshot" create="false"
+			strict="true">
+			<description>LUNSnapshot</description>
+			<attributes>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="parenttype" java-name="parenttype"
+					return-type="string">parenttype</attribute>
+				<attribute script-name="parentid" java-name="parentid"
+					return-type="string">parentid</attribute>
+				<attribute script-name="parentname" java-name="parentname"
+					return-type="string">parentname</attribute>
+				<attribute script-name="healthstatus" java-name="healthstatus"
+					return-type="string">healthstatus</attribute>
+				<attribute script-name="runningstatus" java-name="runningstatus"
+					return-type="string">runningstatus</attribute>
+				<attribute script-name="description" java-name="description"
+					return-type="string">description</attribute>
+				<attribute script-name="subtype" java-name="subtype"
+					return-type="string">subtype</attribute>
+				<attribute script-name="snapshotuser" java-name="snapshotuser"
+					return-type="string">snapshotuser</attribute>
+				<attribute script-name="timestamp" java-name="timestamp"
+					return-type="string">timestamp</attribute>
+				<attribute script-name="rollbackstarttime" java-name="rollbackstarttime"
+					return-type="string">rollbackstarttime</attribute>
+				<attribute script-name="rollbackendtime" java-name="rollbackendtime"
+					return-type="string">rollbackendtime</attribute>
+				<attribute script-name="rollbackspeed" java-name="rollbackspeed"
+					return-type="string">rollbackspeed</attribute>
+				<attribute script-name="rollbackrate" java-name="rollbackrate"
+					return-type="string">rollbackrate</attribute>
+				<attribute script-name="exposedtoinitiator" java-name="exposedtoinitiator"
+					return-type="string">exposedtoinitiator</attribute>
+				<attribute script-name="wwn" java-name="wwn" return-type="string">wwn
+				</attribute>
+				<attribute script-name="usercapacity" java-name="usercapacity"
+					return-type="string">usercapacity</attribute>
+				<attribute script-name="consumedcapacity" java-name="consumedcapacity"
+					return-type="string">consumedcapacity</attribute>
+				<attribute script-name="workingcontroller" java-name="workingcontroller"
+					return-type="string">workingcontroller</attribute>
+				<attribute script-name="ioclassid" java-name="ioclassid"
+					return-type="string">ioclassid</attribute>
+				<attribute script-name="iopriority" java-name="iopriority"
+					return-type="string">iopriority</attribute>
+				<attribute script-name="replicationcapacity" java-name="replicationcapacity"
+					return-type="string">replicationcapacity</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSFilesystem"
+			java-class="org.opensds.storage.vro.plugin.model.Filesystem" create="false"
+			strict="true">
+			<description>Filesystem</description>
+			<attributes>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="parentsnapshotid" java-name="parentsnapshotid"
+					return-type="string">parentsnapshotid</attribute>
+				<attribute script-name="parentfilesystemid" java-name="parentfilesystemid"
+					return-type="string">parentfilesystemid</attribute>
+				<attribute script-name="enablededupcheck" java-name="enablededupcheck"
+					return-type="string">enablededupcheck</attribute>
+				<attribute script-name="type" java-name="type"
+					return-type="string">type</attribute>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="enablededup" java-name="enablededup"
+					return-type="string">enablededup</attribute>
+				<attribute script-name="recycleswitch" java-name="recycleswitch"
+					return-type="string">recycleswitch</attribute>
+				<attribute script-name="ioclassid" java-name="ioclassid"
+					return-type="string">ioclassid</attribute>
+				<attribute script-name="capacitythreshold" java-name="capacitythreshold"
+					return-type="string">capacitythreshold</attribute>
+				<attribute script-name="parenttype" java-name="parenttype"
+					return-type="string">parenttype</attribute>
+				<attribute script-name="parentid" java-name="parentid"
+					return-type="string">parentid</attribute>
+				<attribute script-name="parentname" java-name="parentname"
+					return-type="string">parentname</attribute>
+				<attribute script-name="healthstatus" java-name="healthstatus"
+					return-type="string">healthstatus</attribute>
+				<attribute script-name="runningstatus" java-name="runningstatus"
+					return-type="string">runningstatus</attribute>
+				<attribute script-name="description" java-name="description"
+					return-type="string">description</attribute>
+				<attribute script-name="subtype" java-name="subtype"
+					return-type="string">subtype</attribute>
+				<attribute script-name="alloctype" java-name="alloctype"
+					return-type="string">alloctype</attribute>
+				<attribute script-name="root" java-name="root"
+					return-type="string">root</attribute>
+				<attribute script-name="pathnameseparatorstring"
+					java-name="pathnameseparatorstring" return-type="string">pathnameseparatorstring
+				</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSLUNCopy"
+			java-class="org.opensds.storage.vro.plugin.model.LUNCopy" create="false"
+			strict="true">
+			<description>LUNCopy</description>
+			<attributes>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="type" java-name="type"
+					return-type="string">type</attribute>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="healthstatus" java-name="healthstatus"
+					return-type="string">healthstatus</attribute>
+				<attribute script-name="runningstatus" java-name="runningstatus"
+					return-type="string">runningstatus</attribute>
+				<attribute script-name="description" java-name="description"
+					return-type="string">description</attribute>
+				<attribute script-name="subtype" java-name="subtype"
+					return-type="string">subtype</attribute>
+				<attribute script-name="copyspeed" java-name="copyspeed"
+					return-type="string">copyspeed</attribute>
+				<attribute script-name="luncopytype" java-name="luncopytype"
+					return-type="string">luncopytype</attribute>
+				<attribute script-name="copyprogress" java-name="copyprogress"
+					return-type="string">copyprogress</attribute>
+				<attribute script-name="copystarttime" java-name="copystarttime"
+					return-type="string">copystarttime</attribute>
+				<attribute script-name="copystoptime" java-name="copystoptime"
+					return-type="string">copystoptime</attribute>
+				<attribute script-name="sourcelun" java-name="sourcelun"
+					return-type="string">sourcelun</attribute>
+				<attribute script-name="sourcelunname" java-name="sourcelunname"
+					return-type="string">sourcelunname</attribute>
+				<attribute script-name="sourcelunwwn" java-name="sourcelunwwn"
+					return-type="string">sourcelunwwn</attribute>
+				<attribute script-name="sourcelunwwpn" java-name="sourcelunwwpn"
+					return-type="string">sourcelunwwpn</attribute>
+				<attribute script-name="sourceluncapacity" java-name="sourceluncapacity"
+					return-type="string">sourceluncapacity</attribute>
+				<attribute script-name="sourceluncapacitybyte" java-name="sourceluncapacitybyte"
+					return-type="string">sourceluncapacitybyte</attribute>
+				<attribute script-name="sourcedeviceid" java-name="sourcedeviceid"
+					return-type="string">sourcedeviceid</attribute>
+				<attribute script-name="sourcedevicename" java-name="sourcedevicename"
+					return-type="string">sourcedevicename</attribute>
+				<attribute script-name="baselun" java-name="baselun"
+					return-type="string">baselun</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSiSCSIInitiator"
+			java-class="org.opensds.storage.vro.plugin.model.iSCSIInitiator"
+			create="false" strict="true">
+			<description>iSCSIInitiator</description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="discoveryvermode" java-name="discoveryvermode"
+					return-type="string">discoveryvermode</attribute>
+				<attribute script-name="normalvermode" java-name="normalvermode"
+					return-type="string">normalvermode</attribute>
+				<attribute script-name="failovermode" java-name="failovermode"
+					return-type="string">failovermode</attribute>
+				<attribute script-name="pathtype" java-name="pathtype"
+					return-type="string">pathtype</attribute>				
+				<attribute script-name="parentid" java-name="parentid"
+					return-type="string">parentid</attribute>				
+				<attribute script-name="parentname" java-name="parentname"
+					return-type="string">parentname</attribute>
+			</attributes>
+		</object>		
+		<object script-name="OpenSDSMappingInfo"
+			java-class="org.opensds.storage.vro.plugin.model.MappingInfo"
+			create="false" strict="true">
+			<description>MappingInfo</description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="lunname" java-name="lunname"
+					return-type="string">lunname</attribute>
+				<attribute script-name="lungroupname" java-name="lungroupname"
+					return-type="string">lungroupname</attribute>
+				<attribute script-name="hostname" java-name="hostname"
+					return-type="string">hostname</attribute>
+				<attribute script-name="hostgroupname" java-name="hostgroupname"
+					return-type="string">hostgroupname</attribute>
+				<attribute script-name="mappingviewname" java-name="mappingviewname"
+					return-type="string">mappingviewname</attribute>				
+				<attribute script-name="lunwwn" java-name="lunwwn"
+					return-type="string">lunwwn</attribute>
+			</attributes>
+		</object>		
+		<object script-name="OpenSDSStorageArrayAndLUNInfo"
+			java-class="org.opensds.storage.vro.plugin.model.StorageArrayAndLUNInfo"
+			create="false" strict="true">
+			<description>StorageArrayAndLUNInfo</description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="lunname" java-name="lunname"
+					return-type="string">lunname</attribute>
+				<attribute script-name="STORAGEID" java-name="storageid"
+					return-type="storageid">storageid</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSNFSShare"
+			java-class="org.opensds.storage.vro.plugin.model.NFSShare" create="false"
+			strict="true">
+			<description>NFSShare</description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="description" java-name="description"
+					return-type="string">description</attribute>
+				<attribute script-name="sharepath" java-name="sharepath"
+					return-type="string">sharepath</attribute>
+				<attribute script-name="characterencoding" java-name="characterencoding"
+					return-type="string">characterencoding</attribute>
+				<attribute script-name="fsid" java-name="fsid"
+					return-type="string">fsid</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSHostGroup"
+			java-class="org.opensds.storage.vro.plugin.model.HostGroup" create="false"
+			strict="true">
+			<description>HostGroup</description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="description" java-name="description"
+					return-type="string">description</attribute>
+				<attribute script-name="type" java-name="type"
+					return-type="string">type</attribute>
+				<attribute script-name="isadd2mappingview" java-name="isadd2mappingview"
+					return-type="string">isadd2mappingview</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSFCInitiator"
+			java-class="org.opensds.storage.vro.plugin.model.FCInitiator" create="false"
+			strict="true">
+			<description>FCInitiator</description>
+			<attributes>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="type" java-name="type"
+					return-type="string">type</attribute>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="parenttype" java-name="parenttype"
+					return-type="string">parenttype</attribute>
+				<attribute script-name="parentid" java-name="parentid"
+					return-type="string">parentid</attribute>				
+					<attribute script-name="parentname" java-name="parentname"
+					return-type="string">parentname</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSFTPShare"
+			java-class="org.opensds.storage.vro.plugin.model.FTPShare" create="false"
+			strict="true">
+			<description>FTPShare</description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="accessname" java-name="accessname"
+					return-type="string">accessname</attribute>
+				<attribute script-name="sharepath" java-name="sharepath"
+					return-type="string">sharepath</attribute>
+				<attribute script-name="permission" java-name="permission"
+					return-type="string">permission</attribute>
+				<attribute script-name="upbandwidth" java-name="upbandwidth"
+					return-type="string">upbandwidth</attribute>
+				<attribute script-name="downbandwidth" java-name="downbandwidth"
+					return-type="string">downbandwidth</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSLUNGroup"
+			java-class="org.opensds.storage.vro.plugin.model.LUNGroup" create="false"
+			strict="true">
+			<description>LUNGroup</description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="description" java-name="description"
+					return-type="string">description</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSMappingView"
+			java-class="org.opensds.storage.vro.plugin.model.MappingView" create="false"
+			strict="true">
+			<description>MappingView</description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="description" java-name="description"
+					return-type="string">description</attribute>
+			</attributes>
+		</object>		
+		<object script-name="OpenSDSMappingViewInfo"
+			java-class="org.opensds.storage.vro.plugin.model.MappingViewInfo" create="false"
+			strict="true">
+			<description>MappingViewInfo</description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="description" java-name="description"
+					return-type="string">description</attribute>				
+					<attribute script-name="availablehostlunidlist" java-name="availablehostlunidlist"
+					return-type="string">availablehostlunidlist</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSLUN" java-class="org.opensds.storage.vro.plugin.model.LUN"
+			create="false" strict="true">
+			<description>LUN</description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="capacity" java-name="capacity"
+					return-type="string">capacity</attribute>
+				<attribute script-name="parentid" java-name="parentid"
+					return-type="string">parentid</attribute>
+				<attribute script-name="alloctype" java-name="alloctype"
+					return-type="string">alloctype</attribute>
+				<attribute script-name="description" java-name="description"
+					return-type="string">description</attribute>
+				<attribute script-name="owningcontroller" java-name="owningcontroller"
+					return-type="string">owningcontroller</attribute>
+				<attribute script-name="readcachepolicy" java-name="readcachepolicy"
+					return-type="string">readcachepolicy</attribute>
+				<attribute script-name="writecachepolicy" java-name="writecachepolicy"
+					return-type="string">writecachepolicy</attribute>
+				<attribute script-name="prefetchpolicy" java-name="prefetchpolicy"
+					return-type="string">prefetchpolicy</attribute>
+				<attribute script-name="prefetchvalue" java-name="prefetchvalue"
+					return-type="string">prefetchvalue</attribute>
+				<attribute script-name="datatransferpolicy" java-name="datatransferpolicy"
+					return-type="string">datatransferpolicy</attribute>
+				<attribute script-name="iopriority" java-name="iopriority"
+					return-type="string">iopriority</attribute>
+				<attribute script-name="wwn" java-name="wwn"
+					return-type="string">wwn</attribute>
+			</attributes>
+		</object>
+		<object script-name="OpenSDSCIFSShare"
+			java-class="org.opensds.storage.vro.plugin.model.CIFSShare" create="false"
+			strict="true">
+			<description>CIFSShare</description>
+			<attributes>
+				<attribute script-name="id" java-name="id" return-type="string">id
+				</attribute>
+				<attribute script-name="real_id" java-name="real_id"
+					return-type="string">real_id</attribute>
+				<attribute script-name="name" java-name="name"
+					return-type="string">name</attribute>
+				<attribute script-name="description" java-name="description"
+					return-type="string">description</attribute>
+				<attribute script-name="sharepath" java-name="sharepath"
+					return-type="string">sharepath</attribute>
+				<attribute script-name="enableoplock" java-name="enableoplock"
+					return-type="string">enableoplock</attribute>
+				<attribute script-name="enablenotify" java-name="enablenotify"
+					return-type="string">enablenotify</attribute>
+				<attribute script-name="enableca" java-name="enableca"
+					return-type="string">enableca</attribute>
+				<attribute script-name="offlinefilemode" java-name="offlinefilemode"
+					return-type="string">offlinefilemode</attribute>
+				<attribute script-name="enableipcontrol" java-name="enableipcontrol"
+					return-type="string">enableipcontrol</attribute>
+			</attributes>
+		</object>
+
+
+	</scripting-objects>
+</module>

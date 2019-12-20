@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="GBK"?>
+<project name="o11nplugin-opensdsstorage" default="build-begin" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+	<target name="build-begin" depends="gather-dependencies-from-maven,setup,clean,package,reconfiguration,teardown"/>
+	
+	<!-- ====================================================================== -->
+	<!-- Build environment properties                                           -->
+	<!-- ====================================================================== -->
+	
+	<property file="maven-build.properties" />
+	<property name="maven.build.finalName" value="OpenSDSStorAdapter" />
+	<property name="libs" value="../libs" />
+	<property environment="env"/>
+	<property name="ANT_HOME" value="${env.ANT_HOME}"/>
+	
+	<!-- ====================================================================== -->
+	<!-- Download dependencies target                                           -->
+	<!-- ====================================================================== -->
+
+	<path id="maven-ant-tasks.classpath" path="${ANT_HOME}/lib/maven-ant-tasks-2.1.3.jar" />
+	<typedef resource="org/apache/maven/artifact/ant/antlib.xml"
+			 uri="antlib:org.apache.maven.artifact.ant"
+			 classpathref="maven-ant-tasks.classpath" />
+			 
+	<target name="gather-dependencies-from-maven" >
+		<artifact:pom id="maven.project" file="pom.xml" />
+		<artifact:dependencies filesetId="deps.fileset">
+			<pom file="pom.xml"/>
+		</artifact:dependencies>
+		<copy todir="${libs}">
+			<fileset refid="deps.fileset"/>
+			<mapper type="flatten"/>
+		</copy>
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- Defining classpaths                                                    -->
+	<!-- ====================================================================== -->
+
+	<path id="build.classpath">
+		<fileset dir="${maven.repo.local}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!-- ====================================================================== -->
+	<!-- Cleaning up target                                                     -->
+	<!-- ====================================================================== -->
+	
+	<target name="setup" description="create folder, copy jar and binary" >
+		<mkdir dir="adapters" />
+		<mkdir dir="adapters/OpenSDSStorAdapter" />
+	</target>
+
+	<target name="clean" description="Clean the output directory">
+		<delete dir="adapters" />
+		<delete dir="OpenSDSStorAdapterMP/adapters" />
+		<delete dir="${maven.build.dir}" />
+		<delete file="OpenSDSStorAdapterMP/adapters.zip" />
+	</target>
+	
+	<target name="teardown" description="clean all">
+		<delete dir="bin" />
+		<delete dir="build" />
+		<delete dir="adapters" />
+		<delete dir="OpenSDSStorAdapterMP/adapters" />
+		<delete file="OpenSDSStorAdapterMP/adapters.zip" />
+		<delete dir="${maven.build.dir}" />
+	</target>
+	
+	<!-- ====================================================================== -->
+	<!-- Reconfiguration                                                        -->
+	<!-- ====================================================================== -->
+	<target name="reconfiguration" description="reconfiguration the dir">
+		<copy todir="adapters/OpenSDSStorAdapter/lib" overwrite="true">
+			<fileset dir="../libs">
+			</fileset>
+		</copy>
+		<copy todir="adapters/OpenSDSStorAdapter/conf" overwrite="true">
+			<fileset dir="OpenSDSStorAdapter/conf">
+			</fileset>
+		</copy>
+		<copy todir="adapters/resources" overwrite="true">
+			<fileset dir="OpenSDSStorAdapterMP/resources">
+			</fileset>
+		</copy>
+		<copy todir="adapters" overwrite="true">
+			<fileset dir="OpenSDSStorAdapterMP">
+				<include name="*.png" />
+				<include name="*.txt" />
+			</fileset>
+		</copy>
+		<copy todir="OpenSDSStorAdapterMP/adapters" overwrite="true">
+			<fileset dir="adapters">
+			</fileset>
+		</copy>
+		<zip destfile="OpenSDSStorAdapterMP/adapters.zip" basedir="OpenSDSStorAdapterMP/adapters"></zip>
+		<delete dir="OpenSDSStorAdapterMP/adapters" />
+		<zip destfile="../release/OpenSDSStorAdapterMP-1.0.15.pak" basedir="OpenSDSStorAdapterMP"></zip>
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- Compilation target                                                     -->
+	<!-- ====================================================================== -->
+
+	<target name="compile" depends="" description="Compile the code">
+		<mkdir dir="${maven.build.outputDir}" />
+		<javac destdir="${maven.build.outputDir}" encoding="GBK" nowarn="true" debug="true" optimize="false" deprecation="true" target="1.6" verbose="false" fork="true" source="1.6">
+			<src>
+				<pathelement location="${maven.build.srcDir.0}" />
+			</src>
+			<classpath refid="build.classpath" />
+		</javac>
+		<copy file="OpenSDSStorAdapter/adapter.properties" todir="${maven.build.outputDir}" />
+		<copy todir="${rest.out.properties}" overwrite="true">
+			<fileset dir="${rest.properties}">
+				<include name="*.properties" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- Javadoc target                                                         -->
+	<!-- ====================================================================== -->
+
+	<target name="javadoc" description="Generates the Javadoc of the application">
+		<javadoc sourcepath="${maven.build.srcDir.0}" packagenames="*" destdir="${maven.reporting.outputDirectory}/apidocs" access="protected" old="false" verbose="false" version="true" use="true" author="true" splitindex="false" nodeprecated="false" nodeprecatedlist="false" notree="false" noindex="false" nohelp="false" nonavbar="false" serialwarn="false" charset="ISO-8859-1" linksource="false" breakiterator="false" />
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- Package target                                                         -->
+	<!-- ====================================================================== -->
+
+	<target name="package" depends="compile" description="Package the application">
+		<jar jarfile="${maven.build.dir}/${maven.build.finalName}.jar" compress="true" index="false" basedir="${maven.build.outputDir}" excludes="**/package.html" />
+		<mkdir dir="${maven.repo.local}" />
+		<copy file="${maven.build.dir}/${maven.build.finalName}.jar" todir="adapters" />
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- A dummy target for the package named after the type it creates         -->
+	<!-- ====================================================================== -->
+
+	<target name="jar" depends="package" description="Builds the jar for the application" />
+
+</project>

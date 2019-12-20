@@ -1,0 +1,6357 @@
+{
+	"localization": {
+		"group": {
+			"de": [
+				{
+					"value": "vSphere-Dashboards",
+					"key": "vSphere Dashboards"
+				},
+				{
+					"value": "vSphere-Konfiguration",
+					"key": "vSphere Configuration"
+				}
+			],
+			"ko": [
+				{
+					"value": "vSphere 대시보드",
+					"key": "vSphere Dashboards"
+				},
+				{
+					"value": "vSphere 구성",
+					"key": "vSphere Configuration"
+				}
+			],
+			"zh-TW": [
+				{
+					"value": "vSphere 儀表板",
+					"key": "vSphere Dashboards"
+				},
+				{
+					"value": "vSphere 組態",
+					"key": "vSphere Configuration"
+				}
+			],
+			"ja": [
+				{
+					"value": "vSphere ダッシュボード",
+					"key": "vSphere Dashboards"
+				},
+				{
+					"value": "vSphere の構成",
+					"key": "vSphere Configuration"
+				}
+			],
+			"en": [
+				{
+					"value": "vSphere Dashboards",
+					"key": "vSphere Dashboards"
+				},
+				{
+					"value": "vSphere Configuration",
+					"key": "vSphere Configuration"
+				}
+			],
+			"fr": [
+				{
+					"value": "Tableaux de bord vSphere",
+					"key": "vSphere Dashboards"
+				},
+				{
+					"value": "configuration vSphere",
+					"key": "vSphere Configuration"
+				}
+			],
+			"zh-CN": [
+				{
+					"value": "vSphere 仪表板",
+					"key": "vSphere Dashboards"
+				},
+				{
+					"value": "vSphere 配置",
+					"key": "vSphere Configuration"
+				}
+			]
+		}
+	},
+	"entries": {
+		"resourceKind": [
+			{
+				"resourceKindKey": "Datacenter",
+				"internalId": "resourceKind:id:15_::_",
+				"adapterKindKey": "VMWARE"
+			},
+			{
+				"resourceKindKey": "VirtualMachine",
+				"internalId": "resourceKind:id:14_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "Lun",
+				"internalId": "resourceKind:id:4_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "Host",
+				"internalId": "resourceKind:id:10_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "VirtualMachine",
+				"internalId": "resourceKind:id:3_::_",
+				"adapterKindKey": "VMWARE"
+			},
+			{
+				"resourceKindKey": "SmartPartition",
+				"internalId": "resourceKind:id:17_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "Controller",
+				"internalId": "resourceKind:id:9_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "OpenSDSStorAdapterInstance",
+				"internalId": "resourceKind:id:13_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "DiskDomain",
+				"internalId": "resourceKind:id:7_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "SnapShot",
+				"internalId": "resourceKind:id:18_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "FCPort",
+				"internalId": "resourceKind:id:11_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "ISCSIPort",
+				"internalId": "resourceKind:id:12_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "SmartQos",
+				"internalId": "resourceKind:id:16_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "VMwareAdapter Instance",
+				"internalId": "resourceKind:id:1_::_",
+				"adapterKindKey": "VMWARE"
+			},
+			{
+				"resourceKindKey": "FileSystem",
+				"internalId": "resourceKind:id:5_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "Storage",
+				"internalId": "resourceKind:id:0_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "RemoteReplication",
+				"internalId": "resourceKind:id:19_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "Datastore",
+				"internalId": "resourceKind:id:2_::_",
+				"adapterKindKey": "VMWARE"
+			},
+			{
+				"resourceKindKey": "Disk",
+				"internalId": "resourceKind:id:8_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			},
+			{
+				"resourceKindKey": "Pool",
+				"internalId": "resourceKind:id:6_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			}
+		],
+		"adapterKind": [
+			{
+				"internalId": "adapterKind:id:0_::_",
+				"adapterKindKey": "OpenSDSStorAdapter"
+			}
+		]
+	},
+	"dashboards": [
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/Overviews",
+			"creationTime": 1479105027921,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "1f8e0d6f-c113-441d-8e9a-7b5bc40aa92b",
+					"type": "ResourceList",
+					"title": "OpenSDS Storage List",
+					"config": {
+						"mode": {
+							"mode": 0
+						},
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:0_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:0_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selectFirstRow": {
+							"selectFirstRow": true
+						},
+						"title": "OpenSDS Storage List",
+						"additionalColumns": []
+					},
+					"height": 371,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah8%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah9%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah10%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah11%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah12%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah13%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah14%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah15%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah17%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah18%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah19%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah20%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah21%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah22%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah23%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah24%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah25%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah26%25255Ehidden%25253Db%2525253A1",
+							"key": "permResGrid_widget_f478162b-e51c-4282-a278-1d5ce7359e85_1f8e0d6f-c113-441d-8e9a-7b5bc40aa92b"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "78333a27-014a-4c8e-a248-b39f381097bc",
+					"type": "Scoreboard",
+					"title": "Scoreboard",
+					"config": {
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"valueSize": 24,
+						"title": "Scoreboard",
+						"boxHeight": null,
+						"showResourceName": {
+							"showResourceName": false
+						},
+						"roundDecimals": null,
+						"mode": {
+							"layoutMode": "fixedView"
+						},
+						"labelSize": 12,
+						"metric": {
+							"mode": "resource",
+							"resourceMetrics": [],
+							"resourceKindMetrics": []
+						},
+						"showSparkline": {
+							"showSparkline": false
+						},
+						"boxColumns": 2,
+						"periodLength": null,
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"resInteractionMode": null
+					},
+					"height": 370
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 3,
+					"id": "96cfb68e-e959-49e7-88ad-776cec54fb1c",
+					"type": "ResourceRelationship",
+					"title": "Health Tree",
+					"config": {
+						"tagFilter": null,
+						"nodeSize": null,
+						"refreshInterval": 300,
+						"autoZoom": {
+							"autoSize": false
+						},
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"resourceName": "",
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "Health Tree"
+					},
+					"height": 300,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permResourceRelationship_widget_f478162b-e51c-4282-a278-1d5ce7359e85_96cfb68e-e959-49e7-88ad-776cec54fb1c"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 2,
+					"id": "2b8ffd24-0666-4b57-8eac-9b70bd8a3309",
+					"type": "AlertList",
+					"title": "Alert List",
+					"config": {
+						"alertImpact": [],
+						"mode": "tagFilter",
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:0_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:0_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"criticalityLevel": [],
+						"periodLength": null,
+						"state": [],
+						"title": "Alert List",
+						"type": [],
+						"status": []
+					},
+					"height": 301,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%255Eo%25253Aid%25253Ds%2525253Ah8%255Eo%25253Aid%25253Ds%2525253Ah9%255Eo%25253Aid%25253Ds%2525253Ah10%255Eo%25253Aid%25253Ds%2525253Ah11%255Eo%25253Aid%25253Ds%2525253Ah12%255Eo%25253Aid%25253Ds%2525253Ah13%255Eo%25253Aid%25253Ds%2525253Ah14%255Eo%25253Aid%25253Ds%2525253Ah15%255Eo%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah17%255Eo%25253Aid%25253Ds%2525253Ah18",
+							"key": "permAlertGrid_widget_f478162b-e51c-4282-a278-1d5ce7359e85_2b8ffd24-0666-4b57-8eac-9b70bd8a3309"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last30Days%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateFilter_permAlertGrid_widget_f478162b-e51c-4282-a278-1d5ce7359e85_2b8ffd24-0666-4b57-8eac-9b70bd8a3309"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "0ac3c9b9-5ba1-4627-bb4f-2be6c849fecc",
+					"type": "View",
+					"title": "OpenSDS Capacity List",
+					"config": {
+						"resource": null,
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS Capacity List",
+						"viewDefinitionId": "27c94745-5298-4604-b781-d719e2cc2b9e"
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 3,
+					"id": "781e7cfe-aa79-4dec-bf75-d740ef2674cc",
+					"type": "View",
+					"title": "OpenSDS Capacity Trend",
+					"config": {
+						"resource": null,
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS Capacity Trend",
+						"viewDefinitionId": "e100c091-3b67-41ff-bf2f-13671cb8f23d"
+					},
+					"height": 300
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/Overviews/OpenSDS Storage Overview",
+			"rank": 0,
+			"disabled": false,
+			"id": "f478162b-e51c-4282-a278-1d5ce7359e85",
+			"locked": false,
+			"widgetInteractions": [
+				{
+					"widgetIdProvider": "1f8e0d6f-c113-441d-8e9a-7b5bc40aa92b",
+					"type": "resourceId",
+					"widgetIdReceiver": "78333a27-014a-4c8e-a248-b39f381097bc"
+				},
+				{
+					"widgetIdProvider": "1f8e0d6f-c113-441d-8e9a-7b5bc40aa92b",
+					"type": "resourceId",
+					"widgetIdReceiver": "96cfb68e-e959-49e7-88ad-776cec54fb1c"
+				},
+				{
+					"widgetIdProvider": "1f8e0d6f-c113-441d-8e9a-7b5bc40aa92b",
+					"type": "resourceId",
+					"widgetIdReceiver": "2b8ffd24-0666-4b57-8eac-9b70bd8a3309"
+				},
+				{
+					"widgetIdProvider": "1f8e0d6f-c113-441d-8e9a-7b5bc40aa92b",
+					"type": "resourceId",
+					"widgetIdReceiver": "0ac3c9b9-5ba1-4627-bb4f-2be6c849fecc"
+				},
+				{
+					"widgetIdProvider": "1f8e0d6f-c113-441d-8e9a-7b5bc40aa92b",
+					"type": "resourceId",
+					"widgetIdReceiver": "781e7cfe-aa79-4dec-bf75-d740ef2674cc"
+				}
+			]
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/Overviews",
+			"creationTime": 1479105027921,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "e77e6aac-f21f-4d01-b98a-a259672f18f6",
+					"type": "Skittles",
+					"title": "Source Tree",
+					"config": {
+						"mode": "custom",
+						"badge": [
+							{
+								"badgeKey": "health",
+								"badgeName": "Health",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "workload",
+								"badgeName": "Workload",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "anomalies",
+								"badgeName": "Anomalies",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "faults",
+								"badgeName": "Faults",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "risk",
+								"badgeName": "Risk",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "timeRemaining",
+								"badgeName": "Time Remaining",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "capacity",
+								"badgeName": "Capacity Remaining",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "stress",
+								"badgeName": "Stress",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "efficiency",
+								"badgeName": "Efficiency",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "waste",
+								"badgeName": "Reclaimable Capacity",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "density",
+								"badgeName": "Density",
+								"show": true,
+								"label": null
+							}
+						],
+						"refreshInterval": 300,
+						"custom": [
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "vCenter Server",
+								"resourceKindId": "resourceKind:id:1_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "Datastore",
+								"resourceKindId": "resourceKind:id:2_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "Virtual Machine",
+								"resourceKindId": "resourceKind:id:3_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "Lun",
+								"resourceKindId": "resourceKind:id:4_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "FileSystem",
+								"resourceKindId": "resourceKind:id:5_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "Pool",
+								"resourceKindId": "resourceKind:id:6_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "DiskDomain",
+								"resourceKindId": "resourceKind:id:7_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "Disk",
+								"resourceKindId": "resourceKind:id:8_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "Controller",
+								"resourceKindId": "resourceKind:id:9_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "Storage",
+								"resourceKindId": "resourceKind:id:0_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "Host",
+								"resourceKindId": "resourceKind:id:10_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "FCPort",
+								"resourceKindId": "resourceKind:id:11_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "ISCSIPort",
+								"resourceKindId": "resourceKind:id:12_::_",
+								"resourceKindTypeName": ""
+							}
+						],
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"title": "Source Tree"
+					},
+					"height": 921,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permSkittlesView_widget_b3a47ab5-9d58-43d5-ad94-ca380a3b49b8_e77e6aac-f21f-4d01-b98a-a259672f18f6"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "00fd05b5-4f0f-4b51-a5ee-1f4a0dd9df81",
+					"type": "ResourceRelationship",
+					"title": "Health Tree",
+					"config": {
+						"tagFilter": null,
+						"nodeSize": null,
+						"refreshInterval": 300,
+						"autoZoom": {
+							"autoSize": false
+						},
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"resourceName": "",
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "Health Tree"
+					},
+					"height": 300,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permResourceRelationship_widget_b3a47ab5-9d58-43d5-ad94-ca380a3b49b8_00fd05b5-4f0f-4b51-a5ee-1f4a0dd9df81"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 2,
+					"id": "e8bbea84-9ac0-4d30-93be-a54f9efa9a8e",
+					"type": "SparklineChart",
+					"title": "Metric Sparklines",
+					"config": {
+						"columnSequence": {
+							"columnSequence": "graphFirst"
+						},
+						"refreshInterval": 300,
+						"metric": {
+							"mode": "resource",
+							"resourceMetrics": [],
+							"resourceKindMetrics": []
+						},
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "Metric Sparklines",
+						"resInteractionMode": null
+					},
+					"height": 300,
+					"states": [
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange_widget_b3a47ab5-9d58-43d5-ad94-ca380a3b49b8_e8bbea84-9ac0-4d30-93be-a54f9efa9a8e"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 3,
+					"id": "c5af0965-628a-4568-b7f8-03a71882a3e6",
+					"type": "AlertList",
+					"title": "Alert List",
+					"config": {
+						"alertImpact": [],
+						"mode": "tagFilter",
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:1_::_",
+								"/source/kind/kind:resourceKind:id:2_::_",
+								"/source/kind/kind:resourceKind:id:3_::_",
+								"/source/kind/kind:resourceKind:id:13_::_",
+								"/source/kind/kind:resourceKind:id:4_::_",
+								"/source/kind/kind:resourceKind:id:5_::_",
+								"/source/kind/kind:resourceKind:id:6_::_",
+								"/source/kind/kind:resourceKind:id:7_::_",
+								"/source/kind/kind:resourceKind:id:8_::_",
+								"/source/kind/kind:resourceKind:id:9_::_",
+								"/source/kind/kind:resourceKind:id:0_::_",
+								"/source/kind/kind:resourceKind:id:10_::_",
+								"/source/kind/kind:resourceKind:id:11_::_",
+								"/source/kind/kind:resourceKind:id:12_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:1_::_",
+									"resourceKind:id:2_::_",
+									"resourceKind:id:3_::_",
+									"resourceKind:id:13_::_",
+									"resourceKind:id:4_::_",
+									"resourceKind:id:5_::_",
+									"resourceKind:id:6_::_",
+									"resourceKind:id:7_::_",
+									"resourceKind:id:8_::_",
+									"resourceKind:id:9_::_",
+									"resourceKind:id:0_::_",
+									"resourceKind:id:10_::_",
+									"resourceKind:id:11_::_",
+									"resourceKind:id:12_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"criticalityLevel": [],
+						"periodLength": null,
+						"state": [],
+						"title": "Alert List",
+						"type": [],
+						"status": []
+					},
+					"height": 300,
+					"states": [
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last30Days%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateFilter_permAlertGrid_widget_b3a47ab5-9d58-43d5-ad94-ca380a3b49b8_c5af0965-628a-4568-b7f8-03a71882a3e6"
+						},
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%255Eo%25253Aid%25253Ds%2525253Ah8%255Eo%25253Aid%25253Ds%2525253Ah9%255Eo%25253Aid%25253Ds%2525253Ah10%255Eo%25253Aid%25253Ds%2525253Ah11%255Eo%25253Aid%25253Ds%2525253Ah12%255Eo%25253Aid%25253Ds%2525253Ah13%255Eo%25253Aid%25253Ds%2525253Ah14%255Eo%25253Aid%25253Ds%2525253Ah15%255Eo%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah17%255Eo%25253Aid%25253Ds%2525253Ah18",
+							"key": "permAlertGrid_widget_b3a47ab5-9d58-43d5-ad94-ca380a3b49b8_c5af0965-628a-4568-b7f8-03a71882a3e6"
+						}
+					]
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/Overviews/OpenSDS Topology",
+			"rank": 1,
+			"disabled": false,
+			"id": "b3a47ab5-9d58-43d5-ad94-ca380a3b49b8",
+			"locked": false,
+			"widgetInteractions": [
+				{
+					"widgetIdProvider": "e77e6aac-f21f-4d01-b98a-a259672f18f6",
+					"type": "resourceId",
+					"widgetIdReceiver": "00fd05b5-4f0f-4b51-a5ee-1f4a0dd9df81"
+				},
+				{
+					"widgetIdProvider": "e77e6aac-f21f-4d01-b98a-a259672f18f6",
+					"type": "resourceId",
+					"widgetIdReceiver": "e8bbea84-9ac0-4d30-93be-a54f9efa9a8e"
+				},
+				{
+					"widgetIdProvider": "e77e6aac-f21f-4d01-b98a-a259672f18f6",
+					"type": "resourceId",
+					"widgetIdReceiver": "c5af0965-628a-4568-b7f8-03a71882a3e6"
+				}
+			]
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/Overviews",
+			"creationTime": 1479105027921,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.332-0.34-0.328",
+			"importComplete": true,
+			"columnCount": 3,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "05536912-ea8f-4c39-9bdd-aaa0fe8c7624",
+					"type": "HealthChart",
+					"title": "Datastores",
+					"config": {
+						"mode": {
+							"mode": "self"
+						},
+						"metricType": {
+							"metricType": "health"
+						},
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:2_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:2_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"paginationNumber": 10,
+						"metricName": "",
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"sortBy": "metricValue",
+						"sortByDir": {
+							"orderByDir": "asc"
+						},
+						"periodLength": "last6Hour",
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"title": "Datastores"
+					},
+					"height": 757
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "de6c795b-fd2d-4419-b2ea-9b9aee4d52f8",
+					"type": "ResourceRelationship",
+					"title": "Health Tree",
+					"config": {
+						"tagFilter": null,
+						"nodeSize": null,
+						"refreshInterval": 300,
+						"autoZoom": {
+							"autoSize": false
+						},
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"resourceName": "",
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "Health Tree"
+					},
+					"height": 370,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permResourceRelationship_widget_7b37f474-1f64-473c-9e90-639fb1fc4ea8_de6c795b-fd2d-4419-b2ea-9b9aee4d52f8"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 2,
+					"id": "23e9b300-4ad7-4ec5-840b-6b49cae8f090",
+					"type": "AlertList",
+					"title": "Alert List",
+					"config": {
+						"alertImpact": [],
+						"mode": "tagFilter",
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:2_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:2_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"criticalityLevel": [],
+						"periodLength": null,
+						"state": [],
+						"title": "Alert List",
+						"type": [],
+						"status": []
+					},
+					"height": 376,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%255Eo%25253Aid%25253Ds%2525253Ah8%255Eo%25253Aid%25253Ds%2525253Ah9%255Eo%25253Aid%25253Ds%2525253Ah10%255Eo%25253Aid%25253Ds%2525253Ah11%255Eo%25253Aid%25253Ds%2525253Ah12%255Eo%25253Aid%25253Ds%2525253Ah13%255Eo%25253Aid%25253Ds%2525253Ah14%255Eo%25253Aid%25253Ds%2525253Ah15%255Eo%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah17%255Eo%25253Aid%25253Ds%2525253Ah18",
+							"key": "permAlertGrid_widget_7b37f474-1f64-473c-9e90-639fb1fc4ea8_23e9b300-4ad7-4ec5-840b-6b49cae8f090"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last30Days%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateFilter_permAlertGrid_widget_7b37f474-1f64-473c-9e90-639fb1fc4ea8_23e9b300-4ad7-4ec5-840b-6b49cae8f090"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 3,
+					"y": 1,
+					"id": "13bc1dfd-43e7-46be-b67c-5138d0f60632",
+					"type": "MetricPicker",
+					"title": "Datastores Metrics",
+					"config": {
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"title": "Datastores Metrics"
+					},
+					"height": 369,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1",
+							"key": "permMetricPicker_widget_7b37f474-1f64-473c-9e90-639fb1fc4ea8_13bc1dfd-43e7-46be-b67c-5138d0f60632"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchPropertyMetrics_permMetricPicker_widget_7b37f474-1f64-473c-9e90-639fb1fc4ea8_13bc1dfd-43e7-46be-b67c-5138d0f60632"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCollectingMetrics_permMetricPicker_widget_7b37f474-1f64-473c-9e90-639fb1fc4ea8_13bc1dfd-43e7-46be-b67c-5138d0f60632"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCommonMetrics_permMetricPicker_widget_7b37f474-1f64-473c-9e90-639fb1fc4ea8_13bc1dfd-43e7-46be-b67c-5138d0f60632"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 3,
+					"y": 2,
+					"id": "0ed2db47-9aca-4993-b465-3e7335e4e7f2",
+					"type": "MetricChart",
+					"title": "Datastore Metric Chart",
+					"config": {
+						"resourceMetrics": [],
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "Datastore Metric Chart",
+						"resInteractionMode": null
+					},
+					"height": 377,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permMetricChart_widget_7b37f474-1f64-473c-9e90-639fb1fc4ea8_0ed2db47-9aca-4993-b465-3e7335e4e7f2"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_metricChart_widget_7b37f474-1f64-473c-9e90-639fb1fc4ea8_0ed2db47-9aca-4993-b465-3e7335e4e7f2"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_permMetricChart_widget_7b37f474-1f64-473c-9e90-639fb1fc4ea8_0ed2db47-9aca-4993-b465-3e7335e4e7f2"
+						}
+					]
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/Overviews/OpenSDS DataStores",
+			"rank": 2,
+			"disabled": false,
+			"id": "7b37f474-1f64-473c-9e90-639fb1fc4ea8",
+			"locked": false,
+			"widgetInteractions": [
+				{
+					"widgetIdProvider": "05536912-ea8f-4c39-9bdd-aaa0fe8c7624",
+					"type": "resourceId",
+					"widgetIdReceiver": "de6c795b-fd2d-4419-b2ea-9b9aee4d52f8"
+				},
+				{
+					"widgetIdProvider": "05536912-ea8f-4c39-9bdd-aaa0fe8c7624",
+					"type": "resourceId",
+					"widgetIdReceiver": "23e9b300-4ad7-4ec5-840b-6b49cae8f090"
+				},
+				{
+					"widgetIdProvider": "05536912-ea8f-4c39-9bdd-aaa0fe8c7624",
+					"type": "resourceId",
+					"widgetIdReceiver": "13bc1dfd-43e7-46be-b67c-5138d0f60632"
+				},
+				{
+					"widgetIdProvider": "05536912-ea8f-4c39-9bdd-aaa0fe8c7624",
+					"type": "resourceId",
+					"widgetIdReceiver": "0ed2db47-9aca-4993-b465-3e7335e4e7f2"
+				},
+				{
+					"widgetIdProvider": "13bc1dfd-43e7-46be-b67c-5138d0f60632",
+					"type": "metricId",
+					"widgetIdReceiver": "0ed2db47-9aca-4993-b465-3e7335e4e7f2"
+				}
+			]
+		},
+		{
+			"autoswitchEnabled": false,
+			"columnCount": 2,
+			"columnProportion": "0.5-0.5",
+			"creationTime": 1551925043833,
+			"disabled": false,
+			"hidden": false,
+			"homeTab": false,
+			"id": "a735933f-3c0c-48af-acd3-d81940e522b9",
+			"importAttempts": 0,
+			"importComplete": true,
+			"isDefault": false,
+			"locked": false,
+			"name": "OpenSDS/Overviews/OpenSDS Storage Performance",
+			"namePath": "OpenSDS/Overviews",
+			"rank": 3,
+			"shared": true,
+			"temporary": false,
+			"userId": "38460dfb-24da-487d-b963-c264464a4b1c",
+			"widgetInteractions": [],
+			"widgets": [
+				{
+					"collapsed": false,
+					"config": {
+						"configs": [
+							{
+								"attributeKind": {
+									"id": "68",
+									"value": "CPUUsage"
+								},
+								"color": {
+									"endColor": "FF0000",
+									"maxValue": "100",
+									"middleColor": "888800",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "CPU Usage (%)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:9_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "69",
+									"value": "AverageCacheUsedRate"
+								},
+								"color": {
+									"endColor": "FF0000",
+									"maxValue": "100",
+									"middleColor": "888800",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Cache Usage (%)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:9_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "22",
+									"value": "Throughput"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "IOPS",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:9_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "21",
+									"value": "BandWidth"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Bandwidth (MB/s)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:9_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "370",
+									"value": "AverageIOResponseTimeUs"
+								},
+								"color": {
+									"endColor": "FF0000",
+									"maxValue": "120000",
+									"middleColor": "808000",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Lantency (us)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:9_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							}
+						],
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"refreshInterval": 300,
+						"title": "Controller",
+						"value": 0
+					},
+					"height": 300,
+					"id": "cd66eda6-cd5d-466e-b692-98b37b120f3e",
+					"states": [
+						{
+							"key": "perm_HeatMap_widget_a735933f-3c0c-48af-acd3-d81940e522b9_cd66eda6-cd5d-466e-b692-98b37b120f3e",
+							"value": "o%3A"
+						},
+						{
+							"key": "perm_toolbarVisible_widget_a735933f-3c0c-48af-acd3-d81940e522b9_cd66eda6-cd5d-466e-b692-98b37b120f3e",
+							"value": "b%3A1"
+						}
+					],
+					"title": "Controller",
+					"type": "Heatmap",
+					"x": 1,
+					"y": 1
+				},
+				{
+					"collapsed": false,
+					"config": {
+						"configs": [
+							{
+								"attributeKind": {
+									"id": "22",
+									"value": "Throughput"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "IOPS",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:7_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "21",
+									"value": "BandWidth"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Bandwidth (MB/s)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:7_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "370",
+									"value": "AverageIOResponseTimeUs"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Lantency (us)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:7_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							}
+						],
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"refreshInterval": 300,
+						"title": "DiskDomain",
+						"value": 2
+					},
+					"height": 300,
+					"id": "1d28d7a9-a636-4406-b9cd-710b2ea7ab8a",
+					"states": [
+						{
+							"key": "perm_toolbarVisible_widget_a735933f-3c0c-48af-acd3-d81940e522b9_1d28d7a9-a636-4406-b9cd-710b2ea7ab8a",
+							"value": "b%3A1"
+						},
+						{
+							"key": "perm_HeatMap_widget_a735933f-3c0c-48af-acd3-d81940e522b9_1d28d7a9-a636-4406-b9cd-710b2ea7ab8a",
+							"value": "o%3A"
+						}
+					],
+					"title": "DiskDomain",
+					"type": "Heatmap",
+					"x": 2,
+					"y": 1
+				},
+				{
+					"collapsed": false,
+					"config": {
+						"configs": [
+							{
+								"attributeKind": {
+									"id": "10003",
+									"value": "Capacity Usage Rate"
+								},
+								"color": {
+									"endColor": "FF0000",
+									"maxValue": "100",
+									"middleColor": "888800",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Capacity Usage (%)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:6_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "22",
+									"value": "Throughput"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "IOPS",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:6_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "21",
+									"value": "BandWidth"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Bandwidth (MB/s)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:6_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "370",
+									"value": "AverageIOResponseTimeUs"
+								},
+								"attributePaths": [
+									"/root/370"
+								],
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Lantency (us)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:6_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							}
+						],
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"refreshInterval": 300,
+						"title": "Pool",
+						"value": 3
+					},
+					"height": 300,
+					"id": "ff085800-4b03-45cb-86b9-bdb242829134",
+					"states": [
+						{
+							"key": "perm_HeatMap_widget_a735933f-3c0c-48af-acd3-d81940e522b9_ff085800-4b03-45cb-86b9-bdb242829134",
+							"value": "o%3A"
+						},
+						{
+							"key": "perm_toolbarVisible_widget_a735933f-3c0c-48af-acd3-d81940e522b9_ff085800-4b03-45cb-86b9-bdb242829134",
+							"value": "b%3A1"
+						}
+					],
+					"title": "Pool",
+					"type": "Heatmap",
+					"x": 1,
+					"y": 2
+				},
+				{
+					"collapsed": false,
+					"config": {
+						"configs": [
+							{
+								"attributeKind": {
+									"id": "22",
+									"value": "Throughput"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "IOPS",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:8_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "21",
+									"value": "BandWidth"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Bandwidth (MB/s)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:8_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "370",
+									"value": "AverageIOResponseTimeUs"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Lantency (us)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:8_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							}
+						],
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"refreshInterval": 300,
+						"title": "Disk",
+						"value": 2
+					},
+					"height": 300,
+					"id": "bad63e50-a579-49b7-8b51-bddbca988088",
+					"states": [
+						{
+							"key": "perm_HeatMap_widget_a735933f-3c0c-48af-acd3-d81940e522b9_bad63e50-a579-49b7-8b51-bddbca988088",
+							"value": "o%3A"
+						},
+						{
+							"key": "perm_toolbarVisible_widget_a735933f-3c0c-48af-acd3-d81940e522b9_bad63e50-a579-49b7-8b51-bddbca988088",
+							"value": "b%3A1"
+						}
+					],
+					"title": "Disk",
+					"type": "Heatmap",
+					"x": 2,
+					"y": 2
+				},
+				{
+					"collapsed": false,
+					"config": {
+						"configs": [
+							{
+								"attributeKind": {
+									"id": "303",
+									"value": "命中百分比"
+								},
+								"color": {
+									"endColor": "FF0000",
+									"maxValue": "100",
+									"middleColor": "888800",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"id": "extModel1062-1",
+								"mode": {
+									"mode": true
+								},
+								"name": "Cahce Hit Ratio (%)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:4_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "22",
+									"value": "吞吐量（IOPS）（IO/s）"
+								},
+								"color": {
+									"minValue": 0,
+									"thresholds": {
+										"colors": [
+											"#00FF00",
+											"#339966",
+											"#008000"
+										],
+										"values": [
+											0,
+											50,
+											100
+										]
+									}
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"focusOnGroups": false,
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "IOPS",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:4_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"solidColoring": false,
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "21",
+									"value": "带宽(MB/s)"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"id": "extModel1062-3",
+								"mode": {
+									"mode": true
+								},
+								"name": "Bandwidth (MB/s)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:4_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "370",
+									"value": "平均I/O响应时间 （us）"
+								},
+								"attributePaths": [
+									"/root/370"
+								],
+								"color": {
+									"maxValue": 120000,
+									"minValue": 0,
+									"thresholds": {
+										"colors": [
+											"#00FF00",
+											"#00FF00",
+											"#808000",
+											"#FF0000"
+										],
+										"values": [
+											0,
+											50,
+											100
+										]
+									}
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"focusOnGroups": false,
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"id": "extModel1292-1",
+								"mode": {
+									"mode": true
+								},
+								"name": "Lantency (us)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:4_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"solidColoring": false,
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							}
+						],
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"refreshInterval": 300,
+						"title": "LUN",
+						"value": 1
+					},
+					"height": 300,
+					"id": "3578e814-bb04-400d-b05b-875a9dd400f2",
+					"states": [
+						{
+							"key": "perm_HeatMap_widget_a735933f-3c0c-48af-acd3-d81940e522b9_3578e814-bb04-400d-b05b-875a9dd400f2",
+							"value": "o%3A"
+						},
+						{
+							"key": "perm_toolbarVisible_widget_a735933f-3c0c-48af-acd3-d81940e522b9_3578e814-bb04-400d-b05b-875a9dd400f2",
+							"value": "b%3A1"
+						}
+					],
+					"title": "LUN",
+					"type": "Heatmap",
+					"x": 1,
+					"y": 3
+				},
+				{
+					"collapsed": false,
+					"config": {
+						"configs": [
+							{
+								"attributeKind": {
+									"id": "182",
+									"value": "OPS（个/s）"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"id": "extModel1302-1",
+								"mode": {
+									"mode": true
+								},
+								"name": "OPS",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:5_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "23",
+									"value": "读带宽 （MB/s）"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"id": "extModel1302-2",
+								"mode": {
+									"mode": true
+								},
+								"name": "Read Bandwidth (MB/s)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:5_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "26",
+									"value": "写带宽（MB/s）"
+								},
+								"attributePaths": [
+									"/root/26"
+								],
+								"color": {
+									"minValue": 0,
+									"thresholds": {
+										"colors": [
+											"#00FF00",
+											"#339966",
+											"#008000"
+										],
+										"values": [
+											0,
+											50,
+											100
+										]
+									}
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"focusOnGroups": false,
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Write Bandwidth (MB/s)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:5_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"solidColoring": false,
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "464",
+									"value": "平均读OPS响应时间"
+								},
+								"color": {
+									"endColor": "FF0000",
+									"maxValue": "120000",
+									"middleColor": "808000",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"id": "extModel1302-4",
+								"mode": {
+									"mode": true
+								},
+								"name": "Read Lantency (us)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:5_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "465",
+									"value": "平均写OPS响应时间"
+								},
+								"color": {
+									"endColor": "FF0000",
+									"maxValue": "120000",
+									"middleColor": "808000",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"id": "extModel1302-5",
+								"mode": {
+									"mode": true
+								},
+								"name": "Write Lantency (us)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:5_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							}
+						],
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"refreshInterval": 300,
+						"title": "FileSystem",
+						"value": 2
+					},
+					"height": 300,
+					"id": "005585ce-1376-42cc-85da-05cfbe907f17",
+					"states": [
+						{
+							"key": "perm_toolbarVisible_widget_a735933f-3c0c-48af-acd3-d81940e522b9_005585ce-1376-42cc-85da-05cfbe907f17",
+							"value": "b%3A1"
+						},
+						{
+							"key": "perm_HeatMap_widget_a735933f-3c0c-48af-acd3-d81940e522b9_005585ce-1376-42cc-85da-05cfbe907f17",
+							"value": "o%3A"
+						}
+					],
+					"title": "FileSystem",
+					"type": "Heatmap",
+					"x": 2,
+					"y": 3
+				},
+				{
+					"collapsed": false,
+					"config": {
+						"configs": [
+							{
+								"attributeKind": {
+									"id": "22",
+									"value": "Throughput"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "IOPS",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:10_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "21",
+									"value": "BandWidth"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Bandwidth (MB/s)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:10_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "370",
+									"value": "AverageIOResponseTimeUs"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Lantency (us)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:10_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							}
+						],
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"refreshInterval": 300,
+						"title": "Host",
+						"value": 1
+					},
+					"height": 300,
+					"id": "2309b32f-e2a2-41d0-9d50-9b25260d1416",
+					"states": [
+						{
+							"key": "perm_toolbarVisible_widget_a735933f-3c0c-48af-acd3-d81940e522b9_2309b32f-e2a2-41d0-9d50-9b25260d1416",
+							"value": "b%3A1"
+						},
+						{
+							"key": "perm_HeatMap_widget_a735933f-3c0c-48af-acd3-d81940e522b9_2309b32f-e2a2-41d0-9d50-9b25260d1416",
+							"value": "o%3A"
+						}
+					],
+					"title": "Host",
+					"type": "Heatmap",
+					"x": 1,
+					"y": 4
+				},
+				{
+					"collapsed": false,
+					"config": {
+						"configs": [
+							{
+								"attributeKind": {
+									"id": "22",
+									"value": "Throughput"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "IOPS",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:11_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "21",
+									"value": "BandWidth"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Bandwidth (MB/s)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:11_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "370",
+									"value": "AverageIOResponseTimeUs"
+								},
+								"color": {
+									"endColor": "FF0000",
+									"maxValue": "120000",
+									"middleColor": "808000",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Lantency (us)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:11_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							}
+						],
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"refreshInterval": 300,
+						"title": "FC Port",
+						"value": 2
+					},
+					"height": 300,
+					"id": "3eb7d6ee-b4e2-4e6c-bc1c-95f06e010414",
+					"states": [
+						{
+							"key": "perm_toolbarVisible_widget_a735933f-3c0c-48af-acd3-d81940e522b9_3eb7d6ee-b4e2-4e6c-bc1c-95f06e010414",
+							"value": "b%3A1"
+						},
+						{
+							"key": "perm_HeatMap_widget_a735933f-3c0c-48af-acd3-d81940e522b9_3eb7d6ee-b4e2-4e6c-bc1c-95f06e010414",
+							"value": "o%3A"
+						}
+					],
+					"title": "FC Port",
+					"type": "Heatmap",
+					"x": 2,
+					"y": 4
+				},
+				{
+					"collapsed": false,
+					"config": {
+						"configs": [
+							{
+								"attributeKind": {
+									"id": "22",
+									"value": "Throughput"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "IOPS",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:12_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "21",
+									"value": "BandWidth"
+								},
+								"color": {
+									"endColor": "008000",
+									"maxValue": "",
+									"middleColor": "339966",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Bandwidth (MB/s)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:12_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							},
+							{
+								"attributeKind": {
+									"id": "370",
+									"value": "AverageIOResponseTimeUs"
+								},
+								"attributePaths": [
+									"/root/370"
+								],
+								"color": {
+									"endColor": "FF0000",
+									"maxValue": "120000",
+									"middleColor": "808000",
+									"minValue": "0",
+									"startColor": "00FF00"
+								},
+								"colorBy": {
+									"value": ""
+								},
+								"groupBy": {
+									"id": "015adapterInstancenull",
+									"originalText": "",
+									"parentId": "otherTypes",
+									"parentText": "",
+									"text": "Adapter Instance",
+									"type": "adapterInstance",
+									"typeId": null
+								},
+								"mode": {
+									"mode": true
+								},
+								"name": "Lantency (us)",
+								"relationalGrouping": false,
+								"resourceKind": "resourceKind:id:12_::_",
+								"sizeBy": {
+									"value": ""
+								},
+								"tagFilter": {
+									"path": [
+										"/source/adapterKind/adapterKind:adapterKind:id:0_::_"
+									],
+									"value": {
+										"adapterInstance": [],
+										"adapterKind": [
+											"adapterKind:id:0_::_"
+										],
+										"bus": [],
+										"collector": [],
+										"day": [],
+										"exclaim": false,
+										"healthRange": [],
+										"kind": [],
+										"maintenanceSchedule": [],
+										"state": [],
+										"status": [],
+										"tag": [],
+										"tier": []
+									}
+								},
+								"thenBy": null
+							}
+						],
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"refreshInterval": 300,
+						"title": "iSCSI Port",
+						"value": 2
+					},
+					"height": 300,
+					"id": "4d409e25-8bdc-43c9-b639-78d4cf0191c1",
+					"states": [
+						{
+							"key": "perm_HeatMap_widget_a735933f-3c0c-48af-acd3-d81940e522b9_4d409e25-8bdc-43c9-b639-78d4cf0191c1",
+							"value": "o%3A"
+						},
+						{
+							"key": "perm_toolbarVisible_widget_a735933f-3c0c-48af-acd3-d81940e522b9_4d409e25-8bdc-43c9-b639-78d4cf0191c1",
+							"value": "b%3A1"
+						}
+					],
+					"title": "iSCSI Port",
+					"type": "Heatmap",
+					"x": 1,
+					"y": 5
+				}
+			]
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/Troubleshooting",
+			"creationTime": 1479105027921,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "b5f50057-e0a3-4a74-80f4-18d3b46f2e7b",
+					"type": "ResourceList",
+					"title": "OpenSDS LUNs",
+					"config": {
+						"mode": {
+							"mode": 0
+						},
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:4_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:4_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selectFirstRow": {
+							"selectFirstRow": true
+						},
+						"title": "OpenSDS LUNs",
+						"additionalColumns": []
+					},
+					"height": 409,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah8%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah9%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah10%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah11%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah12%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah13%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah14%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah15%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah17%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah18%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah19%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah20%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah21%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah22%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah23%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah24%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah25%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah26%25255Ehidden%25253Db%2525253A1",
+							"key": "permResGrid_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_b5f50057-e0a3-4a74-80f4-18d3b46f2e7b"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "4ee99728-58cf-4fb0-b101-433f447bea18",
+					"type": "MetricPicker",
+					"title": "OpenSDS LUNs Metrics",
+					"config": {
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"title": "OpenSDS LUNs Metrics"
+					},
+					"height": 183,
+					"states": [
+						{
+							"value": "b%3A0",
+							"key": "permFetchCommonMetrics_permMetricPicker_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_4ee99728-58cf-4fb0-b101-433f447bea18"
+						},
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1",
+							"key": "permMetricPicker_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_4ee99728-58cf-4fb0-b101-433f447bea18"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchPropertyMetrics_permMetricPicker_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_4ee99728-58cf-4fb0-b101-433f447bea18"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCollectingMetrics_permMetricPicker_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_4ee99728-58cf-4fb0-b101-433f447bea18"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 2,
+					"id": "5d1ef959-5489-442a-88b5-f0b95c7d44a3",
+					"type": "MetricChart",
+					"title": "OpenSDS LUN Metric Chart",
+					"config": {
+						"resourceMetrics": [],
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS LUN Metric Chart",
+						"resInteractionMode": null
+					},
+					"height": 300,
+					"states": [
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_permMetricChart_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_5d1ef959-5489-442a-88b5-f0b95c7d44a3"
+						},
+						{
+							"value": "o%3A",
+							"key": "permMetricChart_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_5d1ef959-5489-442a-88b5-f0b95c7d44a3"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_metricChart_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_5d1ef959-5489-442a-88b5-f0b95c7d44a3"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 3,
+					"id": "96abe779-cd4a-4bf6-898b-ae7dd95987ff",
+					"type": "MetricPicker",
+					"title": "Virtual Machine Metrics",
+					"config": {
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"title": "Virtual Machine Metrics"
+					},
+					"height": 180,
+					"states": [
+						{
+							"value": "b%3A0",
+							"key": "permFetchCommonMetrics_permMetricPicker_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_96abe779-cd4a-4bf6-898b-ae7dd95987ff"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchPropertyMetrics_permMetricPicker_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_96abe779-cd4a-4bf6-898b-ae7dd95987ff"
+						},
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1",
+							"key": "permMetricPicker_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_96abe779-cd4a-4bf6-898b-ae7dd95987ff"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCollectingMetrics_permMetricPicker_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_96abe779-cd4a-4bf6-898b-ae7dd95987ff"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 4,
+					"id": "60e4ea9e-4d7c-4a27-bdca-2137d3a440df",
+					"type": "MetricChart",
+					"title": "Virtual Machine Metric Chart",
+					"config": {
+						"resourceMetrics": [],
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "Virtual Machine Metric Chart",
+						"resInteractionMode": null
+					},
+					"height": 300,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permMetricChart_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_60e4ea9e-4d7c-4a27-bdca-2137d3a440df"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_metricChart_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_60e4ea9e-4d7c-4a27-bdca-2137d3a440df"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_permMetricChart_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_60e4ea9e-4d7c-4a27-bdca-2137d3a440df"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "b7196e8b-a4a6-4cd0-826e-e8d9a39c9b96",
+					"type": "Skittles",
+					"title": "OpenSDS LUN Environment",
+					"config": {
+						"mode": "custom",
+						"badge": [
+							{
+								"badgeKey": "health",
+								"badgeName": "Health",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "workload",
+								"badgeName": "Workload",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "anomalies",
+								"badgeName": "Anomalies",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "faults",
+								"badgeName": "Faults",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "risk",
+								"badgeName": "Risk",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "timeRemaining",
+								"badgeName": "Time Remaining",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "capacity",
+								"badgeName": "Capacity Remaining",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "stress",
+								"badgeName": "Stress",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "efficiency",
+								"badgeName": "Efficiency",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "waste",
+								"badgeName": "Reclaimable Capacity",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "density",
+								"badgeName": "Density",
+								"show": true,
+								"label": null
+							}
+						],
+						"refreshInterval": 300,
+						"custom": [
+							{
+								"metricMapping": "",
+								"tagFilter": null,
+								"resourceKindType": "",
+								"resourceKindName": "Lun",
+								"resourceKindId": "resourceKind:id:4_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": null,
+								"resourceKindType": "",
+								"resourceKindName": "Datastore",
+								"resourceKindId": "resourceKind:id:2_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": "",
+								"resourceKindType": "",
+								"resourceKindName": "Virtual Machine",
+								"resourceKindId": "resourceKind:id:3_::_",
+								"resourceKindTypeName": ""
+							}
+						],
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"title": "OpenSDS LUN Environment"
+					},
+					"height": 574,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permSkittlesView_widget_0eb90caa-1d59-4e1c-a4ad-297f8471e91d_b7196e8b-a4a6-4cd0-826e-e8d9a39c9b96"
+						}
+					]
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/Troubleshooting/OpenSDS LUN Troubleshooting",
+			"rank": 4,
+			"disabled": false,
+			"id": "0eb90caa-1d59-4e1c-a4ad-297f8471e91d",
+			"locked": false,
+			"widgetInteractions": [
+				{
+					"widgetIdProvider": "b5f50057-e0a3-4a74-80f4-18d3b46f2e7b",
+					"type": "resourceId",
+					"widgetIdReceiver": "4ee99728-58cf-4fb0-b101-433f447bea18"
+				},
+				{
+					"widgetIdProvider": "4ee99728-58cf-4fb0-b101-433f447bea18",
+					"type": "metricId",
+					"widgetIdReceiver": "5d1ef959-5489-442a-88b5-f0b95c7d44a3"
+				},
+				{
+					"widgetIdProvider": "b7196e8b-a4a6-4cd0-826e-e8d9a39c9b96",
+					"type": "resourceId",
+					"widgetIdReceiver": "96abe779-cd4a-4bf6-898b-ae7dd95987ff"
+				},
+				{
+					"widgetIdProvider": "96abe779-cd4a-4bf6-898b-ae7dd95987ff",
+					"type": "metricId",
+					"widgetIdReceiver": "60e4ea9e-4d7c-4a27-bdca-2137d3a440df"
+				},
+				{
+					"widgetIdProvider": "b5f50057-e0a3-4a74-80f4-18d3b46f2e7b",
+					"type": "resourceId",
+					"widgetIdReceiver": "b7196e8b-a4a6-4cd0-826e-e8d9a39c9b96"
+				}
+			]
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/Troubleshooting",
+			"creationTime": 1479105027921,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.332-0.34-0.328",
+			"importComplete": true,
+			"columnCount": 3,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "5e476e71-1ac6-4c9b-90f0-19047e397a89",
+					"type": "ResourceList",
+					"title": "VM On OpenSDS Storage",
+					"config": {
+						"mode": {
+							"mode": 0
+						},
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:14_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:14_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selectFirstRow": {
+							"selectFirstRow": true
+						},
+						"title": "VM On OpenSDS Storage",
+						"additionalColumns": []
+					},
+					"height": 371,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah8%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah9%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah10%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah11%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah12%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah13%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah14%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah15%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah17%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah18%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah19%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah20%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah21%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah22%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah23%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah24%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah25%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah26%25255Ehidden%25253Db%2525253A1%5EstoreState%3Do%253Asorters%253Da%25253Ao%2525253Aroot%2525253Ds%252525253Adata%2525255Eproperty%2525253Ds%252525253AadapterKind%2525255Edirection%2525253Ds%252525253AASC",
+							"key": "permResGrid_widget_073c8821-0899-4c6e-94a2-6f360a8bcee5_5e476e71-1ac6-4c9b-90f0-19047e397a89"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "66ea0501-2d66-485b-896d-863c63b42fe7",
+					"type": "ResourceRelationship",
+					"title": "OpenSDS Health Tree",
+					"config": {
+						"tagFilter": null,
+						"nodeSize": null,
+						"refreshInterval": 300,
+						"autoZoom": {
+							"autoSize": false
+						},
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"resourceName": "",
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS Health Tree"
+					},
+					"height": 376,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permResourceRelationship_widget_073c8821-0899-4c6e-94a2-6f360a8bcee5_66ea0501-2d66-485b-896d-863c63b42fe7"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "d73d6d64-ffae-45c6-a285-d7123bdf281e",
+					"type": "Skittles",
+					"title": "OpenSDS VM Environment",
+					"config": {
+						"mode": "custom",
+						"badge": [
+							{
+								"badgeKey": "health",
+								"badgeName": "Health",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "workload",
+								"badgeName": "Workload",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "anomalies",
+								"badgeName": "Anomalies",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "faults",
+								"badgeName": "Faults",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "risk",
+								"badgeName": "Risk",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "timeRemaining",
+								"badgeName": "Time Remaining",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "capacity",
+								"badgeName": "Capacity Remaining",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "stress",
+								"badgeName": "Stress",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "compliance",
+								"badgeName": "Compliance",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "efficiency",
+								"badgeName": "Efficiency",
+								"show": false,
+								"label": null
+							},
+							{
+								"badgeKey": "waste",
+								"badgeName": "Reclaimable Capacity",
+								"show": true,
+								"label": null
+							},
+							{
+								"badgeKey": "density",
+								"badgeName": "Density",
+								"show": true,
+								"label": null
+							}
+						],
+						"refreshInterval": 300,
+						"custom": [
+							{
+								"metricMapping": "",
+								"tagFilter": null,
+								"resourceKindType": "",
+								"resourceKindName": "Datacenter",
+								"resourceKindId": "resourceKind:id:15_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": null,
+								"resourceKindType": "",
+								"resourceKindName": "Datastore",
+								"resourceKindId": "resourceKind:id:2_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": null,
+								"resourceKindType": "",
+								"resourceKindName": "Lun",
+								"resourceKindId": "resourceKind:id:4_::_",
+								"resourceKindTypeName": ""
+							},
+							{
+								"metricMapping": "",
+								"tagFilter": null,
+								"resourceKindType": "",
+								"resourceKindName": "VirtualMachine",
+								"resourceKindId": "resourceKind:id:14_::_",
+								"resourceKindTypeName": ""
+							}
+						],
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"title": "OpenSDS VM Environment"
+					},
+					"height": 758,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permSkittlesView_widget_073c8821-0899-4c6e-94a2-6f360a8bcee5_d73d6d64-ffae-45c6-a285-d7123bdf281e"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 3,
+					"y": 1,
+					"id": "a4eddccd-d246-469d-982d-67bb8ad3d553",
+					"type": "MetricPicker",
+					"title": "OpenSDS VM Metrics",
+					"config": {
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"title": "OpenSDS VM Metrics"
+					},
+					"height": 370,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1",
+							"key": "permMetricPicker_widget_073c8821-0899-4c6e-94a2-6f360a8bcee5_a4eddccd-d246-469d-982d-67bb8ad3d553"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCollectingMetrics_permMetricPicker_widget_073c8821-0899-4c6e-94a2-6f360a8bcee5_a4eddccd-d246-469d-982d-67bb8ad3d553"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCommonMetrics_permMetricPicker_widget_073c8821-0899-4c6e-94a2-6f360a8bcee5_a4eddccd-d246-469d-982d-67bb8ad3d553"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchPropertyMetrics_permMetricPicker_widget_073c8821-0899-4c6e-94a2-6f360a8bcee5_a4eddccd-d246-469d-982d-67bb8ad3d553"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 3,
+					"y": 2,
+					"id": "7cc3bcec-fcdb-4712-ab43-c6c0bad07b94",
+					"type": "MetricChart",
+					"title": "OpenSDS VM Metric Chart",
+					"config": {
+						"resourceMetrics": [],
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS VM Metric Chart",
+						"resInteractionMode": null
+					},
+					"height": 377,
+					"states": [
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_metricChart_widget_073c8821-0899-4c6e-94a2-6f360a8bcee5_7cc3bcec-fcdb-4712-ab43-c6c0bad07b94"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_permMetricChart_widget_073c8821-0899-4c6e-94a2-6f360a8bcee5_7cc3bcec-fcdb-4712-ab43-c6c0bad07b94"
+						},
+						{
+							"value": "o%3A",
+							"key": "permMetricChart_widget_073c8821-0899-4c6e-94a2-6f360a8bcee5_7cc3bcec-fcdb-4712-ab43-c6c0bad07b94"
+						}
+					]
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/Troubleshooting/OpenSDS Virtual Machine Troubleshooting",
+			"rank": 5,
+			"disabled": false,
+			"id": "073c8821-0899-4c6e-94a2-6f360a8bcee5",
+			"locked": false,
+			"widgetInteractions": [
+				{
+					"widgetIdProvider": "5e476e71-1ac6-4c9b-90f0-19047e397a89",
+					"type": "resourceId",
+					"widgetIdReceiver": "66ea0501-2d66-485b-896d-863c63b42fe7"
+				},
+				{
+					"widgetIdProvider": "5e476e71-1ac6-4c9b-90f0-19047e397a89",
+					"type": "resourceId",
+					"widgetIdReceiver": "d73d6d64-ffae-45c6-a285-d7123bdf281e"
+				},
+				{
+					"widgetIdProvider": "5e476e71-1ac6-4c9b-90f0-19047e397a89",
+					"type": "resourceId",
+					"widgetIdReceiver": "a4eddccd-d246-469d-982d-67bb8ad3d553"
+				},
+				{
+					"widgetIdProvider": "a4eddccd-d246-469d-982d-67bb8ad3d553",
+					"type": "metricId",
+					"widgetIdReceiver": "7cc3bcec-fcdb-4712-ab43-c6c0bad07b94"
+				}
+			]
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/Troubleshooting",
+			"creationTime": 1479105027921,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.332-0.34-0.328",
+			"importComplete": true,
+			"columnCount": 3,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "579d196a-f25f-48fa-bae2-83f16e499c84",
+					"type": "ResourceList",
+					"title": "OpenSDS Storage List",
+					"config": {
+						"mode": {
+							"mode": 0
+						},
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:0_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:0_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selectFirstRow": {
+							"selectFirstRow": true
+						},
+						"title": "OpenSDS Storage List",
+						"additionalColumns": []
+					},
+					"height": 366,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah8%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah9%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah10%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah11%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah12%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah13%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah14%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah15%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah17%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah18%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah19%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah20%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah21%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah22%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah23%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah24%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah25%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah26%25255Ehidden%25253Db%2525253A1",
+							"key": "permResGrid_widget_1c174c1e-e3fa-4dab-b8d2-89ac0525c5a0_579d196a-f25f-48fa-bae2-83f16e499c84"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 3,
+					"y": 1,
+					"id": "9e85a54e-39a2-4f90-be0c-89d2384fc1d8",
+					"type": "MetricPicker",
+					"title": "OpenSDS Storage Metrics",
+					"config": {
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"title": "OpenSDS Storage Metrics"
+					},
+					"height": 368,
+					"states": [
+						{
+							"value": "b%3A0",
+							"key": "permFetchCommonMetrics_permMetricPicker_widget_1c174c1e-e3fa-4dab-b8d2-89ac0525c5a0_9e85a54e-39a2-4f90-be0c-89d2384fc1d8"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCollectingMetrics_permMetricPicker_widget_1c174c1e-e3fa-4dab-b8d2-89ac0525c5a0_9e85a54e-39a2-4f90-be0c-89d2384fc1d8"
+						},
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1",
+							"key": "permMetricPicker_widget_1c174c1e-e3fa-4dab-b8d2-89ac0525c5a0_9e85a54e-39a2-4f90-be0c-89d2384fc1d8"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchPropertyMetrics_permMetricPicker_widget_1c174c1e-e3fa-4dab-b8d2-89ac0525c5a0_9e85a54e-39a2-4f90-be0c-89d2384fc1d8"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 3,
+					"y": 2,
+					"id": "db6c8f12-b1e1-4e17-83e0-12fe64f6edd8",
+					"type": "MetricChart",
+					"title": "OpenSDS Storage Metric Chart",
+					"config": {
+						"resourceMetrics": [],
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS Storage Metric Chart",
+						"resInteractionMode": null
+					},
+					"height": 378,
+					"states": [
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_metricChart_widget_1c174c1e-e3fa-4dab-b8d2-89ac0525c5a0_db6c8f12-b1e1-4e17-83e0-12fe64f6edd8"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_permMetricChart_widget_1c174c1e-e3fa-4dab-b8d2-89ac0525c5a0_db6c8f12-b1e1-4e17-83e0-12fe64f6edd8"
+						},
+						{
+							"value": "o%3A",
+							"key": "permMetricChart_widget_1c174c1e-e3fa-4dab-b8d2-89ac0525c5a0_db6c8f12-b1e1-4e17-83e0-12fe64f6edd8"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "6aca1df3-3631-4c73-8ce4-857ee1f35737",
+					"type": "ResourceRelationship",
+					"title": "Health Tree",
+					"config": {
+						"tagFilter": null,
+						"nodeSize": null,
+						"refreshInterval": 300,
+						"autoZoom": {
+							"autoSize": false
+						},
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"resourceName": "",
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "Health Tree"
+					},
+					"height": 755,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permResourceRelationship_widget_1c174c1e-e3fa-4dab-b8d2-89ac0525c5a0_6aca1df3-3631-4c73-8ce4-857ee1f35737"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "fd20ffe1-0394-4944-a7d2-b7f4cf33866f",
+					"type": "AlertList",
+					"title": "Alert List",
+					"config": {
+						"alertImpact": [],
+						"mode": "tagFilter",
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:0_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:0_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"criticalityLevel": [],
+						"periodLength": null,
+						"state": [],
+						"title": "Alert List",
+						"type": [],
+						"status": []
+					},
+					"height": 377,
+					"states": [
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last30Days%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateFilter_permAlertGrid_widget_1c174c1e-e3fa-4dab-b8d2-89ac0525c5a0_fd20ffe1-0394-4944-a7d2-b7f4cf33866f"
+						},
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%255Eo%25253Aid%25253Ds%2525253Ah8%255Eo%25253Aid%25253Ds%2525253Ah9%255Eo%25253Aid%25253Ds%2525253Ah10%255Eo%25253Aid%25253Ds%2525253Ah11%255Eo%25253Aid%25253Ds%2525253Ah12%255Eo%25253Aid%25253Ds%2525253Ah13%255Eo%25253Aid%25253Ds%2525253Ah14%255Eo%25253Aid%25253Ds%2525253Ah15%255Eo%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah17%255Eo%25253Aid%25253Ds%2525253Ah18",
+							"key": "permAlertGrid_widget_1c174c1e-e3fa-4dab-b8d2-89ac0525c5a0_fd20ffe1-0394-4944-a7d2-b7f4cf33866f"
+						}
+					]
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/Troubleshooting/OpenSDS Storage System Troubleshooting",
+			"rank": 6,
+			"disabled": false,
+			"id": "1c174c1e-e3fa-4dab-b8d2-89ac0525c5a0",
+			"locked": false,
+			"widgetInteractions": [
+				{
+					"widgetIdProvider": "579d196a-f25f-48fa-bae2-83f16e499c84",
+					"type": "resourceId",
+					"widgetIdReceiver": "9e85a54e-39a2-4f90-be0c-89d2384fc1d8"
+				},
+				{
+					"widgetIdProvider": "9e85a54e-39a2-4f90-be0c-89d2384fc1d8",
+					"type": "metricId",
+					"widgetIdReceiver": "db6c8f12-b1e1-4e17-83e0-12fe64f6edd8"
+				},
+				{
+					"widgetIdProvider": "579d196a-f25f-48fa-bae2-83f16e499c84",
+					"type": "resourceId",
+					"widgetIdReceiver": "6aca1df3-3631-4c73-8ce4-857ee1f35737"
+				},
+				{
+					"widgetIdProvider": "579d196a-f25f-48fa-bae2-83f16e499c84",
+					"type": "resourceId",
+					"widgetIdReceiver": "fd20ffe1-0394-4944-a7d2-b7f4cf33866f"
+				}
+			]
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/TOP-N",
+			"creationTime": 1479105027922,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "4d5b500c-ddf9-41f7-bd80-6b547d51065a",
+					"type": "ParetoAnalysis",
+					"title": "Lantency (us) - TOP-10 OpenSDS Pools",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Lantency (us) - TOP-10 OpenSDS Pools",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/370"
+								],
+								"value": "370"
+							},
+							"resourceKindId": [
+								"resourceKind:id:6_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "3fabf78e-a3e0-4487-9089-d9619c0684a0",
+					"type": "ParetoAnalysis",
+					"title": "Capacity Used (%) - TOP-10 OpenSDS Pools",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Capacity Used (%) - TOP-10 OpenSDS Pools",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/10003"
+								],
+								"value": "10003"
+							},
+							"resourceKindId": [
+								"resourceKind:id:6_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "056cf0f9-9d7a-4c63-87bb-0edaa045d94a",
+					"type": "ParetoAnalysis",
+					"title": "IOPS  - TOP-10 OpenSDS Pools",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "IOPS  - TOP-10 OpenSDS Pools",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/22"
+								],
+								"value": "22"
+							},
+							"resourceKindId": [
+								"resourceKind:id:6_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 2,
+					"id": "75c36714-dd4d-41b1-b352-4e3371a3f684",
+					"type": "ParetoAnalysis",
+					"title": "Bandwidth (MB/s) - TOP-10 OpenSDS Pools",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Bandwidth (MB/s) - TOP-10 OpenSDS Pools",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/21"
+								],
+								"value": "21"
+							},
+							"resourceKindId": [
+								"resourceKind:id:6_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Last 30 days",
+							"dateRange": "last30Days"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": false
+					},
+					"height": 300
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/TOP-N/OpenSDS TOP-N Pools",
+			"rank": 7,
+			"disabled": false,
+			"id": "4334c1b3-a2fe-4d0f-9396-49ac67cb2f6c",
+			"locked": false,
+			"widgetInteractions": []
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/TOP-N",
+			"creationTime": 1479105027922,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "afd8f52f-dd3f-47eb-aeb6-b69542ae8f1e",
+					"type": "ParetoAnalysis",
+					"title": "Lantency (us) - TOP-10 OpenSDS LUNs",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Lantency (us) - TOP-10 OpenSDS LUNs",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/370"
+								],
+								"value": "370"
+							},
+							"resourceKindId": [
+								"resourceKind:id:4_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "d757d662-f0b6-49d2-9746-729470f4cdda",
+					"type": "ParetoAnalysis",
+					"title": "IOPS - TOP-10 OpenSDS LUNs",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "IOPS - TOP-10 OpenSDS LUNs",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/22"
+								],
+								"value": "22"
+							},
+							"resourceKindId": [
+								"resourceKind:id:4_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "37548f46-33d3-430a-a665-4e36914c9190",
+					"type": "ParetoAnalysis",
+					"title": "Bandwidth (MB/s) - TOP-10 OpenSDS LUNs",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Bandwidth (MB/s) - TOP-10 OpenSDS LUNs",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/21"
+								],
+								"value": "21"
+							},
+							"resourceKindId": [
+								"resourceKind:id:4_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/TOP-N/OpenSDS TOP-N LUNs",
+			"rank": 8,
+			"disabled": false,
+			"id": "f58464be-cf3b-414f-b04c-fa1d1e93f63c",
+			"locked": false,
+			"widgetInteractions": []
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/TOP-N",
+			"creationTime": 1479105027922,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 3,
+					"id": "99128ade-b92e-4e81-8279-1912619b902a",
+					"type": "ParetoAnalysis",
+					"title": "OPS - TOP-10 OpenSDS FileSystems",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "OPS - TOP-10 OpenSDS FileSystems",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/182"
+								],
+								"value": "182"
+							},
+							"resourceKindId": [
+								"resourceKind:id:5_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "d838e1a0-e956-4405-ba09-915aa52e1189",
+					"type": "ParetoAnalysis",
+					"title": "Read Lantency (us) - TOP-10 OpenSDS FileSystems",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Read Lantency (us) - TOP-10 OpenSDS FileSystems",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/464"
+								],
+								"value": "464"
+							},
+							"resourceKindId": [
+								"resourceKind:id:5_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "bd3ec395-7ece-45e3-9bab-dd49246e5240",
+					"type": "ParetoAnalysis",
+					"title": "Write Lantency (us) - TOP-10 OpenSDS FileSystems",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Write Lantency (us) - TOP-10 OpenSDS FileSystems",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/465"
+								],
+								"value": "465"
+							},
+							"resourceKindId": [
+								"resourceKind:id:5_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "1810764e-ebd9-4bf2-9892-f8dc0f1dad07",
+					"type": "ParetoAnalysis",
+					"title": "Read Bandwidth (MB/s) - TOP-10 OpenSDS FileSystems",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Read Bandwidth (MB/s) - TOP-10 OpenSDS FileSystems",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/23"
+								],
+								"value": "23"
+							},
+							"resourceKindId": [
+								"resourceKind:id:5_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 2,
+					"id": "d1b54f51-3cc2-43fc-ab80-8de95defb31d",
+					"type": "ParetoAnalysis",
+					"title": "Write Bandwidth (MB/s) - TOP-10 OpenSDS FileSystems",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Write Bandwidth (MB/s) - TOP-10 OpenSDS FileSystems",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/26"
+								],
+								"value": "26"
+							},
+							"resourceKindId": [
+								"resourceKind:id:5_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/TOP-N/OpenSDS TOP-N FileSystems",
+			"rank": 9,
+			"disabled": false,
+			"id": "ce0407ba-2a3c-4532-852f-ff8ab5f6c29b",
+			"locked": false,
+			"widgetInteractions": []
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/TOP-N",
+			"creationTime": 1479105027922,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "80e804d4-b6a4-4e2c-ab94-a56c709f9fcf",
+					"type": "ParetoAnalysis",
+					"title": "Total Capacity (GB) - TOP-10 OpenSDS Storages",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Total Capacity (GB) - TOP-10 OpenSDS Storages",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/TotalCapacity"
+								],
+								"value": "TotalCapacity"
+							},
+							"resourceKindId": [
+								"resourceKind:id:0_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "8505bad1-3be8-4dbd-ab57-0fdf96a4bcea",
+					"type": "ParetoAnalysis",
+					"title": "Capacity Used (%) - TOP-10 OpenSDS Storages",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Capacity Used (%) - TOP-10 OpenSDS Storages",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/CapacityUsageRate"
+								],
+								"value": "CapacityUsageRate"
+							},
+							"resourceKindId": [
+								"resourceKind:id:0_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "3f4194ec-0787-4763-9524-9e6cc701b3ef",
+					"type": "ParetoAnalysis",
+					"title": "Capacity free(%) - TOP-10 OpenSDS Storages",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Capacity free(%) - TOP-10 OpenSDS Storages",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/CapacityFreeRate"
+								],
+								"value": "CapacityFreeRate"
+							},
+							"resourceKindId": [
+								"resourceKind:id:0_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/TOP-N/OpenSDS TOP-N Storage",
+			"rank": 10,
+			"disabled": false,
+			"id": "1fef7037-c9e7-47d5-bc76-61e246adf2ef",
+			"locked": false,
+			"widgetInteractions": []
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/TOP-N",
+			"creationTime": 1479105027922,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "fec8f2f3-cb75-4b66-a0e4-45b30e1f374b",
+					"type": "ParetoAnalysis",
+					"title": "Bandwidth (MB/s) - TOP-10 OpenSDS Disks",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Bandwidth (MB/s) - TOP-10 OpenSDS Disks",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/21"
+								],
+								"value": "21"
+							},
+							"resourceKindId": [
+								"resourceKind:id:8_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "ed343cf7-753e-41f0-bf00-81a106c891fb",
+					"type": "ParetoAnalysis",
+					"title": "Lantency (us) - TOP-10 OpenSDS Disks",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Lantency (us) - TOP-10 OpenSDS Disks",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/370"
+								],
+								"value": "370"
+							},
+							"resourceKindId": [
+								"resourceKind:id:8_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "f771b1bc-f244-4a66-9621-fcb2e0ba2ddc",
+					"type": "ParetoAnalysis",
+					"title": "IOPS - TOP-10 OpenSDS Disks",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "IOPS - TOP-10 OpenSDS Disks",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/22"
+								],
+								"value": "22"
+							},
+							"resourceKindId": [
+								"resourceKind:id:8_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/TOP-N/OpenSDS TOP-N Disks",
+			"rank": 11,
+			"disabled": false,
+			"id": "18eff749-8721-4b14-84e0-8d2f0bb61a2d",
+			"locked": false,
+			"widgetInteractions": []
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/TOP-N",
+			"creationTime": 1479105027922,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "6f2d9151-a725-47f3-b4d3-21f6287af8a2",
+					"type": "ParetoAnalysis",
+					"title": "Lantency (us) - TOP-10 OpenSDS FCPorts",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "mostHealthyApplications"
+							}
+						},
+						"title": "Lantency (us) - TOP-10 OpenSDS FCPorts",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/370"
+								],
+								"value": "370"
+							},
+							"resourceKindId": [
+								"resourceKind:id:11_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 2,
+					"id": "f5ca44ba-cb7d-45b0-8cea-a86979d22882",
+					"type": "ParetoAnalysis",
+					"title": "Lantency (us) - TOP-10 OpenSDS ISCSIPorts",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "mostHealthyApplications"
+							}
+						},
+						"title": "Lantency (us) - TOP-10 OpenSDS ISCSIPorts",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/370"
+								],
+								"value": "370"
+							},
+							"resourceKindId": [
+								"resourceKind:id:12_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "efed7e87-224b-4f3e-8f0c-b83cc0562013",
+					"type": "ParetoAnalysis",
+					"title": "IOPS - TOP-10 OpenSDS FCPorts",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "IOPS - TOP-10 OpenSDS FCPorts",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/22"
+								],
+								"value": "22"
+							},
+							"resourceKindId": [
+								"resourceKind:id:11_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "058cdfd5-1545-4d05-bf52-a2e7b31e5f91",
+					"type": "ParetoAnalysis",
+					"title": "IOPS - TOP-10 OpenSDS ISCSIPorts",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "IOPS - TOP-10 OpenSDS ISCSIPorts",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/22"
+								],
+								"value": "22"
+							},
+							"resourceKindId": [
+								"resourceKind:id:12_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 3,
+					"id": "e75fd110-2eb3-47b9-804e-c1ba84fde46a",
+					"type": "ParetoAnalysis",
+					"title": "Bandwidth (MB/s) - TOP-10 OpenSDS FCPorts",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Bandwidth (MB/s) - TOP-10 OpenSDS FCPorts",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/21"
+								],
+								"value": "21"
+							},
+							"resourceKindId": [
+								"resourceKind:id:11_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 3,
+					"id": "8e5bc5d3-8134-477e-8152-78f3f9b1d276",
+					"type": "ParetoAnalysis",
+					"title": "Bandwidth (MB/s) - TOP-10 OpenSDS ISCSIPorts",
+					"config": {
+						"regenerationTime": 15,
+						"barsCount": 10,
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"tagOption": {
+							"tagFilter": null,
+							"value": {
+								"tagOption": "leastHealthyApplications"
+							}
+						},
+						"title": "Bandwidth (MB/s) - TOP-10 OpenSDS ISCSIPorts",
+						"mode": "metric",
+						"filterMode": "tagFilter",
+						"depth": 10,
+						"metricOption": {
+							"tagFilter": null,
+							"metricInfo": {
+								"path": [
+									"/source/21"
+								],
+								"value": "21"
+							},
+							"resourceKindId": [
+								"resourceKind:id:12_::_"
+							],
+							"value": {
+								"metricOption": "metricsHighestUtilization"
+							}
+						},
+						"periodLength": {
+							"dateRangeText": "Current Value",
+							"dateRange": "currentValue"
+						},
+						"selfProvider": {
+							"selfProvider": true
+						},
+						"filterOldMetrics": {
+							"filterOldMetrics": false
+						}
+					},
+					"height": 300
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/TOP-N/OpenSDS TOP-N Ports",
+			"rank": 12,
+			"disabled": false,
+			"id": "ea89209f-aedf-4a4b-9a8d-43f49c20f565",
+			"locked": false,
+			"widgetInteractions": []
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/Advanced Features",
+			"creationTime": 1479105027922,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "3b228635-c0fd-4f88-aa22-ee3700feec0b",
+					"type": "ResourceList",
+					"title": "SmartQos List",
+					"config": {
+						"mode": {
+							"mode": 0
+						},
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:16_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:16_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selectFirstRow": {
+							"selectFirstRow": true
+						},
+						"title": "SmartQos List",
+						"additionalColumns": []
+					},
+					"height": 371,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah8%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah9%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah10%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah11%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah12%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah13%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah14%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah15%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah17%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah18%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah19%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah20%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah21%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah22%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah23%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah24%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah25%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah26%25255Ehidden%25253Db%2525253A1",
+							"key": "permResGrid_widget_a9f10325-f58c-483b-8aa5-d4205bbfd1e8_3b228635-c0fd-4f88-aa22-ee3700feec0b"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "6df119f5-68ed-47a9-91d1-0ea940194fa9",
+					"type": "MetricPicker",
+					"title": "OpenSDS SmartQos Metrics",
+					"config": {
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"title": "OpenSDS SmartQos Metrics"
+					},
+					"height": 370,
+					"states": [
+						{
+							"value": "b%3A0",
+							"key": "permFetchCommonMetrics_permMetricPicker_widget_a9f10325-f58c-483b-8aa5-d4205bbfd1e8_6df119f5-68ed-47a9-91d1-0ea940194fa9"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCollectingMetrics_permMetricPicker_widget_a9f10325-f58c-483b-8aa5-d4205bbfd1e8_6df119f5-68ed-47a9-91d1-0ea940194fa9"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchPropertyMetrics_permMetricPicker_widget_a9f10325-f58c-483b-8aa5-d4205bbfd1e8_6df119f5-68ed-47a9-91d1-0ea940194fa9"
+						},
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1",
+							"key": "permMetricPicker_widget_a9f10325-f58c-483b-8aa5-d4205bbfd1e8_6df119f5-68ed-47a9-91d1-0ea940194fa9"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 2,
+					"id": "6027e641-eeb4-4f7b-90f1-f264f8cc35a0",
+					"type": "MetricChart",
+					"title": "OpenSDS SmartQos Metric Chart",
+					"config": {
+						"resourceMetrics": [],
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS SmartQos Metric Chart",
+						"resInteractionMode": null
+					},
+					"height": 374,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permMetricChart_widget_a9f10325-f58c-483b-8aa5-d4205bbfd1e8_6027e641-eeb4-4f7b-90f1-f264f8cc35a0"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_permMetricChart_widget_a9f10325-f58c-483b-8aa5-d4205bbfd1e8_6027e641-eeb4-4f7b-90f1-f264f8cc35a0"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_metricChart_widget_a9f10325-f58c-483b-8aa5-d4205bbfd1e8_6027e641-eeb4-4f7b-90f1-f264f8cc35a0"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "f3ee0fb4-5e63-4619-b0cc-67417bea985f",
+					"type": "ResourceRelationship",
+					"title": "OpenSDS Health Tree",
+					"config": {
+						"tagFilter": null,
+						"nodeSize": null,
+						"refreshInterval": 300,
+						"autoZoom": {
+							"autoSize": false
+						},
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"resourceName": "",
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS Health Tree"
+					},
+					"height": 374,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permResourceRelationship_widget_a9f10325-f58c-483b-8aa5-d4205bbfd1e8_f3ee0fb4-5e63-4619-b0cc-67417bea985f"
+						}
+					]
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/Advanced Features/OpenSDS SmartQos",
+			"rank": 13,
+			"disabled": false,
+			"id": "a9f10325-f58c-483b-8aa5-d4205bbfd1e8",
+			"locked": false,
+			"widgetInteractions": [
+				{
+					"widgetIdProvider": "3b228635-c0fd-4f88-aa22-ee3700feec0b",
+					"type": "resourceId",
+					"widgetIdReceiver": "6df119f5-68ed-47a9-91d1-0ea940194fa9"
+				},
+				{
+					"widgetIdProvider": "6df119f5-68ed-47a9-91d1-0ea940194fa9",
+					"type": "metricId",
+					"widgetIdReceiver": "6027e641-eeb4-4f7b-90f1-f264f8cc35a0"
+				},
+				{
+					"widgetIdProvider": "3b228635-c0fd-4f88-aa22-ee3700feec0b",
+					"type": "resourceId",
+					"widgetIdReceiver": "f3ee0fb4-5e63-4619-b0cc-67417bea985f"
+				}
+			]
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/Advanced Features",
+			"creationTime": 1479105027922,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "df4cc4a2-1e93-4959-a634-6f7cf079ddaa",
+					"type": "ResourceList",
+					"title": "SmartPartition List",
+					"config": {
+						"mode": {
+							"mode": 0
+						},
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:17_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:17_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selectFirstRow": {
+							"selectFirstRow": true
+						},
+						"title": "SmartPartition List",
+						"additionalColumns": []
+					},
+					"height": 370,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah8%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah9%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah10%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah11%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah12%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah13%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah14%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah15%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah17%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah18%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah19%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah20%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah21%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah22%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah23%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah24%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah25%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah26%25255Ehidden%25253Db%2525253A1%5EstoreState%3Do%253Asorters%253Da%25253Ao%2525253Aroot%2525253Ds%252525253Adata%2525255Eproperty%2525253Ds%252525253AresourceKind%2525255Edirection%2525253Ds%252525253AASC",
+							"key": "permResGrid_widget_dc323693-c5bc-4bec-8790-36ad3ed05655_df4cc4a2-1e93-4959-a634-6f7cf079ddaa"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "86643411-8f05-4079-8993-532f20d5a86e",
+					"type": "MetricPicker",
+					"title": "OpenSDS SmartPartition Metrics",
+					"config": {
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"title": "OpenSDS SmartPartition Metrics"
+					},
+					"height": 369,
+					"states": [
+						{
+							"value": "b%3A0",
+							"key": "permFetchPropertyMetrics_permMetricPicker_widget_dc323693-c5bc-4bec-8790-36ad3ed05655_86643411-8f05-4079-8993-532f20d5a86e"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCommonMetrics_permMetricPicker_widget_dc323693-c5bc-4bec-8790-36ad3ed05655_86643411-8f05-4079-8993-532f20d5a86e"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCollectingMetrics_permMetricPicker_widget_dc323693-c5bc-4bec-8790-36ad3ed05655_86643411-8f05-4079-8993-532f20d5a86e"
+						},
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1",
+							"key": "permMetricPicker_widget_dc323693-c5bc-4bec-8790-36ad3ed05655_86643411-8f05-4079-8993-532f20d5a86e"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 2,
+					"id": "db967852-48ee-4200-86d3-3d1f58f9c69a",
+					"type": "MetricChart",
+					"title": "OpenSDS SmartPartition Metric Chart",
+					"config": {
+						"resourceMetrics": [],
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS SmartPartition Metric Chart",
+						"resInteractionMode": null
+					},
+					"height": 376,
+					"states": [
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_metricChart_widget_dc323693-c5bc-4bec-8790-36ad3ed05655_db967852-48ee-4200-86d3-3d1f58f9c69a"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_permMetricChart_widget_dc323693-c5bc-4bec-8790-36ad3ed05655_db967852-48ee-4200-86d3-3d1f58f9c69a"
+						},
+						{
+							"value": "o%3A",
+							"key": "permMetricChart_widget_dc323693-c5bc-4bec-8790-36ad3ed05655_db967852-48ee-4200-86d3-3d1f58f9c69a"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "dcb9758f-fa61-43c9-96e2-d49de13e5c7c",
+					"type": "ResourceRelationship",
+					"title": "OpenSDS Health Tree",
+					"config": {
+						"tagFilter": null,
+						"nodeSize": null,
+						"refreshInterval": 300,
+						"autoZoom": {
+							"autoSize": false
+						},
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"resourceName": "",
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS Health Tree"
+					},
+					"height": 375,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permResourceRelationship_widget_dc323693-c5bc-4bec-8790-36ad3ed05655_dcb9758f-fa61-43c9-96e2-d49de13e5c7c"
+						}
+					]
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/Advanced Features/OpenSDS SmartPartition",
+			"rank": 14,
+			"disabled": false,
+			"id": "dc323693-c5bc-4bec-8790-36ad3ed05655",
+			"locked": false,
+			"widgetInteractions": [
+				{
+					"widgetIdProvider": "df4cc4a2-1e93-4959-a634-6f7cf079ddaa",
+					"type": "resourceId",
+					"widgetIdReceiver": "86643411-8f05-4079-8993-532f20d5a86e"
+				},
+				{
+					"widgetIdProvider": "86643411-8f05-4079-8993-532f20d5a86e",
+					"type": "metricId",
+					"widgetIdReceiver": "db967852-48ee-4200-86d3-3d1f58f9c69a"
+				},
+				{
+					"widgetIdProvider": "df4cc4a2-1e93-4959-a634-6f7cf079ddaa",
+					"type": "resourceId",
+					"widgetIdReceiver": "dcb9758f-fa61-43c9-96e2-d49de13e5c7c"
+				}
+			]
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/Advanced Features",
+			"creationTime": 1479105027922,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "565ec088-a41a-4cf8-8091-5b34a39c6571",
+					"type": "ResourceList",
+					"title": "Snapshot List",
+					"config": {
+						"mode": {
+							"mode": 0
+						},
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:18_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:18_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selectFirstRow": {
+							"selectFirstRow": true
+						},
+						"title": "Snapshot List",
+						"additionalColumns": []
+					},
+					"height": 371,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah8%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah9%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah10%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah11%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah12%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah13%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah14%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah15%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah17%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah18%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah19%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah20%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah21%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah22%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah23%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah24%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah25%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah26%25255Ehidden%25253Db%2525253A1",
+							"key": "permResGrid_widget_2714ad3c-ab5e-4553-8dec-bba372a5faf1_565ec088-a41a-4cf8-8091-5b34a39c6571"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "30e66118-4eca-407f-baf1-18d550b03900",
+					"type": "MetricPicker",
+					"title": "OpenSDS Snapshot Metrics",
+					"config": {
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"title": "OpenSDS Snapshot Metrics"
+					},
+					"height": 370,
+					"states": [
+						{
+							"value": "b%3A0",
+							"key": "permFetchPropertyMetrics_permMetricPicker_widget_2714ad3c-ab5e-4553-8dec-bba372a5faf1_30e66118-4eca-407f-baf1-18d550b03900"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCollectingMetrics_permMetricPicker_widget_2714ad3c-ab5e-4553-8dec-bba372a5faf1_30e66118-4eca-407f-baf1-18d550b03900"
+						},
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1",
+							"key": "permMetricPicker_widget_2714ad3c-ab5e-4553-8dec-bba372a5faf1_30e66118-4eca-407f-baf1-18d550b03900"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCommonMetrics_permMetricPicker_widget_2714ad3c-ab5e-4553-8dec-bba372a5faf1_30e66118-4eca-407f-baf1-18d550b03900"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 2,
+					"id": "46953494-0cc6-43ec-9deb-22c7f4b8483d",
+					"type": "MetricChart",
+					"title": "OpenSDS Snapshot Metric Chart",
+					"config": {
+						"resourceMetrics": [],
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS Snapshot Metric Chart",
+						"resInteractionMode": null
+					},
+					"height": 376,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permMetricChart_widget_2714ad3c-ab5e-4553-8dec-bba372a5faf1_46953494-0cc6-43ec-9deb-22c7f4b8483d"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_permMetricChart_widget_2714ad3c-ab5e-4553-8dec-bba372a5faf1_46953494-0cc6-43ec-9deb-22c7f4b8483d"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_metricChart_widget_2714ad3c-ab5e-4553-8dec-bba372a5faf1_46953494-0cc6-43ec-9deb-22c7f4b8483d"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "1893d5e2-30ed-4e6b-9a57-58c1fb021ed2",
+					"type": "ResourceRelationship",
+					"title": "OpenSDS Health Tree",
+					"config": {
+						"tagFilter": null,
+						"nodeSize": null,
+						"refreshInterval": 300,
+						"autoZoom": {
+							"autoSize": false
+						},
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"resourceName": "",
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS Health Tree"
+					},
+					"height": 376,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permResourceRelationship_widget_2714ad3c-ab5e-4553-8dec-bba372a5faf1_1893d5e2-30ed-4e6b-9a57-58c1fb021ed2"
+						}
+					]
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/Advanced Features/OpenSDS Snapshot",
+			"rank": 15,
+			"disabled": false,
+			"id": "2714ad3c-ab5e-4553-8dec-bba372a5faf1",
+			"locked": false,
+			"widgetInteractions": [
+				{
+					"widgetIdProvider": "565ec088-a41a-4cf8-8091-5b34a39c6571",
+					"type": "resourceId",
+					"widgetIdReceiver": "30e66118-4eca-407f-baf1-18d550b03900"
+				},
+				{
+					"widgetIdProvider": "30e66118-4eca-407f-baf1-18d550b03900",
+					"type": "metricId",
+					"widgetIdReceiver": "46953494-0cc6-43ec-9deb-22c7f4b8483d"
+				},
+				{
+					"widgetIdProvider": "565ec088-a41a-4cf8-8091-5b34a39c6571",
+					"type": "resourceId",
+					"widgetIdReceiver": "1893d5e2-30ed-4e6b-9a57-58c1fb021ed2"
+				}
+			]
+		},
+		{
+			"shared": false,
+			"temporary": false,
+			"namePath": "OpenSDS/Advanced Features",
+			"creationTime": 1479105027922,
+			"autoswitchEnabled": false,
+			"importAttempts": 1,
+			"columnProportion": "0.5-0.5",
+			"importComplete": true,
+			"columnCount": 2,
+			"widgets": [
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 1,
+					"id": "d66b08ef-87fa-4181-89d1-9ddeff804594",
+					"type": "ResourceList",
+					"title": "Remote Replication List",
+					"config": {
+						"mode": {
+							"mode": 0
+						},
+						"tagFilter": {
+							"path": [
+								"/source/kind/kind:resourceKind:id:19_::_"
+							],
+							"value": {
+								"bus": [],
+								"adapterKind": [],
+								"kind": [
+									"resourceKind:id:19_::_"
+								],
+								"exclaim": false,
+								"healthRange": [],
+								"maintenanceSchedule": [],
+								"adapterInstance": [],
+								"collector": [],
+								"tier": [],
+								"state": [],
+								"tag": [],
+								"day": [],
+								"status": []
+							}
+						},
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selectFirstRow": {
+							"selectFirstRow": true
+						},
+						"title": "Remote Replication List",
+						"additionalColumns": []
+					},
+					"height": 371,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1%255Eo%25253Aid%25253Ds%2525253Ah2%255Eo%25253Aid%25253Ds%2525253Ah3%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah4%255Eo%25253Aid%25253Ds%2525253Ah5%255Eo%25253Aid%25253Ds%2525253Ah6%255Eo%25253Aid%25253Ds%2525253Ah7%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah8%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah9%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah10%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah11%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah12%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah13%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah14%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah15%25255Ehidden%25253Db%2525253A0%255Eo%25253Aid%25253Ds%2525253Ah16%255Eo%25253Aid%25253Ds%2525253Ah17%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah18%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah19%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah20%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah21%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah22%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah23%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah24%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah25%25255Ehidden%25253Db%2525253A1%255Eo%25253Aid%25253Ds%2525253Ah26%25255Ehidden%25253Db%2525253A1",
+							"key": "permResGrid_widget_b1a6b222-a530-4ad3-afa9-7ab3d5b03f20_d66b08ef-87fa-4181-89d1-9ddeff804594"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 1,
+					"y": 2,
+					"id": "bf3f72f1-d1c2-4360-a485-55db1a24dc9b",
+					"type": "ResourceRelationship",
+					"title": "OpenSDS Health Tree",
+					"config": {
+						"tagFilter": null,
+						"nodeSize": null,
+						"refreshInterval": 300,
+						"autoZoom": {
+							"autoSize": false
+						},
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"resourceName": "",
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS Health Tree"
+					},
+					"height": 376,
+					"states": [
+						{
+							"value": "o%3A",
+							"key": "permResourceRelationship_widget_b1a6b222-a530-4ad3-afa9-7ab3d5b03f20_bf3f72f1-d1c2-4360-a485-55db1a24dc9b"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 1,
+					"id": "8f991806-413e-4ccc-b8a5-dc7103bf457d",
+					"type": "MetricPicker",
+					"title": "OpenSDS Replication Metrics",
+					"config": {
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": false
+						},
+						"title": "OpenSDS Replication Metrics"
+					},
+					"height": 370,
+					"states": [
+						{
+							"value": "o%3Acolumns%3Da%253Ao%25253Aid%25253Ds%2525253Ah1",
+							"key": "permMetricPicker_widget_b1a6b222-a530-4ad3-afa9-7ab3d5b03f20_8f991806-413e-4ccc-b8a5-dc7103bf457d"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCollectingMetrics_permMetricPicker_widget_b1a6b222-a530-4ad3-afa9-7ab3d5b03f20_8f991806-413e-4ccc-b8a5-dc7103bf457d"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchCommonMetrics_permMetricPicker_widget_b1a6b222-a530-4ad3-afa9-7ab3d5b03f20_8f991806-413e-4ccc-b8a5-dc7103bf457d"
+						},
+						{
+							"value": "b%3A0",
+							"key": "permFetchPropertyMetrics_permMetricPicker_widget_b1a6b222-a530-4ad3-afa9-7ab3d5b03f20_8f991806-413e-4ccc-b8a5-dc7103bf457d"
+						}
+					]
+				},
+				{
+					"collapsed": false,
+					"x": 2,
+					"y": 2,
+					"id": "b91941d2-218a-4b26-a376-04f004fc3112",
+					"type": "MetricChart",
+					"title": "OpenSDS Replication Metric Chart",
+					"config": {
+						"resourceMetrics": [],
+						"refreshInterval": 300,
+						"refreshContent": {
+							"refreshContent": true
+						},
+						"selfProvider": {
+							"selfProvider": false
+						},
+						"title": "OpenSDS Replication Metric Chart",
+						"resInteractionMode": null
+					},
+					"height": 375,
+					"states": [
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_metricChart_widget_b1a6b222-a530-4ad3-afa9-7ab3d5b03f20_b91941d2-218a-4b26-a376-04f004fc3112"
+						},
+						{
+							"value": "s%3A%7B%22dateRange%22%3A%22last6Hour%22%2C%22dateFrom%22%3Anull%2C%22dateTo%22%3Anull%2C%22timeFrom%22%3Anull%2C%22timeTo%22%3Anull%7D",
+							"key": "permDateRange1_permMetricChart_widget_b1a6b222-a530-4ad3-afa9-7ab3d5b03f20_b91941d2-218a-4b26-a376-04f004fc3112"
+						},
+						{
+							"value": "o%3A",
+							"key": "permMetricChart_widget_b1a6b222-a530-4ad3-afa9-7ab3d5b03f20_b91941d2-218a-4b26-a376-04f004fc3112"
+						}
+					]
+				}
+			],
+			"userId": "a0eb0a25-d049-45c5-b86a-b0a8b987f350",
+			"isDefault": false,
+			"name": "OpenSDS/Advanced Features/OpenSDS Replication",
+			"rank": 16,
+			"disabled": false,
+			"id": "b1a6b222-a530-4ad3-afa9-7ab3d5b03f20",
+			"locked": false,
+			"widgetInteractions": [
+				{
+					"widgetIdProvider": "d66b08ef-87fa-4181-89d1-9ddeff804594",
+					"type": "resourceId",
+					"widgetIdReceiver": "bf3f72f1-d1c2-4360-a485-55db1a24dc9b"
+				},
+				{
+					"widgetIdProvider": "d66b08ef-87fa-4181-89d1-9ddeff804594",
+					"type": "resourceId",
+					"widgetIdReceiver": "8f991806-413e-4ccc-b8a5-dc7103bf457d"
+				},
+				{
+					"widgetIdProvider": "8f991806-413e-4ccc-b8a5-dc7103bf457d",
+					"type": "metricId",
+					"widgetIdReceiver": "b91941d2-218a-4b26-a376-04f004fc3112"
+				}
+			]
+		}
+	],
+	"uuid": "554150fc-a38e-401b-9bc1-552ee23203c1"
+}

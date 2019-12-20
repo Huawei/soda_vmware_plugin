@@ -1,0 +1,6 @@
+#Mon, 04 Nov 2019 20:48:29 +0800
+
+Major-Version=1
+Minor-Version=0
+Implementation-Version=0
+Vcops_Minimum_Version=6.0.0

@@ -1,0 +1,458 @@
+//===========================================================================
+//
+//  File Name:    Setup.rul
+//
+//  Description:  Blank setup main script file
+//
+//  Comments:     Blank setup is an empty setup project. If you want to
+//				  create a new project via. step-by step instructions use the
+//				  Project Assistant.
+//
+//===========================================================================
+
+// Included header files ----------------------------------------------------  
+BOOL isSupportNFS;
+BOOL isSupportStretched;  
+BOOL isFusionStorage;
+#include "ifx.h"
+
+// Note: In order to have your InstallScript function executed as a custom
+// action by the Windows Installer, it must be prototyped as an 
+// entry-point function.
+
+// The keyword export identifies MyFunction() as an entry-point function.
+// The argument it accepts must be a handle to the Installer database.
+    
+/* export prototype MyFunction(HWND); */ 
+ export prototype CreateUninstallShortCut();
+ 
+function CreateUninstallShortCut()
+STRING  strCmdLine, strProductFolder;
+LIST  lstPath;
+begin 
+    strCmdLine = UNINSTALL_STRING;  
+    strProductFolder = "OpenSDS";
+    
+    lstPath = ListCreate( STRINGLIST );  
+    StrGetTokens( lstPath, UNINSTALL_STRING, "/" );    
+
+    ListGetFirstString( lstPath, strCmdLine );  
+    LongPathToQuote( strCmdLine, TRUE );    
+    
+    strCmdLine = strCmdLine + "/M" + PRODUCT_GUID;
+    
+    // Create the shortcut. 
+    AddFolderIcon(strProductFolder, "Uninstall OpenSDS_Storage_SRA",strCmdLine, "","",0, "", NULL );      
+end;      
+
+//---------------------------------------------------------------------------
+// OnFirstUIBefore
+//
+// The OnFirstUIBefore event is called by the framework when the setup is
+// running in first install mode. By default this event displays UI allowing
+// the end user to specify installation parameters.
+//---------------------------------------------------------------------------
+function OnFirstUIBefore()
+    NUMBER nResult, nSetupType, nvSize, nUser, nvType,nValue;
+    STRING szTitle, szMsg, szQuestion, svName, svCompany, szFile, svDir, szDir, szText1, szText2, szText3;
+    STRING szLicenseFile;  
+    STRING szOpt1,szOpt2;
+	BOOL bCustom, bIgnore1, bIgnore2,bLicenseAccepted,nvCheck1;
+	NUMBER  nvFileHandle;    
+begin	
+    if( REMOVEONLY ) then
+        Disable( DIALOGCACHE );
+		szMsg = SdLoadString( IDS_IFX_ERROR_PRODUCT_NOT_INSTALLED_UNINST );
+   		SdSubstituteProductInfo( szMsg );
+		MessageBox( szMsg, SEVERE );
+		abort;
+    endif;
+    
+	nSetupType = TYPICAL;	
+    isSupportNFS = FALSE;
+	isSupportStretched = FALSE;
+	isFusionStorage = FALSE;
+Dlg_SdWelcome:
+    szTitle = "";
+    szMsg   = "";
+    nResult = SdWelcome(szTitle, szMsg);
+    if (nResult = BACK) goto Dlg_SdWelcome;
+	
+	szTitle   = "";
+	svName    = "";
+    svCompany = ""; 
+    
+Dlg_SdLicense2: 
+        szTitle = ""; 
+        szOpt1 = ""; 
+        szOpt2 = "";  
+        szLicenseFile = "License.txt"; 
+  
+        nResult = SdLicense2(szTitle,szOpt1,szOpt2,szLicenseFile,bLicenseAccepted); 
+        
+        if(nResult = BACK) then 
+                goto   Dlg_SdWelcome; 
+        else 
+                bLicenseAccepted   =   TRUE; 
+        endif;     
+Dlg_AskOptions :
+    szMsg = "Select from the options below."; 
+    szText1 = "support NFS"; 
+	szText2 = "support Stretched";
+	szText3 = "is FusionStorage"; 
+    nValue = NONEXCLUSIVE; 
+    nResult = AskOptions (nValue, szMsg, 
+               szText1, isSupportNFS,
+			   szText2, isSupportStretched,
+			   szText3, isFusionStorage); 
+    if(isSupportNFS = TRUE) then
+    	isSupportNFS = TRUE;
+    else
+    	isSupportNFS = FALSE;
+    endif;
+ 
+    if(isSupportStretched = TRUE) then
+    	isSupportStretched = TRUE;
+    else
+    	isSupportStretched = FALSE;
+    endif;
+    
+    if(isFusionStorage = TRUE) then
+    	isFusionStorage = TRUE;
+    else
+    	isFusionStorage = FALSE;
+    endif;
+    if(nResult = BACK) goto Dlg_SdLicense2; 
+    
+Dlg_SdAskDestPath:  
+	szTitle = "";
+    szMsg   = "";
+                                            
+    if (SYSINFO.bIsWow64) then //如果为64位操作系统
+        REGDB_OPTIONS = REGDB_OPTIONS | REGDB_OPTION_WOW64_64KEY;
+	endif;   
+	         
+	nvType = REGDB_NUMBER;
+      
+    RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+    
+    if (RegDBGetKeyValueEx("SOFTWARE\\Wow6432Node\\VMware, Inc.\\VMware vCenter Site Recovery Manager",
+    "InstallPath", nvType, szDir, nvSize) < 0) then 
+    	 if (RegDBGetKeyValueEx("SOFTWARE\\VMware, Inc.\\VMware vCenter Site Recovery Manager", 
+    	"InstallPath", nvType, szDir, nvSize) < 0) then
+    		MessageBox ("Failed to get registry information of SRM, please install SRM firstly.", SEVERE); 
+    		abort;
+    	endif;  	
+    endif;    
+      
+    //szDir = PROGRAMFILES64 + "\\VMware\\VMware vCenter Site Recovery Manager\\storage\\sra\\OceanStor SRA for HVS V100R001C00";       
+    szDir = szDir + "\\storage\\sra\\OpenSDS_Storage_SRA";     
+                  
+   if (SYSINFO.bIsWow64) then //如果为64位操作系统
+		REGDB_OPTIONS = REGDB_OPTIONS & ~REGDB_OPTION_WOW64_64KEY; 
+	endif;   
+	                  
+    TARGETDIR = szDir;  
+    INSTALLDIR = szDir;   
+    nResult = SdAskDestPath2(szTitle, szMsg,INSTALLDIR);
+    if (nResult = BACK) goto Dlg_AskOptions;
+    
+    
+Dlg_SdStartCopy:
+    szTitle = "";
+    szMsg   = "";
+    nResult = SdStartCopy2( szTitle, szMsg );			
+	
+	if (nResult = BACK) then
+    	goto Dlg_SdAskDestPath;
+    endif;
+
+    // Added in IS 2009 - Set appropriate StatusEx static text.
+    SetStatusExStaticText( SdLoadString( IDS_IFX_STATUSEX_STATICTEXT_FIRSTUI ) ); 
+    
+    Disable(CANCELBUTTON);
+
+    // setup default status
+    Enable(STATUSEX);
+    
+    CreateUninstallShortCut();
+
+   	if(ExistsDir(TARGETDIR) = NOTEXISTS) then
+		CreateDir(TARGETDIR);  
+	endif;                                                  
+   	OpenFileMode (FILE_MODE_APPEND); 
+    // Create a new file and leave it open. 
+    if (CreateFile (nvFileHandle, TARGETDIR, "config.txt") < 0) then 
+       // Report the error. 
+        MessageBox ("CreateFile failed.", SEVERE); 
+        abort; 
+    else 
+      // Set the message to write to the file. 
+		if(isSupportNFS = TRUE) then
+	         szMsg = "isSupportNfs=1\r\n"; 
+	    else
+	         szMsg = "isSupportNfs=0\r\n"; 
+	    endif;  
+		if(isSupportStretched = TRUE) then
+			 szMsg = szMsg + "isSupportStretched=1\r\n";
+		else
+			 szMsg = szMsg + "isSupportStretched=0\r\n";
+		endif; 
+		if(isFusionStorage = TRUE) then
+			 szMsg = szMsg + "isFusionStorage=1\r\n"; 
+			 szMsg = szMsg + "BandInfo=FusionStorage\r\nManuFactoryInfo=OpenSDS\r\nProductModel=8.0"; 
+			 szMsg = szMsg + "\r\nSraName=OpenSDS_Storage_SRA"; 
+		else
+			 szMsg = szMsg + "isFusionStorage=0\r\n"; 
+		     szMsg = szMsg + "BandInfo=OceanStor\r\nManuFactoryInfo=OpenSDS\r\nProductModel=S2600T/S5500T/S5600T/S5800T/S6800T V200R002,18500/18800/18800F V100R001,";
+	    	 szMsg = szMsg + "5300/5500/5600/5800/6800 V3 V300R001 V300R002 V300R003 V300R006,18500/18800 V3 V300R003 V300R006,2200/2600 V3 V300R005 V300R006,2100 V3 V300R006,";
+			 szMsg = szMsg + "2600F/5300F/5500F/5600F/5800F/6800F/18500F/18800F V3 V300R006,Dorado 5000/6000/18000 V3 V300R001,";
+        	 szMsg = szMsg + "5300F/5500F/5600F/5800F/6800F/18500F/18800F V5 V500R007,";
+        	 szMsg = szMsg + "5300/5500/5600/5800/6800 V5 V500R007, 18500/18800 V5 V500R007\r\nSraName=OpenSDS_Storage_SRA";   
+		endif;
+  
+      // Append the message to the file. 
+        if (WriteLine(nvFileHandle, szMsg) < 0) then 
+           // Report the error. 
+          MessageBox ("WriteLine failed.", SEVERE); 
+	    endif; 
+   	endif; 
+    // Close the file. 
+	CloseFile (nvFileHandle); 
+ 	    
+    return 0;
+end;
+
+//---------------------------------------------------------------------------
+// OnMaintUIBefore
+//
+// The OnMaintUIBefore event is called by the framework when the setup is
+// running in maintenance mode. By default this event displays UI that
+// allows the end user to add or remove features, repair currently
+// installed features or uninstall the application.
+//---------------------------------------------------------------------------
+function OnMaintUIBefore()
+	NUMBER nResult, nType;
+	STRING szTitle, szMsg, svDir, svResult, szCaption, szProgramFolder, szProgramName, szItemName;
+begin  
+    szItemName = "OpenSDS";
+    szProgramName = "OpenSDS_Storage_SRA";							
+	
+Dlg_Start:
+
+    // Added in Version 9.5 - Support for REMOVEONLY option.
+    if( !REMOVEONLY ) then
+		// In standard mode show maintenance dialog
+		Disable(BACKBUTTON);
+		nType = SdWelcomeMaint(szTitle, szMsg, REMOVEALL);   
+		nType =   REMOVEALL;
+		Enable(BACKBUTTON);
+	else
+        // Hide the initial progress dialog as otherwise the user can
+        // click on it, and hide the MessageBox.
+        Disable( DIALOGCACHE );
+
+        // In RemoveOnly mode, set to remove.
+        nType = REMOVEALL;
+    endif;
+	
+	// Show Uninstall Confirmation Dialog
+    if ( nType = REMOVEALL ) then 
+        
+        //modified on 2011-11-28
+        szProgramFolder = INSTALLDIR;
+        //DeleteFile(szProgramFolder^"sra.exe");
+        //DeleteFile(szProgramFolder^"command.pl"); 
+        //DeleteFile(szProgramFolder^"readme.txt"); 
+        //DeleteFile(szProgramFolder^"License.txt");
+        //DeleteFolderIcon(szProgramFolder, szProgramName);
+        //DeleteProgramFolder(INSTALLDIR);
+        
+		nResult = MessageBox("Do you want to completely remove the selected application and all of its features?", MB_YESNO );
+		if (nResult != IDYES ) then
+            
+            if( REMOVEONLY ) then
+                // In REMOVEONLY mode, abort the setup.
+                abort;
+            else
+                // In non-REMOVEONLY mode, redisplay the previous dialog.
+			    goto Dlg_Start;
+            endif;
+
+		endif;
+//		DeleteProgramFolder(szProgramFolder^"config.txt");
+	endif;
+
+	nResult = NEXT;
+
+
+Dlg_SdFeatureTree:
+	if (nType = MODIFY) then
+		szTitle = "";
+		szMsg = "";
+		//nResult = SdFeatureTree(szTitle, szMsg, INSTALLDIR, "", 2);
+		//if (nResult = BACK) goto Dlg_Start;
+	endif;
+
+	switch(nType)
+        case REMOVEALL:  
+        
+            //确定删除时再删除菜单里面内容
+            szProgramFolder = FOLDER_PROGRAMS ^ szItemName;
+            DeleteFolderIcon(szProgramFolder, szProgramName);
+            DeleteProgramFolder(szProgramFolder);
+        
+            ComponentRemoveAll();
+            DeleteDir ( INSTALLDIR , ALLCONTENTS );
+
+            // Added in IS 2009 - Set appropriate StatusEx static text.
+            SetStatusExStaticText( SdLoadString( IDS_IFX_STATUSEX_STATICTEXT_MAINTUI_REMOVEALL ) );
+
+     //   case REPAIR:
+        
+         //   ComponentReinstall();
+
+            // Added in IS 2009 - Set appropriate StatusEx static text.
+        //    SetStatusExStaticText( SdLoadString( IDS_IFX_STATUSEX_STATICTEXT_MAINTUI_REPAIR ) );
+
+
+        case MODIFY:
+
+            // Added in IS 2009 - Set appropriate StatusEx static text.
+            SetStatusExStaticText( SdLoadString( IDS_IFX_STATUSEX_STATICTEXT_MAINTUI_MODIFY ) );
+
+    endswitch;    
+    
+    Disable(CANCELBUTTON);
+    
+	// setup default status 
+	SetStatusWindow(0, "");
+	Enable(STATUSEX);
+	StatusUpdate(ON, 100);
+end;
+//---------------------------------------------------------------------------
+// OnFilesInUse
+//
+// The OnFilesInUse event is called in an InstallScript MSI setup when MSI
+// engine sends an INSTALLMESSAGE_FILESINUSE message to the setup.
+//
+// szMessage is the string provided by the MSI engine indicating the files
+// that are in use, SdFilesInUse parses this string appropriately.
+//
+// By default this event displays the SdFilesInUse dialog, the event
+// returns the value returned from the dialog, which is then passed
+// back to the MSI engine to indicate how the message was handled and what
+// action the MSI engine should take.
+//
+// The following return values are supported:
+//
+// IDCANCEL - Indicates that the setup should be cancelled.
+//
+// IDRETRY - Indicates that the MSI engine should re-check for in use files
+// and send the INSTALLMESSAGE_FILESINUSE message if still needed.
+//
+// IDIGNORE - Indicates that the the MSI engine should ignore the fact that
+// the files are in use and should continue the setup.
+//---------------------------------------------------------------------------
+function OnFilesInUse(szMessage)
+  LIST nListApps;
+  begin
+	try
+        // Note: Pass uninitialized nListApps so that the function will parse szMessage
+        // return SdFilesInUse( "", "", szMessage, nListApps ); 
+       return   IDIGNORE;
+	catch
+	   OnUnhandledException();	
+	endcatch;
+end;
+//---------------------------------------------------------------------------                                                                        
+// OnAdminInstallUIBefore
+//
+// The OnAdminInstallUIBefore event is called before the file transfer in
+// an admin setup. By default this event displays UI allowing the end user
+// to specify installation parameters.
+//---------------------------------------------------------------------------
+function OnAdminInstallUIBefore()
+	int    nResult;
+	string szTitle, szMsg;
+begin
+Dlg_SdWelcome:
+	szTitle = "";
+	szMsg   = "";
+	nResult = SdWelcome(szTitle, szMsg);
+	if (nResult = BACK) goto Dlg_SdWelcome;
+
+Dlg_AdminAskPath:    	
+	nResult = AdminAskPath(szMsg, INSTALLDIR, INSTALLDIR);
+	if (nResult = BACK) goto Dlg_SdWelcome;
+
+    // Added in IS 2009 - Set appropriate StatusEx static text.
+    SetStatusExStaticText( SdLoadString( IDS_IFX_STATUSEX_STATICTEXT_FIRSTUI ) );
+	
+	Enable(STATUSEX);
+end;
+//---------------------------------------------------------------------------
+// OnMsiSilentInstall
+//
+// This event is triggered when the msi package is being installed silently,
+// using msiexec.exe  with a /q switch  directly on the msi package--instead
+// of using setup.exe. This event will be the only script that is run.  The 
+// program/endprogram or the event based  script will not be executed.
+// Because it is probable setup authors may want to execute some script
+// during a silent install, this event is provided. The setup author should
+// override this event and execute any logic needed. Note that default 
+// implementation is to display a message box if the product in not already
+// installed and then abort. This event is called by the
+// OnCheckSilentInstall custom action found in the InstallExecuteSequence.
+//---------------------------------------------------------------------------
+function OnMsiSilentInstall(nHandle)
+	int    nResult, cchValueBuf;
+	string szValueBuf[MAX_PATH];
+begin
+	cchValueBuf = MAX_PATH;
+
+	//Check the product state
+	nResult = MsiGetProductInfo(PRODUCT_GUID, INSTALLPROPERTY_INSTALLEDPRODUCTNAME, szValueBuf, cchValueBuf);
+
+	//Only display if not already installed
+	if (ERROR_SUCCESS != nResult) then	
+		MessageBox("To run a silent install you must either specify a response file" + 
+			" or override this event (OnMsiSilentInstall()) and provide your" +
+			" implementation.\n\nThe setup will now end.", WARNING);
+		abort;
+	endif;
+end;
+//---------------------------------------------------------------------------
+// OnCanceling
+//
+// The OnCanceling event is sent when the installation is cancelled, 
+// usually as result of end user clicking Cancel button of a dialog or
+// pressing Esc key. Calling Do(EXIT) will also trigger this event.
+//---------------------------------------------------------------------------
+function OnCanceling()
+begin
+	if (IDYES = SprintfBox(MB_YESNO|MB_ICONEXCLAMATION|MB_DEFBUTTON2, 
+                           SdLoadString(SD_STR_ONCANCELING_TITLE), 
+                           SdLoadString(SD_STR_ONCANCELING_MSG))) then
+		EndCurrentDialog();
+		Enable(USE_LOADED_SKIN);
+		abort;
+	endif;
+end;
+//---------------------------------------------------------------------------
+// OnAppSearch
+//
+// The OnAppSearch event is called after OnBegin and can be used to search
+// for previous versions of the current application. This event is called
+// only when the setup is running in first install mode.
+//---------------------------------------------------------------------------
+function OnAppSearch()
+begin
+end;
+  
+function OnEnd()
+begin  
+	if(ExistsDir(TARGETDIR) = NOTEXISTS) then
+		CreateDir(TARGETDIR);  
+	endif;
+end;  

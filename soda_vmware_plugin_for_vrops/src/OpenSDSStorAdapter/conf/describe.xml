@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AdapterKind key="OpenSDSStorAdapter" nameKey="1" version="1"
+	xmlns="http://schemas.vmware.com/vcops/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://schemas.vmware.com/vcops/schema describeSchema.xsd">
+	<CredentialKinds>
+        <CredentialKind key="PasswordCredentials" nameKey="20000">
+            <CredentialField nameKey="20001" dispOrder="1" enum="false" key="UserName" password="false" type="string" required="true"></CredentialField>
+            <CredentialField nameKey="20002" dispOrder="2" enum="false" key="UserPwd" password="true" type="string" required="true"></CredentialField>
+            <CredentialField nameKey="30001" dispOrder="3" enum="false" key="vCenterUserName" password="false" type="string" required="true"></CredentialField>
+            <CredentialField nameKey="30002" dispOrder="4" enum="false" key="vCenterUserPwd" password="true" type="string" required="true"></CredentialField>           
+        </CredentialKind>     
+    </CredentialKinds>
+	<ResourceKinds>
+		<ResourceKind key="OpenSDSStorAdapterInstance" nameKey="2" type="7" credentialKind="PasswordCredentials">
+			<ResourceIdentifier default="" dispOrder="4" key="ArrayHost" length="500" nameKey="5000" required="true" type="string" />
+			<ResourceIdentifier default="" length="100" dispOrder="6" nameKey="30003" required="true" type="string" key="vCenterRestURL"/>
+			<ResourceIdentifier default="" length="100" dispOrder="7" nameKey="30007" required="true" type="string" key="CertificatePath"/>
+		</ResourceKind>
+		<ResourceKind key="Controller" nameKey="6">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="9" dashboardOrder="1" key="21" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10" dashboardOrder="2" key="22" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="11" dashboardOrder="3" key="23" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="12" dashboardOrder="4" key="24" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="13" dashboardOrder="5" key="25" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="14" dashboardOrder="6" key="26" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="15" dashboardOrder="7" key="27" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="16" dashboardOrder="8" key="28" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="17" dashboardOrder="9" key="29" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="18" dashboardOrder="10" key="68" dataType="float" defaultMonitored="true"  unit="percent"/>
+			<ResourceAttribute nameKey="19" dashboardOrder="11" key="69" dataType="float" defaultMonitored="true"  unit="percent"/>
+			<ResourceAttribute nameKey="20" dashboardOrder="12" key="370" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="21" dashboardOrder="13" key="371" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="22" dashboardOrder="14" key="81" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="23" dashboardOrder="15" key="82" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="24" dashboardOrder="16" key="86" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="25" dashboardOrder="17" key="110" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="26" dashboardOrder="18" key="120" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="27" dashboardOrder="19" key="384" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="28" dashboardOrder="20" key="385" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="102" dashboardOrder="21" key="19" dataType="float" defaultMonitored="true" />
+		</ResourceKind>
+		<ResourceKind key="DiskDomain" nameKey="100">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="9" dashboardOrder="1" key="21" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10" dashboardOrder="2" key="22" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="11" dashboardOrder="3" key="23" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="12" dashboardOrder="4" key="24" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="13" dashboardOrder="5" key="25" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="14" dashboardOrder="6" key="26" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="15" dashboardOrder="7" key="27" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="16" dashboardOrder="8" key="28" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="17" dashboardOrder="9" key="29" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="20" dashboardOrder="10" key="370" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="21" dashboardOrder="11" key="371" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="27" dashboardOrder="12" key="384" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="28" dashboardOrder="13" key="385" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="101" dashboardOrder="14" key="228" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="102" dashboardOrder="15" key="19" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10000" dashboardOrder="16" key="10000" dataType="float" unit="GB" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10001" dashboardOrder="17" key="10001" dataType="float" unit="GB" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10003" dashboardOrder="19" key="10003" dataType="float" defaultMonitored="true" unit="percent"/>
+			<ResourceAttribute nameKey="10004" dashboardOrder="20" key="10004" dataType="float" defaultMonitored="true" unit="percent"/>
+		</ResourceKind>
+		<ResourceKind key="Disk" nameKey="200">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="9" dashboardOrder="1" key="21" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10" dashboardOrder="2" key="22" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="11" dashboardOrder="3" key="23" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="12" dashboardOrder="4" key="24" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="13" dashboardOrder="5" key="25" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="14" dashboardOrder="6" key="26" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="15" dashboardOrder="7" key="27" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="16" dashboardOrder="8" key="28" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="17" dashboardOrder="9" key="29" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="20" dashboardOrder="10" key="370" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="21" dashboardOrder="11" key="371" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="27" dashboardOrder="12" key="384" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="28" dashboardOrder="13" key="385" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="201" dashboardOrder="14" key="241" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="202" dashboardOrder="15" key="242" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10000" dashboardOrder="16" key="10000" dataType="float" unit="GB" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10003" dashboardOrder="19" key="Capacity Usage Rate" dataType="float" unit="percent" defaultMonitored="true" />
+		
+		</ResourceKind>
+		<ResourceKind key="FileSystem" nameKey="300">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="301" dashboardOrder="1" key="182" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="17" dashboardOrder="2" key="29" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="302" dashboardOrder="3" key="232" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="11" dashboardOrder="4" key="23" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="303" dashboardOrder="5" key="464" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="304" dashboardOrder="6" key="233" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="14" dashboardOrder="7" key="26" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="305" dashboardOrder="8" key="465" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10000" dashboardOrder="16" key="10000" dataType="float" unit="GB" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10001" dashboardOrder="17" key="10001" dataType="float" unit="GB" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10003" dashboardOrder="19" key="10003" dataType="float" defaultMonitored="true" unit="percent"/>
+			<ResourceAttribute nameKey="10004" dashboardOrder="20" key="10004" dataType="float" defaultMonitored="true" unit="percent"/>
+		</ResourceKind>
+		<ResourceKind key="Host" nameKey="400">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="401" dashboardOrder="1" key="307" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="9" dashboardOrder="1" key="21" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10" dashboardOrder="2" key="22" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="11" dashboardOrder="3" key="23" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="12" dashboardOrder="4" key="24" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="13" dashboardOrder="5" key="25" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="14" dashboardOrder="6" key="26" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="15" dashboardOrder="7" key="27" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="16" dashboardOrder="8" key="28" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="17" dashboardOrder="9" key="29" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="20" dashboardOrder="10" key="370" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="21" dashboardOrder="11" key="371" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="27" dashboardOrder="12" key="384" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="28" dashboardOrder="13" key="385" dataType="float" defaultMonitored="true" />
+		</ResourceKind>
+		<ResourceKind key="Lun" nameKey="500">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="9" dashboardOrder="1" key="21" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10" dashboardOrder="2" key="22" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="11" dashboardOrder="3" key="23" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="12" dashboardOrder="4" key="24" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="13" dashboardOrder="5" key="25" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="14" dashboardOrder="6" key="26" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="15" dashboardOrder="7" key="27" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="16" dashboardOrder="8" key="28" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="20" dashboardOrder="10" key="370" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="21" dashboardOrder="11" key="371" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="501" dashboardOrder="12" key="86" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="502" dashboardOrder="13" key="88" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="503" dashboardOrder="14" key="93" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="504" dashboardOrder="15" key="95" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="27" dashboardOrder="16" key="384" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="28" dashboardOrder="17" key="385" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="21" dashboardOrder="18" key="371" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="505" dashboardOrder="19" key="228" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="506" dashboardOrder="20" key="265" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="507" dashboardOrder="21" key="266" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="508" dashboardOrder="22" key="303" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10000" dashboardOrder="16" key="10000" dataType="float" unit="GB" defaultMonitored="true" />
+
+		
+		</ResourceKind>
+		<ResourceKind key="Pool" nameKey="600">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="9" dashboardOrder="1" key="21" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10" dashboardOrder="2" key="22" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="11" dashboardOrder="3" key="23" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="12" dashboardOrder="4" key="24" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="13" dashboardOrder="5" key="25" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="14" dashboardOrder="6" key="26" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="15" dashboardOrder="7" key="27" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="16" dashboardOrder="8" key="28" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="17" dashboardOrder="9" key="29" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="20" dashboardOrder="10" key="370" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="21" dashboardOrder="11" key="371" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="27" dashboardOrder="12" key="384" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="28" dashboardOrder="13" key="385" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="601" dashboardOrder="14" key="228" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10000" dashboardOrder="15" key="10000" dataType="float" unit="GB" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10001" dashboardOrder="16" key="10001" dataType="float" unit="GB" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10002" dashboardOrder="17" key="10002" dataType="float" unit="GB" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10003" dashboardOrder="18" key="10003" dataType="float" defaultMonitored="true" unit="percent" />
+			<ResourceAttribute nameKey="10004" dashboardOrder="19" key="10004" dataType="float" defaultMonitored="true" unit="percent" />
+		
+		</ResourceKind>
+		<ResourceKind key="FCPort" nameKey="700">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="701" dashboardOrder="1" key="7" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="9" dashboardOrder="1" key="21" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10" dashboardOrder="2" key="22" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="11" dashboardOrder="3" key="23" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="12" dashboardOrder="4" key="24" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="13" dashboardOrder="5" key="25" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="14" dashboardOrder="6" key="26" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="15" dashboardOrder="7" key="27" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="16" dashboardOrder="8" key="28" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="17" dashboardOrder="9" key="29" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="20" dashboardOrder="10" key="370" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="21" dashboardOrder="11" key="371" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="27" dashboardOrder="12" key="384" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="28" dashboardOrder="13" key="385" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="702" dashboardOrder="14" key="265" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="703" dashboardOrder="15" key="266" dataType="float" defaultMonitored="true" />
+		
+		</ResourceKind>
+		<ResourceKind key="ISCSIPort" nameKey="800">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="701" dashboardOrder="1" key="7" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="9" dashboardOrder="1" key="21" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10" dashboardOrder="2" key="22" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="11" dashboardOrder="3" key="23" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="12" dashboardOrder="4" key="24" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="13" dashboardOrder="5" key="25" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="14" dashboardOrder="6" key="26" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="15" dashboardOrder="7" key="27" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="16" dashboardOrder="8" key="28" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="17" dashboardOrder="9" key="29" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="20" dashboardOrder="10" key="370" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="21" dashboardOrder="11" key="371" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="27" dashboardOrder="12" key="384" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="28" dashboardOrder="13" key="385" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="702" dashboardOrder="14" key="265" dataType="float" defaultMonitored="true" />
+			<ResourceAttribute nameKey="703" dashboardOrder="15" key="266" dataType="float" defaultMonitored="true" />
+		
+		</ResourceKind>
+		<ResourceKind key="Storage" nameKey="900">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="901" dashboardOrder="1" key="SystemId" dataType="string" defaultMonitored="true" />
+			<ResourceAttribute nameKey="902" dashboardOrder="2" key="SystemName" dataType="string" defaultMonitored="true" />
+			<ResourceAttribute nameKey="903" dashboardOrder="3" key="ProductMode" dataType="string" defaultMonitored="true" />
+			<ResourceAttribute nameKey="904" dashboardOrder="4" key="ProductVersion" dataType="string" defaultMonitored="true" />
+			<ResourceAttribute nameKey="905" dashboardOrder="5" key="WWN" dataType="string" defaultMonitored="true" />
+			<ResourceAttribute nameKey="906" dashboardOrder="6" key="TotalCapacity" dataType="float" unit="GB" defaultMonitored="true" />
+			<ResourceAttribute nameKey="907" dashboardOrder="7" key="UsedCapacity" dataType="float" unit="GB" defaultMonitored="true" />
+			<ResourceAttribute nameKey="908" dashboardOrder="8" key="UserFreeCapacity" dataType="float" unit="GB" defaultMonitored="true" />
+			<ResourceAttribute nameKey="909" dashboardOrder="9" key="CapacityUsageRate" dataType="float" defaultMonitored="true" unit="percent"/>
+			<ResourceAttribute nameKey="910" dashboardOrder="10" key="CapacityFreeRate" dataType="float" defaultMonitored="true" unit="percent"/>
+		</ResourceKind>
+		<ResourceKind key="RemoteReplication" nameKey="1000">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="1001" dashboardOrder="1" key="473" defaultMonitored="true" dataType="float"/>
+			<ResourceAttribute nameKey="1002" dashboardOrder="2" key="1054" defaultMonitored="true" dataType="float" />
+			<ResourceAttribute nameKey="9" dashboardOrder="3" key="21" defaultMonitored="true" dataType="float"/>
+			<ResourceAttribute nameKey="1003" dashboardOrder="4" key="99" defaultMonitored="true" dataType="float"/>
+			<ResourceAttribute nameKey="1502" dashboardOrder="5" key="LOCALRESNAME" defaultMonitored="true" dataType="string"/>
+		</ResourceKind>
+		<ResourceKind key="SnapShot" nameKey="1100">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="1101" dashboardOrder="1" key="101" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1102" dashboardOrder="2" key="102" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1103" dashboardOrder="3" key="103" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1104" dashboardOrder="4" key="104" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1105" dashboardOrder="5" key="105" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1106" dashboardOrder="6" key="106" defaultMonitored="true" />
+		</ResourceKind>
+		<ResourceKind key="SmartPartition" nameKey="1200">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="9" dashboardOrder="1" key="21" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10" dashboardOrder="2" key="22" defaultMonitored="true" />
+			<ResourceAttribute nameKey="11" dashboardOrder="3" key="23" defaultMonitored="true" />
+			<ResourceAttribute nameKey="13" dashboardOrder="4" key="25" defaultMonitored="true" />
+			<ResourceAttribute nameKey="14" dashboardOrder="5" key="26" defaultMonitored="true" />
+			<ResourceAttribute nameKey="16" dashboardOrder="6" key="28" defaultMonitored="true" />
+			<ResourceAttribute nameKey="20" dashboardOrder="7" key="370" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1201" dashboardOrder="8" key="93" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1202" dashboardOrder="9" key="95" defaultMonitored="true" />
+			<ResourceAttribute nameKey="27" dashboardOrder="10" key="384" defaultMonitored="true" />
+			<ResourceAttribute nameKey="28" dashboardOrder="11" key="385" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1203" dashboardOrder="12" key="333" defaultMonitored="true" />
+		</ResourceKind>
+		<ResourceKind key="SmartQos" nameKey="1300">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="1301" dashboardOrder="1" key="5" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1302" dashboardOrder="2" key="18" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1303" dashboardOrder="3" key="19" defaultMonitored="true" />
+			<ResourceAttribute nameKey="9" dashboardOrder="4" key="21" defaultMonitored="true" />
+			<ResourceAttribute nameKey="10" dashboardOrder="5" key="22" defaultMonitored="true" />
+			<ResourceAttribute nameKey="11" dashboardOrder="6" key="23" defaultMonitored="true" />
+			<ResourceAttribute nameKey="12" dashboardOrder="7" key="24" defaultMonitored="true" />
+			<ResourceAttribute nameKey="13" dashboardOrder="8" key="25" defaultMonitored="true" />
+			<ResourceAttribute nameKey="14" dashboardOrder="9" key="26" defaultMonitored="true" />
+			<ResourceAttribute nameKey="15" dashboardOrder="10" key="27" defaultMonitored="true" />
+			<ResourceAttribute nameKey="16" dashboardOrder="11" key="28" defaultMonitored="true" />
+			<ResourceAttribute nameKey="17" dashboardOrder="12" key="29" defaultMonitored="true" />
+			<ResourceAttribute nameKey="20" dashboardOrder="13" key="370" defaultMonitored="true" />
+			<ResourceAttribute nameKey="21" dashboardOrder="14" key="371" defaultMonitored="true" />
+			<ResourceAttribute nameKey="27" dashboardOrder="15" key="384" defaultMonitored="true" />
+			<ResourceAttribute nameKey="28" dashboardOrder="16" key="385" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1304" dashboardOrder="17" key="228" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1305" dashboardOrder="18" key="241" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1306" dashboardOrder="19" key="242" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1307" dashboardOrder="20" key="265" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1308" dashboardOrder="21" key="266" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1309" dashboardOrder="22" key="307" defaultMonitored="true" />
+		</ResourceKind>
+
+		
+		<ResourceKind key="VirtualMachine" nameKey="1500">
+			<ResourceIdentifier dispOrder="1" key="Id" length="100" nameKey="7" required="true" type="integer" />
+			<ResourceIdentifier dispOrder="2" key="Name" length="100" nameKey="8" required="false" type="string" identType="2" />
+			<ResourceAttribute nameKey="1501" dashboardOrder="1" key="maxMksConnections" dataType="integer" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1503" dashboardOrder="2" key="MaxCpuUsage" dataType="integer" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1504" dashboardOrder="3" key="MaxMemoryUsage" dataType="integer" defaultMonitored="true" />
+			<ResourceAttribute nameKey="1505" dashboardOrder="4" key="MemoryOverhead" dataType="long" defaultMonitored="true" />
+		</ResourceKind>
+	</ResourceKinds>
+    <TraversalSpecKinds>
+        <TraversalSpecKind name=" Storage and VM Filter" rootAdapterKind="OpenSDSStorAdapter" rootResourceKind="Storage" usedFor="ALL" iconName="StorageAndVM.png">
+			<ResourcePath path="OpenSDSStorAdapter::Storage||OpenSDSStorAdapter::DiskDomain::child||OpenSDSStorAdapter::Pool::child||OpenSDSStorAdapter::Lun::child||VMWARE::Datastore::~child||OpenSDSStorAdapter::VirtualMachine::child"/>
+		</TraversalSpecKind>
+	</TraversalSpecKinds>
+	<TraversalSpecExtensionKinds>
+		<TraversalSpecExtensionKind name="vSphere Datastore to OpenSDS Lun extension" parentAdapterKind="VMWARE" parentTraversalSpecName="vSphere Storage">
+			<ResourcePath joinPointInParentPath="VMWARE::Datastore" path="OpenSDSStorAdapter::Lun::child"/>
+		</TraversalSpecExtensionKind>
+	</TraversalSpecExtensionKinds>
+    <AlertDefinitions>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFCPortOverIOPSAlarms" nameKey="100000" resourceKind="FCPort" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSFCPortHighIOPS"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSFCPortHighIOPSRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSStorageLatencyAlarms" nameKey="100001" resourceKind="Controller" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSStorageLatency"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSStorageLatencyRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFileSystemHighThroughputAlarms" nameKey="100002" resourceKind="FileSystem" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="OpenSDSFileSystemHighReadThroughput"/>
+                    <Symptom ref="OpenSDSFileSystemHighWriteThroughput"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSFileSystemHighThroughputRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSHostHighThroughputAlarms" nameKey="100003" resourceKind="Host" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSHostHighThroughput"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSHostHighThroughputRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFileSystemLongLatencyAlarms" nameKey="100004" resourceKind="FileSystem" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="OpenSDSFileSystemLongReadLatency"/>
+                    <Symptom ref="OpenSDSFileSystemLongWriteLatency"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSFileSystemLongLatencyRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSDiskHighThroughPutAlarms" nameKey="100005" resourceKind="Disk" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSDiskHighThrouthPut"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSDiskHighThroughPutRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFCPortHighThroughputAlarms" nameKey="100006" resourceKind="FCPort" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSFCPortHighThroughput"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSFCPortHighThroughputRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSiSCSIPortLongLatencyAlarms" nameKey="100007" resourceKind="ISCSIPort" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSiSCSIPortLongLatency"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSiSCSIPortLongLatencyRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSISCSIPortOverIOPSAlarms" nameKey="100008" resourceKind="ISCSIPort" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSISCSIPortOverIOPS"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSISCSIPortOverIOPSRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSHighThroughputAlarms" nameKey="100009" resourceKind="Controller" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSHighThroughput"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSHighThroughputRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSLUNOverIOPSAlarms" nameKey="100010" resourceKind="Lun" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSLUNOverIOPS"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSLUNOverIOPSRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSISCSIPortHighThroughputAlarms" nameKey="100011" resourceKind="ISCSIPort" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSISCSIPortHighThroughput"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSISCSIPortHighThroughputRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFileSystemCapacityAlarms" nameKey="100012" resourceKind="FileSystem" subType="20" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSFileSystemCapacity"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSFileSystemCapacityRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSHostLongLatencyAlarms" nameKey="100013" resourceKind="Host" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSHostLongLatency"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSHostLongLatencyRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSDiskLongLatencyAlarms" nameKey="100014" resourceKind="Disk" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSDiskLongLatency"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSDiskLongLatencyRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" description="OpenSDSLUNLongLatencyAlarms" id="" nameKey="100015" resourceKind="Lun" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSLUNLongLatency"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSLUNLongLatencyRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSOverIOPSAlarms" nameKey="100016" resourceKind="Controller" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSOverIOPS"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSOverIOPSRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSHostOverIOPSAlarms" nameKey="100017" resourceKind="Host" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSHostOverIOPS"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSHostOverIOPSRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSLUNHighThroughputAlarms" nameKey="100018" resourceKind="Lun" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSLUNHighThroughput"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSLUNHighThroughputRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSDiskOverIOPSAlarms" nameKey="100019" resourceKind="Disk" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSDiskOverIOPS"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSDiskOverIOPSRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSCPUUtilizationAlarms" nameKey="100020" resourceKind="Controller" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSets operator="and">
+                    <SymptomSet applyOn="self" operator="and" ref="OpenSDSCPUUtilization"/>
+                    <SymptomSet applyOn="self" negateCondition="true" operator="and" ref="OpenSDSOverIOPS"/>
+                    <SymptomSet applyOn="self" negateCondition="true" operator="and" ref="OpenSDSHighThroughput"/>
+                    <SymptomSet applyOn="self" negateCondition="true" operator="and" ref="OpenSDSStorageLatency"/>
+                </SymptomSets>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSCPUUtilizationRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFCPortLonglatencyAlarms" nameKey="100021" resourceKind="FCPort" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSFCPortLonglatency"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSFCPortLonglatencyRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSDiskDomainCapacityAlarms" nameKey="100022" resourceKind="DiskDomain" subType="20" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSDiskDomainCapacity"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSDiskDomainCapacityRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFileSystemOverOPSAlarms" nameKey="100023" resourceKind="FileSystem" subType="19" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSFileSystemOverOPS"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSFileSystemOverOPSRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSStoragePoolCapacityAlarms" nameKey="100024" resourceKind="Pool" subType="20" type="18">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and" ref="OpenSDSStoragePoolCapacity"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="OpenSDSStoragePoolCapacityRecommendation"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+    </AlertDefinitions>
+    <SymptomDefinitions>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFileSystemLongReadLatency" nameKey="110000" resourceKind="FileSystem">
+            <State severity="warning">
+                <Condition key="464" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFileSystemHighWriteThroughput" nameKey="110001" resourceKind="FileSystem">
+            <State severity="warning">
+                <Condition key="26" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSLUNLongLatency" nameKey="110002" resourceKind="Lun">
+            <State severity="warning">
+                <Condition key="370" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFileSystemOverOPS" nameKey="110003" resourceKind="FileSystem">
+            <State severity="warning">
+                <Condition key="182" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFileSystemLongWriteLatency" nameKey="110004" resourceKind="FileSystem">
+            <State severity="warning">
+                <Condition key="465" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSStorageLatency" nameKey="110005" resourceKind="Controller">
+            <State severity="warning">
+                <Condition key="370" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSDiskOverIOPS" nameKey="110006" resourceKind="Disk">
+            <State severity="warning">
+                <Condition key="22" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSHostLongLatency" nameKey="110007" resourceKind="Host">
+            <State severity="warning">
+                <Condition key="370" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFCPortHighIOPS" nameKey="110008" resourceKind="FCPort">
+            <State severity="warning">
+                <Condition key="22" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSOverIOPS" nameKey="110009" resourceKind="Controller">
+            <State severity="warning">
+                <Condition key="22" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSHostOverIOPS" nameKey="110010" resourceKind="Host">
+            <State severity="warning">
+                <Condition key="22" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSLUNHighThroughput" nameKey="110011" resourceKind="Lun">
+            <State severity="warning">
+                <Condition key="21" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFileSystemHighReadThroughput" nameKey="110012" resourceKind="FileSystem">
+            <State severity="warning">
+                <Condition key="23" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSDiskLongLatency" nameKey="110013" resourceKind="Disk">
+            <State severity="warning">
+                <Condition key="370" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSCPUUtilization" nameKey="110014" resourceKind="Controller">
+            <State severity="warning">
+                <Condition key="68" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSISCSIPortHighThroughput" nameKey="110015" resourceKind="ISCSIPort">
+            <State severity="warning">
+                <Condition key="21" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSStoragePoolCapacity" nameKey="110016" resourceKind="Pool">
+            <State severity="warning">
+                <Condition key="10003" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSiSCSIPortLongLatency" nameKey="110017" resourceKind="ISCSIPort">
+            <State severity="warning">
+                <Condition key="370" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSDiskHighThrouthPut" nameKey="110018" resourceKind="Disk">
+            <State severity="warning">
+                <Condition key="21" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFCPortHighThroughput" nameKey="110019" resourceKind="FCPort">
+            <State severity="warning">
+                <Condition key="21" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSHighThroughput" nameKey="110020" resourceKind="Controller">
+            <State severity="warning">
+                <Condition key="21" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSHostHighThroughput" nameKey="110021" resourceKind="Host">
+            <State severity="warning">
+                <Condition key="21" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSISCSIPortOverIOPS" nameKey="110022" resourceKind="ISCSIPort">
+            <State severity="warning">
+                <Condition key="22" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFCPortLonglatency" nameKey="110023" resourceKind="FCPort">
+            <State severity="warning">
+                <Condition key="370" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSFileSystemCapacity" nameKey="110024" resourceKind="FileSystem">
+            <State severity="warning">
+                <Condition key="10003" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSDiskDomainCapacity" nameKey="110025" resourceKind="DiskDomain">
+            <State severity="warning">
+                <Condition key="10003" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="OpenSDSStorAdapter" id="OpenSDSLUNOverIOPS" nameKey="110026" resourceKind="Lun">
+            <State severity="warning">
+                <Condition key="22" operator="above" type="dtmetric"/>
+            </State>
+        </SymptomDefinition>
+    </SymptomDefinitions>
+    <Recommendations>
+        <Recommendation key="OpenSDSHostHighThroughputRecommendation">
+            <Description nameKey="120000"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSCPUUtilizationRecommendation">
+            <Description nameKey="120001"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSLUNLongLatencyRecommendation">
+            <Description nameKey="120002"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSFileSystemHighThroughputRecommendation">
+            <Description nameKey="120003"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSFCPortHighIOPSRecommendation">
+            <Description nameKey="120004"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSFileSystemOverOPSRecommendation">
+            <Description nameKey="120005"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSISCSIPortHighThroughputRecommendation">
+            <Description nameKey="120006"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSLUNHighThroughputRecommendation">
+            <Description nameKey="120007"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSFCPortHighThroughputRecommendation">
+            <Description nameKey="120008"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSDiskLongLatencyRecommendation">
+            <Description nameKey="120009"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSStorageLatencyRecommendation">
+            <Description nameKey="120010"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSFileSystemLongLatencyRecommendation">
+            <Description nameKey="120011"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSDiskHighThroughPutRecommendation">
+            <Description nameKey="120012"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSStoragePoolCapacityRecommendation">
+            <Description nameKey="120013"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSDiskDomainCapacityRecommendation">
+            <Description nameKey="120014"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSFileSystemCapacityRecommendation">
+            <Description nameKey="120015"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSHighThroughputRecommendation">
+            <Description nameKey="120016"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSISCSIPortOverIOPSRecommendation">
+            <Description nameKey="120017"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSFCPortLonglatencyRecommendation">
+            <Description nameKey="120018"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSOverIOPSRecommendation">
+            <Description nameKey="120019"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSHostOverIOPSRecommendation">
+            <Description nameKey="120020"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSiSCSIPortLongLatencyRecommendation">
+            <Description nameKey="120021"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSHostLongLatencyRecommendation">
+            <Description nameKey="120022"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSDiskOverIOPSRecommendation">
+            <Description nameKey="120023"></Description>
+        </Recommendation>
+        <Recommendation key="OpenSDSLUNOverIOPSRecommendation">
+            <Description nameKey="120024"></Description>
+        </Recommendation>
+    </Recommendations>
+
+</AdapterKind>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F80E2DED-DCC5-4DBD-BE33-381236C58C43}</ProjectGuid>
+    <RootNamespace>common</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../common;../../third_party_groupware/OpenSDS_Storage_Plugins/openssl/include;../securec;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalLibraryDirectories>..\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>huaweisecurec.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../common;../../third_party_groupware/OpenSDS_Storage_Plugins/openssl/include;../securec;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalLibraryDirectories>..\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="xmlserial\tinystr.cpp" />
+    <ClCompile Include="xmlserial\tinyxml.cpp" />
+    <ClCompile Include="xmlserial\tinyxmlerror.cpp" />
+    <ClCompile Include="xmlserial\tinyxmlparser.cpp" />
+    <ClCompile Include="xmlserial\xmlreader.cpp" />
+    <ClCompile Include="xmlserial\xmlserializable.cpp" />
+    <ClCompile Include="xmlserial\xmlwriter.cpp" />
+    <ClCompile Include="cli\rslt_parser.cpp" />
+    <ClCompile Include="os\Commf.cpp" />
+    <ClCompile Include="os\Log.cpp" />
+    <ClCompile Include="xml_node\array.cpp" />
+    <ClCompile Include="xml_node\arrays.cpp" />
+    <ClCompile Include="xml_node\cg_snapshot.cpp" />
+    <ClCompile Include="xml_node\commond_info.cpp" />
+    <ClCompile Include="xml_node\consistency_groups.cpp" />
+    <ClCompile Include="xml_node\device.cpp" />
+    <ClCompile Include="xml_node\device_sync.cpp" />
+    <ClCompile Include="xml_node\identity.cpp" />
+    <ClCompile Include="xml_node\recovery_point.cpp" />
+    <ClCompile Include="xml_node\replicated_devices.cpp" />
+    <ClCompile Include="xml_node\replication_setting.cpp" />
+    <ClCompile Include="xml_node\snapshot.cpp" />
+    <ClCompile Include="xml_node\source_device.cpp" />
+    <ClCompile Include="xml_node\source_devices.cpp" />
+    <ClCompile Include="xml_node\target_device.cpp" />
+    <ClCompile Include="xml_node\target_devices.cpp" />
+    <ClCompile Include="xml_node\target_groups.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="xmlserial\tinystr.h" />
+    <ClInclude Include="xmlserial\tinyxml.h" />
+    <ClInclude Include="xmlserial\xmlcommon.h" />
+    <ClInclude Include="xmlserial\xmlreader.h" />
+    <ClInclude Include="xmlserial\xmlserializable.h" />
+    <ClInclude Include="xmlserial\xmlwriter.h" />
+    <ClInclude Include="cli\rslt_parser.h" />
+    <ClInclude Include="os\BaseException.h" />
+    <ClInclude Include="os\Commf.h" />
+    <ClInclude Include="os\Log.h" />
+    <ClInclude Include="os\Type.h" />
+    <ClInclude Include="xml_node\array.h" />
+    <ClInclude Include="xml_node\arrays.h" />
+    <ClInclude Include="xml_node\cg_snapshot.h" />
+    <ClInclude Include="xml_node\commond_info.h" />
+    <ClInclude Include="xml_node\consistency_groups.h" />
+    <ClInclude Include="xml_node\device.h" />
+    <ClInclude Include="xml_node\device_sync.h" />
+    <ClInclude Include="xml_node\identity.h" />
+    <ClInclude Include="xml_node\recovery_point.h" />
+    <ClInclude Include="xml_node\replicated_devices.h" />
+    <ClInclude Include="xml_node\replication_setting.h" />
+    <ClInclude Include="xml_node\snapshot.h" />
+    <ClInclude Include="xml_node\source_device.h" />
+    <ClInclude Include="xml_node\source_devices.h" />
+    <ClInclude Include="xml_node\target_device.h" />
+    <ClInclude Include="xml_node\target_devices.h" />
+    <ClInclude Include="xml_node\target_groups.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="error_code.h" />
+    <ClInclude Include="XmlInterface.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

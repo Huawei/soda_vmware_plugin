@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<solution>
+<managementPack>
+<name>OpenSDSStorAdapterMP-1.0.15</name>
+<version>1.0.15</version>
+<minimumProductVersion>6.0.0</minimumProductVersion>
+<localizations lang="en">
+<localization lang="en">
+<displayName>OpenSDSStorAdapter</displayName>
+<description>vROps Adapter for OpenSDS storage. Provides end-to-end visibility, analytics, and capacity planning for workloads running on OpenSDS Storage.</description>
+<vendor>OpenSDS</vendor>
+</localization>
+</localizations>
+<eula>eula.txt</eula>
+<image>pak_icon.png</image>
+<platforms>
+<platform>Linux VA</platform>
+<platform>Linux Non-VA</platform>
+<platform>Windows</platform>
+</platforms>
+<adapters>
+<adapter>D:/adapter/1024/OpenSDSStorAdapter</adapter>
+</adapters>
+<scripts runScriptsOnAllNodes="false">
+<pre>preAdapters.py</pre>
+<post>postAdapters.py</post>
+<validation>validate.py</validation>
+</scripts>
+</managementPack>
+</solution>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{02278EC5-49C1-4597-A89C-E9B1CC79D331}</ProjectGuid>
+    <RootNamespace>TLVCom</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../Bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../common;../../third_party_groupware/OpenSDS_Storage_Plugins/jsoncpp/source/include;../../third_party_groupware/OpenSDS_Storage_Plugins/openssl/include;../../third_party_groupware/OpenSDS_Storage_Plugins/ACE/source/;../securec</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;COMMUNICATION_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ACEd.lib;lib_json.lib;ACE_SSLd.lib;securec.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\lib\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>..\lib;..\..\..\third_party_groupware\..\third_party_groupware\OpenSDS_Storage_Plugins\ACE-5.8.2\lib;..\..\..\third_party_groupware\..\third_party_groupware\OpenSDS_Storage_Plugins\openssl\out32dll;..\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>..\lib\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy /Y ..\..\third_party_groupware\OpenSDS_Storage_Plugins\ACE\lib\win32_x86_msvc\release\*.lib ..\lib\
+xcopy /Y ..\..\third_party_groupware\OpenSDS_Storage_Plugins\ACE\bin\win32_x86_msvc\release\*.dll ..\bin\
+xcopy /Y ..\..\third_party_groupware\OpenSDS_Storage_Plugins\jsoncpp\lib\win32_x86_msvc\release\*.lib ..\lib\
+xcopy /Y ..\..\third_party_groupware\OpenSDS_Storage_Plugins\jsoncpp\bin\win32_x86_msvc\release\*.dll ..\bin\
+xcopy /Y ..\..\third_party_groupware\OpenSDS_Storage_Plugins\curl\lib\win32_x86_msvc\release\*.lib ..\lib\
+xcopy /Y ..\..\third_party_groupware\OpenSDS_Storage_Plugins\curl\bin\win32_x86_msvc\release\*.dll ..\bin\</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>../common;../../third_party_groupware/OpenSDS_Storage_Plugins/jsoncpp/source/include;../../third_party_groupware/OpenSDS_Storage_Plugins/openssl/include;../../third_party_groupware/OpenSDS_Storage_Plugins/ACE/source/;../securec</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;COMMUNICATION_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ACE.lib;lib_json.lib;ACE_SSL.lib;securec.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\Bin\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>..\lib;..\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>..\lib\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy /Y ..\..\third_party_groupware\OpenSDS_Storage_Plugins\ACE\lib\win32_x86_msvc\release\*.lib ..\lib\
+xcopy /Y ..\..\third_party_groupware\OpenSDS_Storage_Plugins\ACE\bin\win32_x86_msvc\release\*.dll ..\bin\
+xcopy /Y ..\..\third_party_groupware\OpenSDS_Storage_Plugins\jsoncpp\lib\win32_x86_msvc\release\*.lib ..\lib\
+xcopy /Y ..\..\third_party_groupware\OpenSDS_Storage_Plugins\jsoncpp\bin\win32_x86_msvc\release\*.dll ..\bin\
+xcopy /Y ..\..\third_party_groupware\OpenSDS_Storage_Plugins\curl\lib\win32_x86_msvc\release\*.lib ..\lib\
+xcopy /Y ..\..\third_party_groupware\OpenSDS_Storage_Plugins\curl\bin\win32_x86_msvc\release\*.dll ..\bin\</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="communication.h" />
+    <ClInclude Include="msg_package.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="msg_package.cpp" />
+    <ClCompile Include="om_connecter.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

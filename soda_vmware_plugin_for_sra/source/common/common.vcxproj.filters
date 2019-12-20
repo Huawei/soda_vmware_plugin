@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="xmlserial">
+      <UniqueIdentifier>{9c04019f-6d56-4382-bac3-38220514c746}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cli">
+      <UniqueIdentifier>{c2bb86ac-ff93-42ca-8908-1ce62b46ce0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="os">
+      <UniqueIdentifier>{adb8de00-e5ae-4efd-b8bd-382c1edf8e01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xml_node">
+      <UniqueIdentifier>{1bbaba33-3386-49cc-b48f-e5e6f4fa4b1f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="xmlserial\xmlreader.cpp">
+      <Filter>xmlserial</Filter>
+    </ClCompile>
+    <ClCompile Include="xmlserial\xmlserializable.cpp">
+      <Filter>xmlserial</Filter>
+    </ClCompile>
+    <ClCompile Include="xmlserial\xmlwriter.cpp">
+      <Filter>xmlserial</Filter>
+    </ClCompile>
+    <ClCompile Include="cli\rslt_parser.cpp">
+      <Filter>cli</Filter>
+    </ClCompile>
+    <ClCompile Include="os\Commf.cpp">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="os\Log.cpp">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\array.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\arrays.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\cg_snapshot.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\commond_info.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\consistency_groups.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\device.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\device_sync.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\identity.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\recovery_point.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\replicated_devices.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\replication_setting.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\snapshot.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\source_device.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\source_devices.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\target_device.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\target_devices.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xml_node\target_groups.cpp">
+      <Filter>xml_node</Filter>
+    </ClCompile>
+    <ClCompile Include="xmlserial\tinystr.cpp">
+      <Filter>xmlserial</Filter>
+    </ClCompile>
+    <ClCompile Include="xmlserial\tinyxml.cpp">
+      <Filter>xmlserial</Filter>
+    </ClCompile>
+    <ClCompile Include="xmlserial\tinyxmlerror.cpp">
+      <Filter>xmlserial</Filter>
+    </ClCompile>
+    <ClCompile Include="xmlserial\tinyxmlparser.cpp">
+      <Filter>xmlserial</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="xmlserial\xmlcommon.h">
+      <Filter>xmlserial</Filter>
+    </ClInclude>
+    <ClInclude Include="xmlserial\xmlreader.h">
+      <Filter>xmlserial</Filter>
+    </ClInclude>
+    <ClInclude Include="xmlserial\xmlserializable.h">
+      <Filter>xmlserial</Filter>
+    </ClInclude>
+    <ClInclude Include="xmlserial\xmlwriter.h">
+      <Filter>xmlserial</Filter>
+    </ClInclude>
+    <ClInclude Include="cli\rslt_parser.h">
+      <Filter>cli</Filter>
+    </ClInclude>
+    <ClInclude Include="os\BaseException.h">
+      <Filter>os</Filter>
+    </ClInclude>
+    <ClInclude Include="os\Commf.h">
+      <Filter>os</Filter>
+    </ClInclude>
+    <ClInclude Include="os\Log.h">
+      <Filter>os</Filter>
+    </ClInclude>
+    <ClInclude Include="os\Type.h">
+      <Filter>os</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\array.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\arrays.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\cg_snapshot.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\commond_info.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\consistency_groups.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\device.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\device_sync.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\identity.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\recovery_point.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\replicated_devices.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\replication_setting.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\snapshot.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\source_device.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\source_devices.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\target_device.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\target_devices.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="xml_node\target_groups.h">
+      <Filter>xml_node</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h" />
+    <ClInclude Include="error_code.h" />
+    <ClInclude Include="XmlInterface.h" />
+    <ClInclude Include="xmlserial\tinystr.h">
+      <Filter>xmlserial</Filter>
+    </ClInclude>
+    <ClInclude Include="xmlserial\tinyxml.h">
+      <Filter>xmlserial</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

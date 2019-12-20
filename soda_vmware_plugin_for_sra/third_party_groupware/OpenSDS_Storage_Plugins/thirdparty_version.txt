@@ -1,0 +1,8 @@
+zlib              1.2.11
+OpenSSL           1.1.1a
+libssh2           1.8.0
+jsoncpp           0.10.6
+Curl and Libcurl  7.64.1
+ACE-TAO-CIAO      6.5.0
+tinyxml           2.6.2
+ 

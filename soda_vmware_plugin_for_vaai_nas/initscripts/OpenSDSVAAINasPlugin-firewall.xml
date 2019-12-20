@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigRoot>
+<service>
+<id>OpenSDSVAAINasPlugin</id>
+<enabled>true</enabled>
+<required>false</required>
+<rule id="0">
+    <!-- Example Nas Plugin does not use any inbound ports, but real plugins might.  -->
+    <direction>inbound</direction>
+    <protocol>tcp</protocol>
+    <porttype>dst</porttype>
+    <port>2049</port> 
+</rule> 
+ <rule id="1">
+     <!-- Example Nas Plugin uses UDP port 2049 which is normally not open on ESX. -->
+    <direction>outbound</direction>
+    <protocol>udp</protocol>
+    <porttype>dst</porttype>
+    <port>2049</port> 
+</rule> 
+  <rule id="2">
+     <!-- Example Nas Plugin uses UDP port 111 which is normally not open on ESX. -->
+    <direction>outbound</direction>
+    <protocol>udp</protocol>
+    <porttype>dst</porttype>
+    <port>111</port> 
+</rule>
+<rule id="3">
+     <!-- example of opening a range of ports. -->
+    <direction>outbound</direction>
+    <protocol>udp</protocol>
+    <porttype>dst</porttype>
+    <port>
+        <begin>0</begin>
+        <end>65535</end>
+    </port> 
+</rule> 
+</service>
+</ConfigRoot>

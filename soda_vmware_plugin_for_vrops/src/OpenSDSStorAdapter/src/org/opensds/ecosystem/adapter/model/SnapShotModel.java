@@ -1,0 +1,53 @@
+// Copyright 2019 The OpenSDS Authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License"); you may
+// not use this file except in compliance with the License. You may obtain
+// a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations
+// under the License.
+
+package org.opensds.ecosystem.adapter.model;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.opensds.ecosystem.adapter.model.meta.DataType;
+import org.opensds.ecosystem.adapter.model.meta.StorModel;
+
+public class SnapShotModel extends StorModel {
+    private Map<String, List<String>> snapShot2LunShip;
+
+    /**
+     * 构造方法,初始化对象
+     */
+    public SnapShotModel() {
+        this.snapShot2LunShip = new HashMap<String, List<String>>();
+    }
+
+    /**
+     * 初始化
+     **/
+    public void init() {
+        getDataTypes().add(DataType.ReadeRequestCntFromSnapshot.getValue());
+        getDataTypes().add(DataType.ReadeRequestCntFromSourceLUN.getValue());
+        getDataTypes().add(DataType.WriteRequestCntFromSourceLUN.getValue());
+        getDataTypes().add(DataType.ReadRequestCntSnapshotPool.getValue());
+        getDataTypes().add(DataType.WriteRequestCntSnapshotPool.getValue());
+        getDataTypes().add(DataType.WriteRequestCntMorethanChunk.getValue());
+    }
+
+    public Map<String, List<String>> getSnapShot2LunShip() {
+        return snapShot2LunShip;
+    }
+
+    public void setSnapShot2LunShip(Map<String, List<String>> snapShot2LunShip) {
+        this.snapShot2LunShip = snapShot2LunShip;
+    }
+}
