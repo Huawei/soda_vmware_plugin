@@ -832,7 +832,11 @@ int TestFailoverStop::_stop_test_device_out(CCmdOperate& cmdOperate, string& str
         }
 
         for (itMapInfo = lst_delete_map.begin(); itMapInfo != lst_delete_map.end(); itMapInfo++){
-            ret = _del_map_from_dar(cmdOperate, itMapInfo->strMapID, itMapInfo->strLunGroupID,  itMapInfo->strHostGroupID, itMapInfo->strDevLUNID);
+            if (itMapInfo -> uiIsSnap == 1)
+			{
+				ret = _del_map_from_dar(cmdOperate, itMapInfo->strMapID, itMapInfo->strLunGroupID,  itMapInfo->strHostGroupID, itMapInfo->strDevLUNID);
+			}
+
             if (RETURN_OK != ret){
                 (void)check_success_out("", err_info);
                 return ret;
@@ -906,26 +910,11 @@ int TestFailoverStop::_del_map_from_dar(CCmdOperate& cmdOperate, const string& m
         COMMLOG(OS_LOG_ERROR, "get snapshot from lunGroup[%s] failed", lunGroupID.c_str());
     }
 
-    if (lstLunIDs.size() != 0 || lstSnapShot.size() != 1){
+    if (lstSnapShot.size() != 1){
         COMMLOG(OS_LOG_WARN, "the Lun Number is [%u], the snapshot number is [%u] included by lunGroup[%s]  ", lstLunIDs.size(), lstSnapShot.size(), lunGroupID.c_str());
     }
 
-    if (lstLunIDs.size() != 0 && lstSnapShot.size() != 0){
-        list<HYIMAGE_INFO_STRU>::iterator itrLstSnapShot = lstSnapShot.begin();
-        for (; itrLstSnapShot != lstSnapShot.end(); itrLstSnapShot++){
-            if (snapID == itrLstSnapShot->strID){
-                ret = cmdOperate.CMD_delLunFromLunGroup(snapID, lunGroupID, OBJ_SNAPSHOT);
-                if ( ret != RETURN_OK){
-                    COMMLOG(OS_LOG_ERROR, "snapshot [%s] can not remove from lunGroup [%s].", lstSnapShot.front().strID.c_str(), lunGroupID.c_str());
-                    return ret;
-                }
-
-                return RETURN_OK;
-            }
-        }    
-    }
-
-    if (lstLunIDs.size() == 0 && lstSnapShot.size() == 1){
+	if (lstSnapShot.size() == 1 && snapID == lstSnapShot.front().strID ){
         ret = cmdOperate.CMD_delMapping(mapID, hostGroupID, lunGroupID);
         if (ret != RETURN_OK){
             COMMLOG(OS_LOG_ERROR, "delete mapping faild by mapID[%s]", mapID.c_str());
