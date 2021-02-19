@@ -522,14 +522,6 @@ void ReverseReplication::_outband_swap_consisthm(CCmdOperate& cmdOperate)
                 COMMLOG(OS_LOG_ERROR, "Cannot find access group info of device(%s)", tmp_tg.target_id.c_str());
                 return;
             }
-
-            list<CMDHOSTINFO_STRU> rlstHostInfo;
-            ret = _add_map(cmdOperate, tmp_tg, lstDARHosts, rlstHostInfo, lun_id, OBJ_LUN);
-            if (RETURN_OK != ret){
-                iter->error_info.code = OS_IToString(ret);
-                COMMLOG(OS_LOG_ERROR, "Map remote lun [%s] to hosts failed.", lun_id.c_str());
-                return;
-            }
         }
 
         
@@ -805,24 +797,8 @@ void ReverseReplication::_outband_swap_hypermetropair(CCmdOperate& cmdOperate)
             ++iter;
             continue;
         }
-
         
-        list<CMDHOSTINFO_STRU> rlstHostInfo;
-        TargetDeviceInfo tmp_tg;
-        tmp_tg.target_id = iter->id;
-        tmp_tg.target_key = tmp_tg.target_id;
-        tmp_tg.cg_accessgroups = iter->cg_accessgroups;
 
-        if (!g_bFusionStorage){
-            ret = _add_map(cmdOperate, tmp_tg, lstDARHosts, rlstHostInfo, strid, OBJ_LUN);
-            if (RETURN_OK != ret){
-                iter->error_info.code = OS_IToString(ret);
-                COMMLOG(OS_LOG_ERROR, "Map remote lun [%s] to hosts failed.", strid.c_str());
-                return;
-            }
-        }
-
-        
         COMMLOG(OS_LOG_INFO,"The Hypermetro id of lun [%s] is [%s]",strid.c_str(),hyper_id.c_str());
         print("The Hypermetro id of lun [%s] is [%s]",strid.c_str(),hyper_id.c_str());
         
